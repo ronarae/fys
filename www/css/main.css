@@ -30,7 +30,7 @@ a:hover {
   color: white;
 }
 
-.assemble_name {
+.navbar-brand {
   font-family: "French Script MT";
   color: white;
   font-size: 250%;
@@ -53,4 +53,26 @@ a:hover {
 
 .modal-open {
   overflow-y: auto;
+}
+
+/*home-main*/
+
+.header {
+  padding-top: 265px;
+  padding-bottom: 50px;
+  margin-top: 50px;
+}
+
+.assembleBrand {
+  font-size: 150px;
+  font-family: "French Script MT";
+  color: white;
+}
+
+button.btn.btn-outline-secondary.btn-lg {
+  border-radius: 25px;
+}
+
+.hoeHetWerkFont {
+  font-family: Consolas;
 }
