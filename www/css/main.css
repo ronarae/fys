@@ -9,7 +9,7 @@ body {
 }
 
 header {
-  display: inline-block;
+  display: block;
 }
 
 a {
@@ -24,14 +24,14 @@ a:hover {
   font-family: "French Script MT";
   color: white;
   font-size: 250%;
-  margin: 10px;
+  margin: 10px;\
 }
 
 .login_btn {
   text-align: right;
-  font-size: 200%;
+  font-size: 150%;
   color: white;
   margin: 10px;
   font-style: italic;
-  top: -250%;
+  top: -100px;
 }
