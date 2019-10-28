@@ -14,7 +14,6 @@ body {
   margin: 0;
   background-image: url("../img/background-1.png");
   background-size: cover;
-  background-attachment: fixed;
 }
 
 header {
@@ -27,7 +26,6 @@ a {
 
 a:hover {
   text-decoration: underline;
-  color: white;
 }
 
 .assemble_name {
@@ -51,6 +49,15 @@ a:hover {
   color: white !important;
 }
 
-.modal-open {
-  overflow-y: auto;
+.about{
+  color: white;
+  width: 50%;
+  border: black 1px solid;
+  text-align: center;
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.about-title{
+  text-align: center;
 }
