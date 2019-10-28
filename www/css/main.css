@@ -55,7 +55,8 @@ a:hover {
   border: black 1px solid;
   text-align: center;
   display: inline-block;
-  margin: 0 auto;
+  margin-left: 25%;
+  margin-top: 10%;
 }
 
 .about-title{
