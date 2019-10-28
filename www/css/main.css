@@ -8,9 +8,30 @@ body {
   background-size: cover;
 }
 
+header {
+  display: inline;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .assemble_name {
   font-family: "French Script MT";
   color: white;
   font-size: 250%;
   margin: 10px;
+}
+
+.login_btn {
+  text-align: right;
+  font-size: 200%;
+  color: white;
+  margin: 10px;
+  font-style: italic;
+  top: -250%;
 }
