@@ -3,11 +3,11 @@
 
 /* Start stylesheet */
 
-/*
-* {
+
+/* * {
   border: 1px solid black;
-}
-*/
+} */
+
 
 
 body {
@@ -43,4 +43,8 @@ a:hover {
   margin: 10px;
   font-style: italic;
   top: -100px;
+}
+
+.fas {
+  color: white !important;
 }
