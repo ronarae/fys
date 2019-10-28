@@ -1,0 +1,16 @@
+/* import French Script MT */
+@import url(//db.onlinewebfonts.com/c/c2f7638be87032cd75a21eeceffd56bd?family=French+Script+MT);
+
+/* Start stylesheet */
+body {
+  margin: 0;
+  background-image: url("/www/img/background-1.png");
+  background-size: cover;
+}
+
+.assemble_name {
+  font-family: "French Script MT";
+  color: white;
+  font-size: 250%;
+  margin: 10px;
+}
