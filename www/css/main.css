@@ -50,7 +50,8 @@ a:hover {
 }
 
 .about{
-  color: white;
+  background-color: white;
+  opacity: 0.5;
   width: 50%;
   border: black 1px solid;
   display: inline-block;
