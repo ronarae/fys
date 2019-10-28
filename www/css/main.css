@@ -50,8 +50,6 @@ a:hover {
 }
 
 .about{
-  background-color: white;
-  opacity: 0.5;
   width: 50%;
   border: black 1px solid;
   display: inline-block;
@@ -61,4 +59,13 @@ a:hover {
 
 .about-title{
   text-align: center;
+}
+
+.about-text{
+  z-index: 4;
+}
+
+.about-background{
+  height: 100%;
+  width: 100%;
 }
