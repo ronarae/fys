@@ -84,8 +84,9 @@ button.btn.btn-outline-secondary.btn-lg {
 }
 
 .fa-arrow-circle-right {
-  padding: 50px 0;
-  size: 9px;
+  padding: 70px 0;
+  font-size: 50px;
+  color: white;
 }
 
 .stap {
