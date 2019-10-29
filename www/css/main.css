@@ -48,3 +48,15 @@ button.btn.btn-outline-secondary.btn-lg {
 #hoeHetWerkt {
   margin: 500px 0;
 }
+
+.box {
+  background-color: lightgrey;
+  width: 85px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.fa-arrow-circle-right {
+  padding: 50px 0;
+  size: 9px;
+}
