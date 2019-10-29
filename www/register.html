@@ -14,6 +14,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="js/register.js" charset="utf-8"></script>
 </head>
+
 <body>
   <nav class="navbar navbar-expand-sm fixed-top">
     <a class="navbar-brand assembleBrand" href="index.html">Assemble</a>
@@ -25,7 +26,7 @@
           <div class="progress">
             <div id="registerProgress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%">33%</div>
           </div>
-          <div class="tab active">
+          <div class="tab">
             <div class="form-group">
               <label>
                 <p class="label-txt animated">VOORNAAM</p>
@@ -86,7 +87,7 @@
             <div class="form-group">
               <label>
                 <p class="label-txt">GESLACHT</p>
-                <select name="geslacht" id="geslacht" class="input">
+                <select name="geslacht" id="geslacht" class="input single">
                   <option value="man">Man</option>
                   <option value="vrouw">Vrouw</option>
                   <option value="anders">Anders</option>
@@ -106,6 +107,45 @@
               </label>
             </div>
           </div>
+          <div class="tab active">
+            <div class="form-group">
+              <label>
+                <p class="label-txt">INTERESSES</p>
+                <label for="primary" class="btn btn-primary">Voetbal
+                  <input type="checkbox" id="primary" class="badgebox" value="voetbal">
+                  <span class="badge">&check;</span>
+                </label>
+                <label for="primary" class="btn btn-primary">Basketbal
+                   <input type="checkbox" id="primary" class="badgebox" value="Basketbal">
+                   <span class="badge">&check;</span>
+                 </label>
+                <label for="primary" class="btn btn-primary">dansen
+                   <input type="checkbox" id="primary" class="badgebox" value="dansen">
+                   <span class="badge">&check;</span>
+                 </label>
+                <label for="primary" class="btn btn-primary">Musea
+                   <input type="checkbox" id="primary" class="badgebox" value="Musea">
+                   <span class="badge">&check;</span>
+                 </label>
+                <label for="primary" class="btn btn-primary">Gallerij
+                  <input type="checkbox" id="primary" class="badgebox" value="Gallerij">
+                  <span class="badge">&check;</span>
+                </label>
+                <label for="primary" class="btn btn-primary">Standbeelden
+                   <input type="checkbox" id="primary" class="badgebox" value="Standbeelden">
+                   <span class="badge">&check;</span>
+                 </label>
+                <label for="primary" class="btn btn-primary">Walibi
+                  <input type="checkbox" id="primary" class="badgebox" value="Walibi">
+                  <span class="badge">&check;</span>
+                </label>
+                <label for="primary" class="btn btn-primary">Horrorhouse
+                   <input type="checkbox" id="primary" class="badgebox" value="Horrorhouse">
+                   <span class="badge">&check;</span>
+                 </label>
+              </label>
+            </div>
+          </div>
           <div class="row">
             <div class="col-2 float-left">
               <button onclick="previousPage()" id="prevBtn" class="btn btn-secondary" type="button" disabled="">Vorige</button>
@@ -119,4 +159,5 @@
     </div>
   </div>
 </body>
+
 </html>
