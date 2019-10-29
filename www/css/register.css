@@ -88,7 +88,7 @@ select.input.single {
 
 /* Hiding the checkbox, but allowing it to be focused */
 .badgebox {
-  opacity: 0;
+  opacity: 0.01;
 }
 
 .badgebox+.badge {
