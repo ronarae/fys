@@ -1,6 +1,7 @@
 /* import Fonts */
 @import url(//db.onlinewebfonts.com/c/c2f7638be87032cd75a21eeceffd56bd?family=French+Script+MT);
 @import url(//db.onlinewebfonts.com/c/1db29588408eadbd4406aae9238555eb?family=Consolas);
+@import url(//db.onlinewebfonts.com/c/b1f909b1cb3adb801a92229ea92613e1?family=Script+MT+Bold);
 
 body {
   background: url("../img/background-1.png") no-repeat center center fixed;
@@ -62,13 +63,20 @@ button.btn.btn-outline-secondary.btn-lg {
 }
 
 .box {
-  background-color: lightgrey;
+  background-color: rgba(255, 255, 255, 0.5);;
   width: 85px;
   padding: 10px;
   margin: 10px;
+  border-radius: 15px;
 }
 
 .fa-arrow-circle-right {
   padding: 50px 0;
   size: 9px;
+}
+
+.stap {
+  font-family: "Script MT Bold";
+  font-size: 35px;
+  color: black;
 }
