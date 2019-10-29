@@ -47,7 +47,8 @@ button.btn.btn-outline-secondary.btn-lg {
 }
 
 #hoeHetWerkt {
-  margin: 500px 0;
+  margin: 225px 0;
+  padding-top: 250px;
 }
 
 .links{
@@ -93,4 +94,8 @@ button.btn.btn-outline-secondary.btn-lg {
   font-family: "Script MT Bold";
   font-size: 35px;
   color: darkslategray;
+}
+
+.backToTop {
+  margin: 25px;
 }
