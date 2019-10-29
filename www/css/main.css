@@ -1,43 +1,21 @@
 /* import French Script MT */
 @import url(//db.onlinewebfonts.com/c/c2f7638be87032cd75a21eeceffd56bd?family=French+Script+MT);
 
-/* Start stylesheet */
-
-
-/* * {
-  border: 1px solid black;
-} */
-
-
-
 body {
-  margin: 0;
-  background-image: url("../img/background-1.png");
+  background: url("../img/background-1.png") no-repeat center center fixed;
   background-size: cover;
 }
 
-header {
-  display: inline-block;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-.navbar-brand {
+/*NAVBAR*/
+.assembleBrand {
   font-family: "French Script MT";
   color: white;
-  font-size: 250%;
-  margin: 10px;
+  font-size: 40px !important;
 }
 
+/*LOGIN POP UP*/
 .login_btn {
   text-align: right;
-
   font-size: 150%;
   color: white;
   margin: 10px;
@@ -45,28 +23,14 @@ a:hover {
   top: -100px;
 }
 
-.fas {
-  color: white !important;
-}
-
-.about{
-  color: white;
-  width: 50%;
-  border: black 1px solid;
-  text-align: center;
-  display: inline-block;
-  margin: 0 auto;
-}
-
-/*home-main*/
-
+/*MAIN*/
 .header {
-  padding-top: 265px;
+  padding-top: 200px;
   padding-bottom: 50px;
   margin-top: 50px;
 }
 
-.assembleBrand {
+.headerAssembleBrand {
   font-size: 150px;
   font-family: "French Script MT";
   color: white;
@@ -78,4 +42,8 @@ button.btn.btn-outline-secondary.btn-lg {
 
 .hoeHetWerkFont {
   font-family: Consolas;
+}
+
+#hoeHetWerkt {
+  margin: 500px 0;
 }
