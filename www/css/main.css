@@ -61,6 +61,10 @@ button.btn.btn-outline-secondary.btn-lg {
   border-radius: 2%;
 }
 
+.about{
+  margin-top: 10%;
+}
+
 .box {
   background-color: lightgrey;
   width: 85px;
