@@ -49,17 +49,15 @@ a:hover {
   color: white !important;
 }
 
+/*About page*/
 .about{
-  color: white;
-  width: 50%;
   border: black 1px solid;
-  text-align: center;
-  display: inline-block;
-  margin: 0 auto;
+  position: absolute;
+  margin-top: 10%;
+  margin-left: 10%;
 }
 
 /*home-main*/
-
 .header {
   padding-top: 265px;
   padding-bottom: 50px;
