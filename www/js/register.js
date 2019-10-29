@@ -21,7 +21,7 @@ function nextPage() {
     active.removeClass("active");
     active = active.next();
     active.addClass("active");
-    progressBar(33);
+    progressBar(25);
   }
   if (!active.next().hasClass("tab")) {
     $("#nextBtn").attr("disabled", "");
@@ -36,7 +36,7 @@ function previousPage() {
     active.removeClass("active");
     active = active.prev();
     active.addClass("active");
-    progressBar(-33);
+    progressBar(-25);
   }
   if (!active.prev().hasClass("tab")) {
     $("#prevBtn").attr("disabled", "");
