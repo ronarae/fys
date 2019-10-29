@@ -30,7 +30,7 @@ label {
   transition: ease .3s;
 }
 
-select.input {
+select.input.single {
   margin-top: 20px;
   border: 0;
   -moz-appearance: none;
@@ -84,6 +84,31 @@ select.input {
 
 .label-active {
   top: -3em;
+}
+
+/* Hiding the checkbox, but allowing it to be focused */
+.badgebox {
+  opacity: 0;
+}
+
+.badgebox+.badge {
+  /* Move the check mark away when unchecked */
+  text-indent: -999999px;
+  /* Makes the badge's width stay the same checked and unchecked */
+  width: 27px;
+}
+
+.badgebox:focus+.badge {
+  /* Set something to make the badge looks focused */
+  /* This really depends on the application, in my case it was: */
+  /* Adding a light border */
+  box-shadow: inset 0px 0px 5px;
+  /* Taking the difference out of the padding */
+}
+
+.badgebox:checked+.badge {
+  /* Move the check mark back when checked */
+  text-indent: 0;
 }
 
 /* button {
