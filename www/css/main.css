@@ -62,7 +62,16 @@ button.btn.btn-outline-secondary.btn-lg {
 }
 
 .about{
-  margin-top: 10%;
+  margin-top: 5%;
+}
+
+.overons{
+  background-color: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  width: 50%;
+  margin-left: 25%;
+  margin-bottom: 5%;
+  border-radius: 30%;
 }
 
 .box {
