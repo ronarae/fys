@@ -1,5 +1,6 @@
-/* import French Script MT */
+/* import Fonts */
 @import url(//db.onlinewebfonts.com/c/c2f7638be87032cd75a21eeceffd56bd?family=French+Script+MT);
+@import url(//db.onlinewebfonts.com/c/1db29588408eadbd4406aae9238555eb?family=Consolas);
 
 body {
   background: url("../img/background-1.png") no-repeat center center fixed;
