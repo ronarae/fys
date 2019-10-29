@@ -13,6 +13,7 @@ $(document).ready(function() {
 });
 
 function nextPage() {
+  console.log("Travel to next page");
   var active = $(".tab.active");
   $("#prevBtn").prop("disabled", false);
   $("#prevBtn").removeAttr("disabled");
