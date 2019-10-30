@@ -13,9 +13,23 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
 <body>
-<a class="navbar-brand assemble_name" href="#">Assemble</a>
-<div class="positie3"><h4>zoek een match|uitloggen</h4>
-</div>
+<!--    NAVBAR    -->
+<nav class="navbar navbar-expand-md fixed-top">
+    <a class="navbar-brand assembleBrand" href="#">Assemble</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <form class="form-inline mt-2 mt-md-0">
+            <a href="#" class="nav-link text-white"><i class="fas fa-user"></i>Zoek een match</a>
+            <button data-toggle="modal" data-target="#loginModal" class="nav-link text-white btn btn-link">
+                <i class="fas fa-sign-in-alt"></i> uitloggen</button>
+        </form>
+    </div>
+</nav>
+
 <div class="fakeimg" >Image</div>
 <div class="gegevens"></div>
 <div class="gegevens2"></div>
