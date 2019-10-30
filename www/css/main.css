@@ -187,3 +187,21 @@ button.btn.btn-outline-secondary.btn-lg {
   top: 5px;
   left: 1150px;
 }
+
+
+/*PROFIEL PAGINA*/
+.image {
+  background-color: gray;
+}
+
+.info {
+  background-color: blue;
+}
+
+.info2 {
+  background-color: white;
+}
+
+.info3 {
+  background-color: white;
+}
