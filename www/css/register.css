@@ -14,6 +14,10 @@ form {
   text-align: center;
 }
 
+button[type="button"]:disabled {
+  cursor: not-allowed !important;
+}
+
 /* label opmaak */
 label.text-input {
   display: block;
