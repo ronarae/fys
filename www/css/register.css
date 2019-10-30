@@ -1,4 +1,4 @@
-div.col-10 {
+div.col-sm-10 {
   margin: 60px auto;
   background: rgba(239, 239, 239, 0.5);
   margin-top: 10%;
@@ -13,10 +13,14 @@ form {
   text-align: center;
 }
 
-label {
+label.text-input {
   display: block;
   position: relative;
   margin: 40px 0px;
+}
+
+.label-txt.animated {
+  top: 0px !important;
 }
 
 .label-txt {
@@ -28,6 +32,20 @@ label {
   letter-spacing: 1px;
   color: rgb(120, 120, 120);
   transition: ease .3s;
+}
+
+.label-txt.why {
+  top: -11em;
+  text-align: center;
+}
+
+.area {
+  margin-top: 11em;
+}
+
+textarea {
+  padding: 20px;
+  resize: none;
 }
 
 select.input.single {
@@ -83,48 +101,93 @@ select.input.single {
 }
 
 .label-active {
-  top: -3em;
+  animation: moveText 1s both;
 }
 
-/* Hiding the checkbox, but allowing it to be focused */
-.badgebox {
-  opacity: 0.01;
+@keyframes moveText {
+  from {
+    top: 0px;
+  }
+
+  to {
+    top: -2em;
+  }
 }
 
-.badgebox+.badge {
-  /* Move the check mark away when unchecked */
-  text-indent: -999999px;
-  /* Makes the badge's width stay the same checked and unchecked */
-  width: 27px;
+.badge-checkboxes .checkbox input[type="checkbox"],
+.badge-checkboxes label.checkbox-inline input[type="checkbox"] {
+  /*  Hide the checkbox, but keeps tabbing to it possible. */
+  position: absolute;
+  clip: rect(0 0 0 0);
 }
 
-.badgebox:focus+.badge {
-  /* Set something to make the badge looks focused */
-  /* This really depends on the application, in my case it was: */
-  /* Adding a light border */
-  box-shadow: inset 0px 0px 5px;
-  /* Taking the difference out of the padding */
+.badge-checkboxes .checkbox label,
+.badge-checkboxes label.checkbox-inline {
+  padding-left: 0;
+  font-size: 20px;
+  margin: 10px;
+  margin-top: 35px;
+  /* Remove space normally used for the checkbox */
 }
 
-.badgebox:checked+.badge {
-  /* Move the check mark back when checked */
-  text-indent: 0;
+.badge-checkboxes .checkbox input[type="checkbox"]:checked:focus+.badge,
+.badge-checkboxes label.checkbox-inline input[type="checkbox"]:checked:focus+.badge {
+  box-shadow: 0 0 2pt 1pt #007bff;
+  /* Outline when checkbox is focused/tabbed to */
+  color: white;
+  background-color: #007bff
 }
 
-/* button {
-  display: inline-block;
-  padding: 12px 24px;
-  background: rgb(220,220,220);
-  font-weight: bold;
-  color: rgb(120,120,120);
-  border: none;
-  outline: none;
-  border-radius: 3px;
-  cursor: pointer;
-  transition: ease .3s;
+.badge-checkboxes .checkbox input[type="checkbox"]:focus+.badge,
+.badge-checkboxes label.checkbox-inline input[type="checkbox"]:focus+.badge {
+  box-shadow: 0 0 2pt 1pt #007bff;
+  background-color: #007bff;
+  /* Outline when checkbox is focused/tabbed to */
 }
 
-button:hover {
-  background: #8BC34A;
-  color: #ffffff;
-} */
+.badge-checkboxes .check input[type="checkbox"]:checked+.badge,
+.badge-checkboxes label.checkbox-inline input[type="checkbox"]:checked+.badge {
+  background-color: #007bff;
+  color: white;
+}
+
+.badge-checkboxes .checkbox input[type="checkbox"]+.badge,
+.badge-checkboxes label.checkbox-inline input[type="checkbox"]+.badge {
+  border: 1px solid #007bff;
+  /* Add outline to badge */
+  /* Make text in badge not selectable */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Give badges for disabled checkboxes an opacity of 50% */
+.badge-checkboxes .checkbox input[type="checkbox"]:disabled+.badge,
+.badge-checkboxes label.checkbox-inline input[type="checkbox"]:disabled+.badge {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+}
+
+/* Remove badge background-color and set text color for not checked options */
+.badge-checkboxes .checkbox input[type="checkbox"]:not(:checked)+.badge,
+.badge-checkboxes label.checkbox-inline input[type="checkbox"]:not(:checked)+.badge {
+  background-color: Transparent;
+  color: black;
+}
+
+/*The following css only required for Bootstrap <= 3.1.0 */
+.badge-checkboxes .checkbox {
+  padding-left: 0;
+  /* Remove space normally used for the checkbox */
+}
+
+.badge-checkboxes .disabled label,
+.badge-checkboxes label.checkbox-inline.disabled {
+  cursor: not-allowed
+}
