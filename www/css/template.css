@@ -1,0 +1,44 @@
+html {
+    padding: 100px 0;
+}
+
+p {
+    margin-top: 1rem;
+}
+.title {
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 10px 0;
+    font-size: 35px;
+    border-radius: 40px;
+}
+
+.nav-link {
+    padding: 10px 50px;
+
+}
+
+.nav-tabs{
+    margin: 40px 0;
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+.tab-content{
+    background-color:#303136;
+    color:#fff;
+    padding:5px
+}
+.nav-tabs > li > a{
+    border: medium black;
+    text-decoration: none;
+    color: black;
+}
+.nav-tabs > li > a:hover{
+    background-color: #6998DF !important;
+    border: medium none;
+    border-radius: 0;
+    color:#fff;
+}
+
+a {
+    text-decoration: none;
+}
