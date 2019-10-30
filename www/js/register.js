@@ -11,7 +11,7 @@ $(document).ready(function() {
   });
 
 });
-
+//functie volgende pagina
 function nextPage() {
   console.log("Travel to next page");
   var active = $(".tab.active");
@@ -21,13 +21,14 @@ function nextPage() {
     active.removeClass("active");
     active = active.next();
     active.addClass("active");
-    progressBar(25);
+    progressBar(20);
   }
   if (!active.next().hasClass("tab")) {
     $("#nextBtn").attr("disabled", "");
   }
 }
 
+//functie vorige pagina
 function previousPage() {
   var active = $(".tab.active");
   $("#nextBtn").prop("disabled", false);
@@ -36,13 +37,14 @@ function previousPage() {
     active.removeClass("active");
     active = active.prev();
     active.addClass("active");
-    progressBar(-25);
+    progressBar(-20);
   }
   if (!active.prev().hasClass("tab")) {
     $("#prevBtn").attr("disabled", "");
   }
 }
 
+//functie progressbar
 function progressBar(add) {
   var bar = $("#registerProgress");
   var arianow = bar.attr("aria-valuenow");

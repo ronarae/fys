@@ -3,6 +3,9 @@
 @import url(//db.onlinewebfonts.com/c/1db29588408eadbd4406aae9238555eb?family=Consolas);
 @import url(//db.onlinewebfonts.com/c/b1f909b1cb3adb801a92229ea92613e1?family=Script+MT+Bold);
 
+html {
+  padding: 100px 0;
+}
 body {
   background: url("../img/background-1.png") no-repeat center center fixed;
   background-size: cover;
@@ -27,7 +30,7 @@ body {
 
 /*MAIN*/
 .header {
-  padding-top: 200px;
+  padding-top: 250px;
   padding-bottom: 50px;
   margin-top: 50px;
 }
@@ -129,7 +132,7 @@ button.btn.btn-outline-secondary.btn-lg {
   margin-top: 3%;
 }
 
-.box {
+.boxHoeHetWerkt {
   background-color: rgba(255, 255, 255, 0.5);;
   width: 85px;
   padding: 10px;
@@ -151,4 +154,110 @@ button.btn.btn-outline-secondary.btn-lg {
 
 .backToTop {
   margin: 25px;
+}
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  padding: 107px;
+  position: absolute;
+  top: 100px;
+  left: 140px;
+}
+/*naam,geboortedatum,geslacht,email*/
+.gegevens{
+  background-color: rgba(239,239,239,0.5);
+  padding: 120px 400px;
+  position: absolute;
+  top: 100px;
+  left: 420px;
+}
+/*links,overmij,interesse*/
+.gegevens2{
+  background-color: rgba(239,239,239,0.5);
+  padding: 180px 350px;
+  position: absolute;
+  top: 350px;
+  left: 140px;
+}
+/*mijn matches,zoeken matches*/
+.gegevens3{
+  background-color: rgba(239,239,239,0.5);
+  padding: 180px 180px;
+  position: absolute;
+  top: 350px;
+  left: 860px;
+}
+/*text positie,naam,geboortedatum,geslacht,email*/
+.text{
+  position: absolute;
+  top: 130px;
+  left: 480px;
+}
+/*text positie,links,over mij,interesse:kampen,eten*/
+.text2{
+  position: absolute;
+  top: 360px;
+  left:160px
+
+}
+/*text positie,interesse:sporten,natuur*/
+.text3{
+  position: absolute;
+  top: 537px;
+  left: 310px;
+}
+/*text positie,interesse:strand,cruise*/
+.text4{
+  position: absolute;
+  top: 537px;
+  left: 460px;
+}
+/*text positie,mijn matches,je hebt geen match*/
+.text5{
+  position: absolute;
+  top:375px;
+  left: 965px;
+}
+/*box,zoek een match */
+.box {
+  background-color: white;
+  padding: 10px 30px;
+  position: absolute;
+  top: 530px;
+  left: 960px;
+}
+/*positie bewerk icon*/
+.positie1{
+  position: absolute;
+  top: 310px;
+  left: 1195px;
+}
+.positie2{
+  position: absolute;
+  top: 680px;
+  left: 810px;
+}
+/*posite zoek een match en uitloggen*/
+.positie3{
+  position: absolute;
+  top: 5px;
+  left: 1150px;
+}
+
+
+/*PROFIEL PAGINA*/
+.image {
+  background-color: gray;
+}
+
+.info {
+  background-color: blue;
+}
+
+.info2 {
+  background-color: white;
+}
+
+.info3 {
+  background-color: white;
 }
