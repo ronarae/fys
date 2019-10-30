@@ -6,8 +6,12 @@
 html {
   padding: 100px 0;
 }
-body {
+body#main {
   background: url("../img/background-1.png") no-repeat center center fixed;
+  background-size: cover;
+}
+body#subMain {
+  background: url("../img/NoPath - kopie (14).png") no-repeat center center fixed;
   background-size: cover;
 }
 
