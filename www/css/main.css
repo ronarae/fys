@@ -51,6 +51,8 @@ button.btn.btn-outline-secondary.btn-lg {
   padding-top: 250px;
 }
 
+
+/* ABOUT US PAGE*/
 .links{
   background-color: rgba(255, 255, 255, 0.5);
   padding: 1%;
@@ -74,6 +76,57 @@ button.btn.btn-outline-secondary.btn-lg {
   margin-left: 25%;
   margin-bottom: 5%;
   border-radius: 30%;
+}
+
+/*PROFILE MATCH*/
+
+.profile-match{
+  margin-top: 10%;
+}
+
+.profile-pic{
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  text-align: center;
+  height: 300px;
+  width: 100%;
+  padding-top: 25%;
+}
+
+
+.profile-extra{
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  margin-left: 1%;
+  display: flex;
+  padding: 2%;
+  height: 100%;
+}
+
+.profile-info{
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+  margin-top: 1%;
+  padding: 2%;
+}
+
+.profile-buttons{
+  float: right;
+}
+
+.info{
+  width: 100%;
+  margin: 3%;
+}
+
+
+.match{
+  font-size: 25px;
+  background-color: white;
+  color: black;
+  border-radius: 25px;
+  width: 100%;
+  margin-top: 3%;
 }
 
 .box {
