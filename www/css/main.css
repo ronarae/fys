@@ -82,7 +82,6 @@ button.btn.btn-outline-secondary.btn-lg {
 }
 
 /*PROFILE MATCH*/
-
 .profile-match{
   margin-top: 10%;
 }
@@ -95,7 +94,6 @@ button.btn.btn-outline-secondary.btn-lg {
   width: 100%;
   padding-top: 25%;
 }
-
 
 .profile-extra{
   background-color: rgba(255, 255, 255, 0.5);
@@ -117,11 +115,10 @@ button.btn.btn-outline-secondary.btn-lg {
   float: right;
 }
 
-.info{
+.info-match{
   width: 100%;
   margin: 3%;
 }
-
 
 .match{
   font-size: 25px;
