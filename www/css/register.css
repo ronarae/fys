@@ -7,22 +7,26 @@ div.col-sm-10 {
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.1);
 }
 
+/* form opmaak */
 form {
   margin: 60px auto;
   padding: 60px 120px 80px 120px;
   text-align: center;
 }
 
+/* label opmaak */
 label.text-input {
   display: block;
   position: relative;
   margin: 40px 0px;
 }
 
+/* label text animatie opmaak */
 .label-txt.animated {
   top: 0px !important;
 }
 
+/* label text opmaak */
 .label-txt {
   position: absolute;
   top: -1.6em;
@@ -34,20 +38,28 @@ label.text-input {
   transition: ease .3s;
 }
 
-.label-txt.why {
-  top: -11em;
-  text-align: center;
-}
-
+/* opmaak voor text area */
 .area {
   margin-top: 11em;
 }
 
+/* opmaak voor label */
+.label {
+  font-family: sans-serif;
+  font-size: .8em;
+  padding: 10px;
+  letter-spacing: 1px;
+  color: rgb(120, 120, 120);
+  transition: ease .3s
+}
+
+/* omaak voor textarea */
 textarea {
   padding: 20px;
   resize: none;
 }
 
+/* select input single */
 select.input.single {
   margin-top: 20px;
   border: 0;
@@ -62,6 +74,7 @@ select.input.single {
   background-repeat: no-repeat;
 }
 
+/* tab */
 .tab {
   display: none;
 }
