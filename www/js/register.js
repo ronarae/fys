@@ -11,7 +11,7 @@ $(document).ready(function() {
   });
 
 });
-
+//functie volgende pagina
 function nextPage() {
   console.log("Travel to next page");
   var active = $(".tab.active");
@@ -28,6 +28,7 @@ function nextPage() {
   }
 }
 
+//functie vorige pagina
 function previousPage() {
   var active = $(".tab.active");
   $("#nextBtn").prop("disabled", false);
@@ -43,6 +44,7 @@ function previousPage() {
   }
 }
 
+//functie progressbar
 function progressBar(add) {
   var bar = $("#registerProgress");
   var arianow = bar.attr("aria-valuenow");
