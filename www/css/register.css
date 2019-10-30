@@ -59,6 +59,7 @@ textarea {
   resize: none;
 }
 
+/* select input single */
 select.input.single {
   margin-top: 20px;
   border: 0;
@@ -73,6 +74,7 @@ select.input.single {
   background-repeat: no-repeat;
 }
 
+/* tab */
 .tab {
   display: none;
 }
