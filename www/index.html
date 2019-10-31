@@ -14,7 +14,6 @@
 
 </head>
 <body id="main">
-<div class="container">
   <!--    LOGIN POP UP       -->
   <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
@@ -50,6 +49,7 @@
       </div>
     </div>
   </div>
+
   <!--    NAVBAR    -->
   <nav class="navbar navbar-expand-md fixed-top">
     <a class="navbar-brand assembleBrand" href="about.html">Assemble</a>
@@ -59,11 +59,11 @@
     <div class="collapse navbar-collapse" id="navbarCollapse">
       <ul class="navbar-nav mr-auto">
       </ul>
-      <form class="form-inline mt-2 mt-md-0">
+
         <a href="register.html" class="nav-link text-white"><i class="fas fa-user"></i> Registreren</a>
         <button data-toggle="modal" data-target="#loginModal" class="nav-link text-white btn btn-link">
           <i class="fas fa-sign-in-alt"></i> Login</button>
-      </form>
+
     </div>
   </nav>
 
@@ -95,7 +95,7 @@
         </div>
         <div class="col-md-3 text-center boxHoeHetWerkt">
           <p><b>STAP 3</b></p><br>
-            <p class="stap">Have fun!!!</p><br>
+            <p class="stap">Zoek een match</p><br>
         </div>
       </div>
     </div>
@@ -105,5 +105,23 @@
     </div>
   </main>
 </div>
+<!-- FOOTER -->
+<footer class="footer text-center" id="mainFooter">
+  <div class="container">
+    <div class="row">
+      <div class="col-4 text-left">
+        <a href="index.html">
+          <p class="brand">Assemble</p>
+        </a>
+      </div>
+      <div class="col-4 text-center">
+        <p><a href="register.html"> Registreer</a> | <button data-toggle="modal" data-target="#loginModal" class="btn btn-link"> Inloggen</button> | <a href="about.html">Over Ons</a></p>
+      </div>
+      <div class="col-4 text-right">
+        <p class="contact">Contact:020-1234567 / 06-12345678</p>
+      </div>
+    </div>
+  </div>
+</footer>
 </body>
 </html>

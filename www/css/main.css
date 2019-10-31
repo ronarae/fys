@@ -54,7 +54,7 @@ button.btn.btn-outline-secondary.btn-lg {
 }
 
 #hoeHetWerkt {
-  margin: 225px 0;
+  margin: 225px 0 100px;
   padding-top: 250px;
 }
 
@@ -203,4 +203,65 @@ button.btn.btn-outline-secondary.btn-lg {
   position: absolute;
   left:445px;
   top:310px;
+}
+
+/*FOOTER*/
+footer#subFooter, footer#mainFooter {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color:#000000;
+    margin-top: 50px;
+}
+footer#mainFooter {
+  background:rgba(255, 255, 255, 0.5);
+}
+
+footer#mainFooter p.brand, footer#subFooter p.brand {
+  font-family: "French Script MT";
+  color: floralwhite;
+  font-size: 36px;
+  margin: 6px 0 0;
+}
+
+footer#subFooter {
+  background: rgba(255, 255, 255, 0.9);
+}
+
+footer#subFooter p.brand {
+  color: black;
+}
+footer#mainFooter p, footer#mainFooter a,
+footer#subFooter p, footer#subFooter a {
+  margin-top: 10px;
+  color: white;
+  font-family: Consolas;
+  font-size: 15px;
+  font-weight: lighter;
+}
+footer#subFooter p, footer#subFooter a {
+  color: black;
+}
+
+footer#mainFooter a:hover, footer#subFooter a:hover{
+  color: #6998DF;
+  text-decoration: none;
+}
+
+footer#subFooter .btn-link {
+  color: black !important;
+  text-decoration: none;
+}
+
+a:hover {
+  color: navajowhite;
+  text-decoration: none;
+}
+
+footer#subFooter p.contact, footer#mainFooter p.contact {
+  margin-top: 20px;
+}
+
+footer#mainFooter .btn-link {
+  color: white !important;
 }
