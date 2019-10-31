@@ -26,7 +26,7 @@
         <ul class="navbar-nav mr-auto">
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-            <a href="#" class="nav-link text-white"><i class="fas fa-sign-out-alt"></i> UITLOGGEN</a>
+            <a href="index.html" class="nav-link text-white"><i class="fas fa-sign-out-alt"></i> UITLOGGEN</a>
         </form>
     </div>
 </nav>
@@ -78,9 +78,9 @@
                             <p class="label-txt">Wie kan mijn e-mail zien?</p>
                             <select name="email" id="email" class="input single" required>
                                 <option value="">Kies een optie:</option>
-                                <option value="man">Alleen ik</option>
-                                <option value="vrouw">Mijn matches</option>
-                                <option value="anders">iedereen</option>
+                                <option value="onlyme">Alleen ik</option>
+                                <option value="matches">Mijn matches</option>
+                                <option value="everyone" selected>iedereen</option>
                             </select>
                             <div class="line-box">
                                 <div class="line"></div>
@@ -92,9 +92,9 @@
                             <p class="label-txt">Wie kan mij berichten sturen?</p>
                             <select name="berichten" id="berichten" class="input single" required>
                                 <option value="">Kies een optie:</option>
-                                <option value="man">Alleen ik</option>
-                                <option value="vrouw">Mijn matches</option>
-                                <option value="anders">iedereen</option>
+                                <option value="onlyme">Alleen ik</option>
+                                <option value="matches" selected>Mijn matches</option>
+                                <option value="everyone">iedereen</option>
                             </select>
                             <div class="line-box">
                                 <div class="line"></div>
@@ -106,9 +106,9 @@
                             <p class="label-txt">Wie kan mijn matches zien?</p>
                             <select name="matches" id="matches" class="input single" required>
                                 <option value="">Kies een optie:</option>
-                                <option value="man">Alleen ik</option>
-                                <option value="vrouw">Mijn matches</option>
-                                <option value="anders">iedereen</option>
+                                <option value="onlyme" selected>Alleen ik</option>
+                                <option value="matches">Mijn matches</option>
+                                <option value="everyone">iedereen</option>
                             </select>
                             <div class="line-box">
                                 <div class="line"></div>
@@ -119,7 +119,7 @@
                     <div class="form-group">
                         <input type="submit" value="Opslaan" class="btn btn-primary btn-block">
                         <br><br>
-                        <button class="btn btn-danger" onclick="verwijderAcc()">Account verwijderen</button>
+                        <button class="btn btn-danger" onclick="verwijderAcc();">Account verwijderen</button>
                     </div>
 
                 </div>
@@ -127,5 +127,23 @@
         </div>
     </div>
 </div>
+<!-- FOOTER -->
+<footer class="footer text-center" id="subFooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 text-left">
+                <a href="index.html">
+                    <p class="brand">Assemble</p>
+                </a>
+            </div>
+            <div class="col-4 text-center">
+                <p><a href="profielpagina.html">MIJN PROFIEL</a> | <a href="index.html"> UITLOGGEN</a> | <a href="about.html">OVER ONS</a></p>
+            </div>
+            <div class="col-4 text-right">
+                <p class="contact">Contact:020-1234567 / 06-12345678</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
