@@ -23,9 +23,8 @@
         <ul class="navbar-nav mr-auto">
         </ul>
         <form class="form-inline mt-2 mt-md-0">
-            <a href="#" class="nav-link text-white">Zoek een match</a>
-            <button data-toggle="modal" data-target="#loginModal" class="nav-link text-white btn btn-link">
-                <i class="fas fa-sign-in-alt"></i> uitloggen</button>
+            <a href="zoekEenMatch.html" class="nav-link text-white text-uppercase">Zoek een match</a>
+            <a href="index.html" class="text-uppercase text-white"> <i class="fas fa-sign-in-alt"></i> uitloggen </a>
         </form>
     </div>
 </nav>
@@ -78,27 +77,46 @@
         </div>
         <div class="col-7">
             <div class="info3">
-                mijn matches
+                <h2 class="text-uppercase">mijn matches </h2>
+                <br>
+<!--als er is geen match komt deze line-->
+                <i>Je hebt nog geen match</i>
                 <br><br>
-                je hebt nog geen match
-                <br><br>
-            <div class="box">
-                <h6>zoek een match</h6>
-            </div>
-
+                <div class="box">
+                    <a href="zoekEenMatch.html">
+                        <button class="btn btn-outline-secondary"> ZOEK EEN MATCH </button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </div>
 <div class="bewerk1">
-    <i class="far fa-edit"></i>
+    <a href="acc_gegevens.html"> <i class="far fa-edit"></i></a>
 </div>
 <div class="bewerk2">
-    <i class="far fa-edit"></i>
+    <a href="over_mij.html"> <i class="far fa-edit"></i></a>
 </div>
 <div class="bewerk3">
-<i class="fas fa-camera"></i>
+    <a href="profielFoto_veranderen.html"> <i class="fas fa-camera"></i></a>
 </div>
-</body>
+<!-- FOOTER -->
+<footer class="footer text-center" id="subFooter">
+    <div class="container">
+        <div class="row">
+            <div class="col-4 text-left">
+                <a href="index.html">
+                    <p class="brand">Assemble</p>
+                </a>
+            </div>
+            <div class="col-4 text-center">
+                <p><a href="over_mij.html"> BEWERK PROFIEL</a> | <a href="#"> UITLOGGEN</a> | <a href="about.html">OVER ONS</a></p>
+            </div>
+            <div class="col-4 text-right">
+                <p class="contact">Contact:020-1234567 / 06-12345678</p>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

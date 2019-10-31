@@ -182,25 +182,20 @@ button.btn.btn-outline-secondary.btn-lg {
   padding-bottom: 81px;
   padding-left: 50px;
 }
-.box{
-  width: 150px;
-  background-color: white;
-  border: 1px solid black;
-  padding: 20px 5px;
 
+.bewerk1, .bewerk2, .bewerk3, .bewerk1 a, .bewerk2 a, .bewerk3 a {
+  position: absolute;
+  color: black;
 }
 .bewerk1{
-   position: absolute;
   left:1300px;
   top:315px;
  }
 .bewerk2{
-  position: absolute;
   left:635px;
   top:600px;
 }
 .bewerk3{
-  position: absolute;
   left:445px;
   top:310px;
 }
