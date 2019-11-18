@@ -6,44 +6,50 @@ $(document).ready(function() {
 
 //smooth scroll
 function scroll() {
-    //Select all links with hashes
+    //selecteer alle a element met een href tag wat een # bevat
     $('a[href*="#"]')
-        // Remove links that don't actually link to anything
+        // Verwijder de linken die nergens naar verwijzen
         .not('[href="#"]')
         .not('[href="#0"]')
         .click(function(event) {
-            // On-page links
+            // Als er op een link geklikt wordt
             if (
+                //vervang alle slashes met een lege string
                 location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
                 location.hostname == this.hostname
             ) {
-                // Figure out element to scroll to
+                // Zoek het element waar de link naar verwijst.
                 var targetEl;
                 var isTop = false;
+                // Variable target is gelijk aan de momentele link path
                 var target = $(this.hash);
+                //als de hash gelijk is aan top zet de locatie op window y op 0
                 if (this.hash.slice(1) == "top") {
                     targetEl = 0;
                     isTop = true;
-                } else {
+                }
+                //anders zet de target gelijk aan de y coordinate van het target element 
+                else {
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                     targetEl = target.offset().top;
                 }
-                // Does a scroll target exist?
+                // Is de target gezet
                 if (target.length || isTop === true) {
-                    // Only prevent default if animation is actually gonna happen
+                    // Zorg ervoor dat de link niet werkt, maar dat de andere animatie gebruikt wordt.
                     event.preventDefault();
+                    // Speel de animatie af
                     $('html, body').animate({
                         scrollTop: targetEl
                     }, 1000, function() {
-                        // Callback after animation
-                        // Must change focus!
+                        // Run als de animatie afgelopen is
+                        // Verander de focus
                         var $target = $(target);
                         $target.focus();
-                        if ($target.is(":focus")) { // Checking if the target was focused
+                        if ($target.is(":focus")) { // Kijk of de target gefocused was
                             return false;
                         } else {
-                            $target.attr('tabindex', '-1'); // Adding tabindex for elements not focusable
-                            $target.focus(); // Set focus again
+                            $target.attr('tabindex', '-1'); // Voeg een tabindex toe aan elementen die niet gefocused waren
+                            $target.focus(); // Focus de target
                         };
                     });
                 }
@@ -61,19 +67,22 @@ function includeHTML() {
         //zoek element met het attribute include
         if (element.hasAttribute('include')) {
             file = element.getAttribute('include');
+            //nieuw xmlhttprequest
             xhttp = new XMLHttpRequest();
             xhttp.onreadystatechange = function() {
-                if (this.readyState == 4) {
-                    if (this.status == 200) {
-                        element.innerHTML = this.responseText;
+                    // kijk of er een foutmelding is bij de xmlhttprequest
+                    if (this.readyState == 4) {
+                        if (this.status == 200) {
+                            element.innerHTML = this.responseText;
+                        }
+                        if (this.status == 404) {
+                            element.innerHTML = "Page not Found";
+                        }
+                        element.removeAttribute('include');
+                        includeHTML();
                     }
-                    if (this.status == 404) {
-                        element.innerHTML = "Page not Found";
-                    }
-                    element.removeAttribute('include');
-                    includeHTML();
                 }
-            }
+                //open het bestand
             xhttp.open("GET", file, true);
             xhttp.send();
             return;
