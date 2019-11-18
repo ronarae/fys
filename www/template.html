@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Template</title>
@@ -12,79 +13,33 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </head>
+
 <body>
-<!--    LOGIN POP UP       -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Login</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="profielpagina.html">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="uname" placeholder="Gebruikersnaam">
-                    </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="pass" placeholder="Wachtwoord">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="form-control btn btn-primary" name="submit" value="Inloggen">
-                    </div>
-                </form>
-                <div class="d-flex justify-content-center links">
-                    Nog geen account?&nbsp;<a href="register.html"> Registreer</a>
+    <!--    LOGIN POP UP       -->
+    <div include="includes/_login.html"></div>
+    <!-- NAVBAR-->
+    <div include="includes/_header.html"></div>
+
+    <!-- MAIN -->
+
+    <!-- FOOTER -->
+    <footer class="footer text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 text-left">
+                    <a href="index.html">
+                        <p class="brand">Assemble</p>
+                    </a>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <a href="resetpass.html">Wachtwoord vergeten?</a>
+                <div class="col-4 text-center">
+                    <p><a href="register.html"> Registreer</a> | <button data-toggle="modal" data-target="#loginModal"> Inloggen</button> | <a href="about.html">Over Ons</a></p>
+                </div>
+                <div class="col-4 text-right">
+                    <p>Contact:020-1234567 / 06-12345678</p>
                 </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
-            </div>
         </div>
-    </div>
-</div>
-
-<!--    NAVBAR    -->
-<nav class="navbar navbar-expand-md fixed-top">
-    <a class="navbar-brand assembleBrand" href="#">Assemble</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <a href="#" class="nav-link text-white"><i class="fas fa-user"></i> Registreren</a>
-            <button data-toggle="modal" data-target="#loginModal" class="nav-link text-white btn btn-link">
-                <i class="fas fa-sign-in-alt"></i> Login</button>
-        </form>
-    </div>
-</nav>
-
-<!-- MAIN -->
-
-<!-- FOOTER -->
-<footer class="footer text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 text-left">
-                <a href="index.html">
-                    <p class="brand">Assemble</p>
-                </a>
-            </div>
-            <div class="col-4 text-center">
-                <p><a href="register.html"> Registreer</a> | <button data-toggle="modal" data-target="#loginModal"> Inloggen</button> | <a href="about.html">Over Ons</a></p>
-            </div>
-            <div class="col-4 text-right">
-                <p>Contact:020-1234567 / 06-12345678</p>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 </body>
+
 </html>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>login gegevens</title>
@@ -15,116 +16,106 @@
     <script src="js/register.js" charset="utf-8"></script>
 
 </head>
+
 <body id="subMain">
-<!--    NAVBAR    -->
-<nav class="navbar navbar-expand-md fixed-top">
-    <a class="navbar-brand assembleBrand" href="index.html">Assemble</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <a href="index.html" class="nav-link text-white"><i class="fas fa-sign-out-alt"></i> UITLOGGEN</a>
-        </form>
-    </div>
-</nav>
+    <!-- NAVBAR-->
+    <div include="includes/_header.html"></div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-4"></div>
-        <div class="col-4">
-            <div class="title">
-                <p class="text-uppercase text-center">bewerk profiel</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-4"></div>
+            <div class="col-4">
+                <div class="title">
+                    <p class="text-uppercase text-center">bewerk profiel</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <div class="navTabs">
-                <ul class="nav nav-tabs center d-flex justify-content-between">
-                    <li class="nav-item">
-                        <a class="nav-link  text-uppercase" href="over_mij.html">over mij</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="profielFoto_veranderen.html">profiel foto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link  text-uppercase" href="acc_gegevens.html">account gegevens</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active text-uppercase" href="login_gegevens.html">login gegevens</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-uppercase" href="acc_instellingen.html">Instellingen</a>
-                    </li>
-                </ul>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="navTabs">
+                    <ul class="nav nav-tabs center d-flex justify-content-between">
+                        <li class="nav-item">
+                            <a class="nav-link  text-uppercase" href="over_mij.html">over mij</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="profielFoto_veranderen.html">profiel foto</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link  text-uppercase" href="acc_gegevens.html">account gegevens</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-uppercase" href="login_gegevens.html">login gegevens</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="acc_instellingen.html">Instellingen</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<div class="mainContainer">
-    <div class="row justify-content-center">
-        <div class="col-sm-10">
-            <form class="justify-content-center needs-validation" novalidate>
-                <div class="form-group">
-                    <label class="text-input">
+    <div class="mainContainer">
+        <div class="row justify-content-center">
+            <div class="col-sm-10">
+                <form class="justify-content-center needs-validation" novalidate>
+                    <div class="form-group">
+                        <label class="text-input">
                         <p class="label-txt animated">Email:</p>
                         <input type="text" class="input" value="test@persoon.nl" required>
                         <div class="line-box">
                             <div class="line"></div>
                         </div>
                     </label>
-                    <div class="form-group">
-                        <label class="text-input">
+                        <div class="form-group">
+                            <label class="text-input">
                             <p class="label-txt animated">Wachtwoord:</p>
                             <input type="password" class="input" value="wachtwoord" required>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
                         </label>
-                    </div>
-                    <div class="form-group">
-                        <label class="text-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-input">
                             <p class="label-txt animated">Herhaal wachtwoord:</p>
                             <input type="password" class="input" value="wachtwoord" required>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
                         </label>
-                    </div>
+                        </div>
 
-                    <div class="form-group">
-                        <input type="submit" value="Opslaan" class="btn btn-primary btn-block">
-                    </div>
+                        <div class="form-group">
+                            <input type="submit" value="Opslaan" class="btn btn-primary btn-block">
+                        </div>
 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- FOOTER -->
+    <footer class="footer text-center" id="subFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 text-left">
+                    <a href="index.html">
+                        <p class="brand">Assemble</p>
+                    </a>
                 </div>
-            </form>
-        </div>
-    </div>
-</div>
-<!-- FOOTER -->
-<footer class="footer text-center" id="subFooter">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 text-left">
-                <a href="index.html">
-                    <p class="brand">Assemble</p>
-                </a>
-            </div>
-            <div class="col-4 text-center">
-                <p><a href="profielpagina.html">MIJN PROFIEL</a> | <a href="index.html"> UITLOGGEN</a> | <a href="about.html">OVER ONS</a></p>
-            </div>
-            <div class="col-4 text-right">
-                <p class="contact">Contact:020-1234567 / 06-12345678</p>
+                <div class="col-4 text-center">
+                    <p><a href="profielpagina.html">MIJN PROFIEL</a> | <a href="index.html"> UITLOGGEN</a> | <a href="about.html">OVER ONS</a></p>
+                </div>
+                <div class="col-4 text-right">
+                    <p class="contact">Contact:020-1234567 / 06-12345678</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
+
 </html>

@@ -15,154 +15,105 @@
 
 <body id="subMain">
 
-<!--    LOGIN POP UP       -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Login</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form action="profielpagina.html">
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="uname" placeholder="Gebruikersnaam">
+    <!--    LOGIN POP UP       -->
+    <div include="includes/_login.html"></div>
+    <!-- NAVBAR-->
+    <div include="includes/_header.html"></div>
+
+
+    <!--- Pagina over het doel van deze website en over onze team met onze contact gegevens --->
+    <div class="about">
+        <div class="about-background">
+            <div class="container">
+                <div class="row page-title">
+                    <div class="col">
+                        <h1>Over ons</h1>
                     </div>
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="pass" placeholder="Wachtwoord">
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" class="form-control btn btn-primary" name="submit" value="Inloggen">
-                    </div>
-                </form>
-                <div class="d-flex justify-content-center links">
-                    Nog geen account?&nbsp;<a href="register.html"> Registreer</a>
                 </div>
-                <div class="d-flex justify-content-center">
-                    <a href="resetpass.html">Wachtwoord vergeten?</a>
+                <div class="row">
+                    <div class="col links">
+                        <h1>Ons Doel</h1>
+                        <p>Het aantal alleenstaanden in Nederland stijgt hard.Zeventig jaar geleden telde Nederland 285.000 alleenstaanden, nu zijn dat er meer dan drie miljoen. Dit blijkt uit cijfers van het Centraal Bureau voor de Statistiek. De verwachting
+                            is dat in 2030 3,6 miljoen mensen alleenstaanden hebben in Nederland. Een alleenstaande kan iemand zijn die vrijgezel is maar, ook iemand die gescheiden is met of zonder kinderen of weduwe/ weduwnaar is. In de vakantiewereld
+                            is een groeiende vraag voor reizen voor alleenstaanden. Voor sommige reizigers is 's avonds alleen naar een bar gaan leuk, anderen reizen liever samen met familie of vrienden, of juist met een heel nieuw gezelschap. Het kan
+                            leuk zijn (een deel) van de reis op te trekken met iemand die dezelfde interesses heeft. Bijvoorbeeld om samen naar een favoriet festival te gaan of om samen lekker vis te eten bij de vismarkt of om samen te winkelen. Corendon
+                            wil inspelen op deze ontwikkelingen wil de alleenstaande reizigers met elkaar in contact brengen op basis van gezamenlijke interesses. Dit contact kunnen we maken voordat een reis geboekt wordt, bijvoorbeeld door een andere
+                            alleenstaande reiziger te zoeken om samen (een deel) van de reis mee op te trekken. Maar het kan ook tijdens de reis, door bijvoorbeeld iemand te zoeken voor een leuke activiteit. Corendon wil een website ontwikkelen om dit
+                            allemaal mogelijk te maken. Deze website staat los van de bestaande Corendon website. Via links in de reisteksten en in de reisdocumenten wordt verwezen naar het bestaan van de site.</p>
+                        <br>
+                    </div>
+                    <div class="col"></div>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
+
+                <br>
+                <br>
+                <br>
+
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col rechts">
+                        <h1>Over ons team</h1>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Naam</th>
+                                    <th>Studentennummer</th>
+                                    <th>Emailadres</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Bas Mulder</td>
+                                    <td>500000</td>
+                                    <td>bas.mulder@hva.nl</td>
+                                </tr>
+                                <tr>
+                                    <td>Yasmine Amadou</td>
+                                    <td>50003449</td>
+                                    <td>yasmine.amadou@hva.nl</td>
+                                </tr>
+                                <tr>
+                                    <td>KinHan Wong</td>
+                                    <td>50000000</td>
+                                    <td>kinhan.wong@hva.nl</td>
+                                </tr>
+                                <tr>
+                                    <td>Rona Rae de Romas Rieza</td>
+
+                                    <td>50000000</td>
+                                    <td>rona.rieza@hva.nl</td>
+                                </tr>
+                                <tr>
+                                    <td>Anies Sayed</td>
+                                    <td>50000000</td>
+                                    <td>anies.sayed@hva.nl</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-<!-- NAVBAR-->
-<nav class="navbar navbar-expand-sm fixed-top">
-    <a class="navbar-brand assembleBrand" href="index.html">Assemble</a>
-    <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-            <a href="register.html" class="nav-link text-white"><i class="fas fa-user"></i> Registreer</a>
-        </li>
-        <li class="nav-item">
-            <a href="#" class="nav-link text-white"><i class="fas fa-sign-in-alt"></i> Login</a>
-        </li>
-    </ul>
-</nav>
-
-
-<!--- Pagina over het doel van deze website en over onze team met onze contact gegevens --->
-<div class="about">
-    <div class="about-background">
+    </div>
+    <!-- FOOTER -->
+    <footer class="footer text-center" id="subFooter">
         <div class="container">
-            <div class="row page-title">
-                <div class="col">
-                    <h1>Over ons</h1>
-                </div>
-            </div>
             <div class="row">
-                <div class="col links">
-                    <h1>Ons Doel</h1>
-                    <p>Het aantal alleenstaanden in Nederland stijgt hard.Zeventig jaar geleden telde Nederland 285.000 alleenstaanden,
-                        nu zijn dat er meer dan drie miljoen. Dit blijkt uit cijfers van het Centraal Bureau voor de Statistiek.
-                        De verwachting is dat in 2030 3,6 miljoen mensen alleenstaanden hebben in Nederland.
-                        Een alleenstaande kan iemand zijn die vrijgezel is maar, ook iemand die gescheiden is met of zonder kinderen of weduwe/ weduwnaar is.
-                        In de vakantiewereld is een groeiende vraag voor reizen voor alleenstaanden.
-                        Voor sommige reizigers is 's avonds alleen naar een bar gaan leuk, anderen reizen liever samen met familie of vrienden,
-                        of juist met een heel nieuw gezelschap. Het kan leuk zijn (een deel) van de reis op te trekken met iemand die dezelfde interesses heeft.
-                        Bijvoorbeeld om samen naar een favoriet festival te gaan of om samen lekker vis te eten bij de vismarkt of om samen te winkelen.
-                        Corendon wil inspelen op deze ontwikkelingen wil de alleenstaande reizigers met elkaar in contact brengen op basis van gezamenlijke interesses.
-                        Dit contact kunnen we maken voordat een reis geboekt wordt, bijvoorbeeld door een andere alleenstaande reiziger te zoeken om samen (een deel) van de reis mee op te trekken.
-                        Maar het kan ook tijdens de reis, door bijvoorbeeld iemand te zoeken voor een leuke activiteit. Corendon wil een website ontwikkelen om dit allemaal mogelijk te maken.
-                        Deze website staat los van de bestaande Corendon website. Via links in de reisteksten en in de reisdocumenten wordt verwezen naar het bestaan van de site.</p>
-                    <br>
+                <div class="col-4 text-left">
+                    <a href="index.html">
+                        <p class="brand">Assemble</p>
+                    </a>
                 </div>
-                <div class="col"></div>
-            </div>
-
-            <br>
-            <br>
-            <br>
-
-            <div class="row">
-                <div class="col"></div>
-                <div class="col rechts">
-                    <h1>Over ons team</h1>
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th>Naam</th>
-                            <th>Studentennummer</th>
-                            <th>Emailadres</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>Bas Mulder</td>
-                            <td>500000</td>
-                            <td>bas.mulder@hva.nl</td>
-                        </tr>
-                        <tr>
-                            <td>Yasmine Amadou</td>
-                            <td>50003449</td>
-                            <td>yasmine.amadou@hva.nl</td>
-                        </tr>
-                        <tr>
-                            <td>KinHan Wong</td>
-                            <td>50000000</td>
-                            <td>kinhan.wong@hva.nl</td>
-                        </tr>
-                        <tr>
-                            <td>Rona Rae de Romas Rieza</td>
-
-                            <td>50000000</td>
-                            <td>rona.rieza@hva.nl</td>
-                        </tr>
-                        <tr>
-                            <td>Anies Sayed</td>
-                            <td>50000000</td>
-                            <td>anies.sayed@hva.nl</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                <div class="col-4 text-center">
+                    <p><a href="register.html"> Registreer</a> | <button data-toggle="modal" data-target="#loginModal" class="text-white btn btn-link"> Inloggen</button> | <a href="about.html">Over Ons</a></p>
+                </div>
+                <div class="col-4 text-right">
+                    <p class="contact">Contact:020-1234567 / 06-12345678</p>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
-<!-- FOOTER -->
-<footer class="footer text-center" id="subFooter">
-    <div class="container">
-        <div class="row">
-            <div class="col-4 text-left">
-                <a href="index.html">
-                    <p class="brand">Assemble</p>
-                </a>
-            </div>
-            <div class="col-4 text-center">
-                <p><a href="register.html"> Registreer</a> | <button data-toggle="modal" data-target="#loginModal" class="text-white btn btn-link"> Inloggen</button> | <a href="about.html">Over Ons</a></p>
-            </div>
-            <div class="col-4 text-right">
-                <p class="contact">Contact:020-1234567 / 06-12345678</p>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 </body>
 
 </html>

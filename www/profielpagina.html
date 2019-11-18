@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PROFIEL | Assemble</title>
@@ -12,121 +14,107 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </head>
+
 <body id="subMain">
-<!--    NAVBAR    -->
-<nav class="navbar navbar-expand-md fixed-top">
-    <a class="navbar-brand assembleBrand" href="index.html">Assemble</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <ul class="navbar-nav mr-auto">
-        </ul>
-        <form class="form-inline mt-2 mt-md-0">
-            <a href="zoekEenMatch.html" class="nav-link text-white text-uppercase">Zoek een match</a>
-            <a href="index.html" class="text-uppercase text-white"> <i class="fas fa-sign-in-alt"></i> uitloggen </a>
-        </form>
-    </div>
-</nav>
-<!-- profiel -->
-<div class="container">
-    <div class="row">
-        <div class="col-3">
-            <div class="image">
-                <div class="row">
-                    <div class="col-8">
-                            <i class="fas fa-user"></i>
-                    </div>
-                    <div class="col-3">
-                        <a href="profielFoto_veranderen.html"><i class=" editIcons fas fa-camera"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-9">
-            <div class="info">
-                <div class="row">
-                    <div class="col-10">
-                        Naam: Lorem Ipsum
-                        <br><br>
-                        Geboortedatum: 01-01-2000
-                        <br><br>
-                        Geslacht: Ander
-                        <br><br>
-                        Email: test@persoon.nl
-                    </div>
-                    <div class="col-2">
-                        <a href="acc_gegevens.html"> <i class="far fa-edit editIcons    "></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-5">
-            <div class="info2">
-                <p class="text-uppercase">links: <a href="https://google.nl">google.nl</a></p>
-                <p class="text-uppercase">over mij: <i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, vitae.</i></p>
-                <p class="text-uppercase">interesse:</p>
-                <br>
-                <div class="row">
-                    <div class="col-10">
-                        <div class="row">
-                            <div class="col-4">
-                                <i class="far fa-check-square">eten</i>
-                                <i class="far fa-check-square">sporten</i>
-                            </div>
-                            <div class="col-4">
-                                <i class="far fa-check-square">natuur</i>
-                                <i class="far fa-check-square">kampen</i>
-                            </div>
-                            <div class="col-4">
-                                <i class="far fa-check-square">strand </i>
-                                <i class="far fa-check-square">cruise</i>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-2">
-                        <a href="over_mij.html"> <i class="far fa-edit editIcons"></i></a>
-                    </div>
-                    </div>
-            </div>
-        </div>
-        <div class="col-7">
-            <div class="info3">
-                <h2 class="text-uppercase">mijn matches </h2>
-                <br>
-<!--als er is geen match komt deze line-->
-                <i>Je hebt nog geen match</i>
-                <br><br>
-                <div class="box">
-                    <a href="zoekEenMatch.html">
-                        <button class="btn btn-outline-secondary"> ZOEK EEN MATCH </button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- FOOTER -->
-<footer class="footer text-center" id="subFooter">
+    <!-- NAVBAR-->
+    <div include="includes/_header.html"></div>
+    <!-- profiel -->
     <div class="container">
         <div class="row">
-            <div class="col-4 text-left">
-                <a href="index.html">
-                    <p class="brand">Assemble</p>
-                </a>
+            <div class="col-3">
+                <div class="image">
+                    <div class="row">
+                        <div class="col-8">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="col-3">
+                            <a href="profielFoto_veranderen.html"><i class=" editIcons fas fa-camera"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-4 text-center">
-                <p><a href="over_mij.html"> BEWERK PROFIEL</a> | <a href="#"> UITLOGGEN</a> | <a href="about.html">OVER ONS</a></p>
+            <div class="col-9">
+                <div class="info">
+                    <div class="row">
+                        <div class="col-10">
+                            Naam: Lorem Ipsum
+                            <br><br> Geboortedatum: 01-01-2000
+                            <br><br> Geslacht: Ander
+                            <br><br> Email: test@persoon.nl
+                        </div>
+                        <div class="col-2">
+                            <a href="acc_gegevens.html"> <i class="far fa-edit editIcons    "></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="col-4 text-right">
-                <p class="contact">Contact:020-1234567 / 06-12345678</p>
+        </div>
+
+        <div class="row">
+            <div class="col-5">
+                <div class="info2">
+                    <p class="text-uppercase">links: <a href="https://google.nl">google.nl</a></p>
+                    <p class="text-uppercase">over mij: <i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, vitae.</i></p>
+                    <p class="text-uppercase">interesse:</p>
+                    <br>
+                    <div class="row">
+                        <div class="col-10">
+                            <div class="row">
+                                <div class="col-4">
+                                    <i class="far fa-check-square">eten</i>
+                                    <i class="far fa-check-square">sporten</i>
+                                </div>
+                                <div class="col-4">
+                                    <i class="far fa-check-square">natuur</i>
+                                    <i class="far fa-check-square">kampen</i>
+                                </div>
+                                <div class="col-4">
+                                    <i class="far fa-check-square">strand </i>
+                                    <i class="far fa-check-square">cruise</i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-2">
+                            <a href="over_mij.html"> <i class="far fa-edit editIcons"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-7">
+                <div class="info3">
+                    <h2 class="text-uppercase">mijn matches </h2>
+                    <br>
+                    <!--als er is geen match komt deze line-->
+                    <i>Je hebt nog geen match</i>
+                    <br><br>
+                    <div class="box">
+                        <a href="zoekEenMatch.html">
+                            <button class="btn btn-outline-secondary"> ZOEK EEN MATCH </button>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</footer>
+
+    <!-- FOOTER -->
+    <footer class="footer text-center" id="subFooter">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 text-left">
+                    <a href="index.html">
+                        <p class="brand">Assemble</p>
+                    </a>
+                </div>
+                <div class="col-4 text-center">
+                    <p><a href="over_mij.html"> BEWERK PROFIEL</a> | <a href="#"> UITLOGGEN</a> | <a href="about.html">OVER ONS</a></p>
+                </div>
+                <div class="col-4 text-right">
+                    <p class="contact">Contact:020-1234567 / 06-12345678</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
+
 </html>
