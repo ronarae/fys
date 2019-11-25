@@ -2,136 +2,73 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Home</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/register.css">
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/register.css">
 
-  <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="js/main.js" charset="utf-8"></script>
-  <script src="js/register.js" charset="utf-8"></script>
+    <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js" charset="utf-8"></script>
+    <script src="assets/js/pages/register.js" charset="utf-8"></script>
 
 </head>
 
 <body id="main">
-  <!--    LOGIN POP UP       -->
-  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Login</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form action="profielpagina.html">
-            <div class="form-group">
-              <input type="text" class="form-control" name="uname" placeholder="Gebruikersnaam">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="pass" placeholder="Wachtwoord">
-            </div>
-            <div class="form-group">
-              <input type="submit" class="form-control btn btn-primary" name="submit" value="Inloggen">
-            </div>
-          </form>
-          <div class="d-flex justify-content-center links">
-            Nog geen account?&nbsp;<a href="register.html"> Registreer</a>
-          </div>
-          <div class="d-flex justify-content-center">
-            <a href="#">Wachtwoord vergeten?</a>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
-        </div>
-      </div>
-    </div>
-  </div>
+    <!-- LOGIN MODAL -->
+    <div include="assets/includes/_login.html"></div>
 
-  <!--    NAVBAR    -->
-  <nav class="navbar navbar-expand-md fixed-top">
-    <a class="navbar-brand assembleBrand" href="about.html">Assemble</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-      </ul>
+    <!-- NAVBAR-->
+    <div include="assets/includes/_header.html"></div>
 
-      <a href="register.html" class="nav-link text-white"><i class="fas fa-user"></i> Registreren</a>
-      <button data-toggle="modal" data-target="#loginModal" class="nav-link text-white btn btn-link">
-        <i class="fas fa-sign-in-alt"></i> Login</button>
-
-    </div>
-  </nav>
-
-  <!--    MAIN        -->
-  <main role="main" class="container">
-    <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-sm-10">
-          <h1 class="text-center">Reset Wachtwoord</h1>
-          <form class="justify-content-center needs-validation register" novalidate>
-            <div class="form-group">
-              <label class="text-input">
+    <!--    MAIN        -->
+    <main role="main" class="container">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-10">
+                    <h1 class="text-center">Reset Wachtwoord</h1>
+                    <form class="justify-content-center needs-validation register" novalidate>
+                        <div class="form-group">
+                            <label class="text-input">
                 <p class="label-txt animated">VOER HIER JE EMAIL IN</p>
                 <input type="email" class="input">
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
               </label>
-            </div>
-            <div class="form-group">
-              <label class="text-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-input">
                 <p class="label-txt animated">NIEUW WACHTWOORD</p>
                 <input type="password" class="input" required>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
               </label>
-            </div>
-            <div class="form-group">
-              <label class="text-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-input">
                 <p class="label-txt animated">HERHAAL WACHTWOORd</p>
                 <input type="password" class="input" required>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
               </label>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block">RESET WACHTWOORD</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block">RESET WACHTWOORD</button>
-            </div>
-          </form>
         </div>
-      </div>
+    </main>
     </div>
-  </main>
-  </div>
-  <!-- FOOTER -->
-  <footer class="footer text-center" id="mainFooter">
-    <div class="container">
-      <div class="row">
-        <div class="col-4 text-left">
-          <a href="index.html">
-            <p class="brand">Assemble</p>
-          </a>
-        </div>
-        <div class="col-4 text-center">
-          <p><a href="register.html"> Registreer</a> | <button data-toggle="modal" data-target="#loginModal" class="btn btn-link"> Inloggen</button> | <a href="about.html">Over Ons</a></p>
-        </div>
-        <div class="col-4 text-right">
-          <p class="contact">Contact:020-1234567 / 06-12345678</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    <!-- FOOTER -->
+    <div include="assets/includes/_footer.html"></div>
 </body>
 
 </html>

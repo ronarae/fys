@@ -1,127 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Home</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-  <link rel="stylesheet" href="css/main.css">
 
-  <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="js/main.js" charset="utf-8"></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <script src="http://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js" charset="utf-8"></script>
 
 </head>
+
 <body id="main">
-  <!--    LOGIN POP UP       -->
-  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Login</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form action="profielpagina.html">
-            <div class="form-group">
-              <input type="text" class="form-control" name="uname" placeholder="Gebruikersnaam">
+    <!--    LOGIN POP UP       -->
+    <div include='assets/includes/_login.html'></div>
+
+    <!--    NAVBAR    -->
+    <div include='assets/includes/_header.html'></div>
+
+    <!--    MAIN        -->
+    <main role="main" class="container">
+        <section class="header text-center">
+            <div class="container">
+                <h1 class="headerAssembleBrand">Assemble</h1>
+                <a href="zoekEenMatch.html"> <button class="btn btn-outline-secondary btn-lg">Zoek een match</button></a><br>
+                <a href="#hoeHetWerkt"><button class="btn hoeHetWerkFont">HOE HET WERKT</button></a>
             </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="pass" placeholder="Wachtwoord">
+        </section>
+
+        <div class="container" id="hoeHetWerkt">
+            <div class="row">
+                <div class="col-md-3 text-center boxHoeHetWerkt">
+                    <p><b>STAP 1</b></p><br>
+                    <p class="stap">Registreer</p><br>
+                </div>
+                <div class="col-md-1 text-center">
+                    <i class="fas fa-arrow-circle-right"></i>
+                </div>
+                <div class="col-md-3 text-center boxHoeHetWerkt">
+                    <p><b>STAP 2</b></p><br>
+                    <p class="stap">Inloggen</p><br>
+                </div>
+                <div class="col-md-1 text-center">
+                    <i class="fas fa-arrow-circle-right"></i>
+                </div>
+                <div class="col-md-3 text-center boxHoeHetWerkt">
+                    <p><b>STAP 3</b></p><br>
+                    <p class="stap">Zoek een match</p><br>
+                </div>
             </div>
-            <div class="form-group">
-              <input type="submit" class="form-control btn btn-primary" name="submit" value="Inloggen">
-            </div>
-          </form>
-          <div class="d-flex justify-content-center links">
-            Nog geen account?&nbsp;<a href="register.html"> Registreer</a>
-          </div>
-          <div class="d-flex justify-content-center">
-            <a href="resetpass.html">Wachtwoord vergeten?</a>
-          </div>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
+
+        <div class="backToTop text-center">
+            <a href="#top"><button class="btn btn-lg btn-outline-secondary">TERUG NAAR BOVEN</button></a>
         </div>
-      </div>
+    </main>
     </div>
-  </div>
-
-  <!--    NAVBAR    -->
-  <nav class="navbar navbar-expand-md fixed-top">
-    <a class="navbar-brand assembleBrand" href="about.html">Assemble</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-      </ul>
-
-        <a href="register.html" class="nav-link text-white"><i class="fas fa-user"></i> Registreren</a>
-        <button data-toggle="modal" data-target="#loginModal" class="nav-link text-white btn btn-link">
-          <i class="fas fa-sign-in-alt"></i> Login</button>
-
-    </div>
-  </nav>
-
-  <!--    MAIN        -->
-  <main role="main" class="container">
-    <section class="header text-center">
-      <div class="container">
-        <h1 class="headerAssembleBrand">Assemble</h1>
-        <a href="zoekEenMatch.html"> <button class="btn btn-outline-secondary btn-lg">Zoek een match</button></a><br>
-        <a href="#hoeHetWerkt"><button class="btn hoeHetWerkFont">HOE HET WERKT</button></a>
-      </div>
-    </section>
-
-    <div class="container" id="hoeHetWerkt">
-      <div class="row">
-        <div class="col-md-3 text-center boxHoeHetWerkt">
-          <p><b>STAP 1</b></p><br>
-            <p class="stap">Registreer</p><br>
-        </div>
-        <div class="col-md-1 text-center">
-          <i class="fas fa-arrow-circle-right"></i>
-        </div>
-        <div class="col-md-3 text-center boxHoeHetWerkt">
-          <p><b>STAP 2</b></p><br>
-            <p class="stap">Inloggen</p><br>
-        </div>
-        <div class="col-md-1 text-center">
-          <i class="fas fa-arrow-circle-right"></i>
-        </div>
-        <div class="col-md-3 text-center boxHoeHetWerkt">
-          <p><b>STAP 3</b></p><br>
-            <p class="stap">Zoek een match</p><br>
-        </div>
-      </div>
-    </div>
-
-    <div class="backToTop text-center">
-      <a href="#top"><button class="btn btn-lg btn-outline-secondary">TERUG NAAR BOVEN</button></a>
-    </div>
-  </main>
-</div>
-<!-- FOOTER -->
-<footer class="footer text-center" id="mainFooter">
-  <div class="container">
-    <div class="row">
-      <div class="col-4 text-left">
-        <a href="index.html">
-          <p class="brand">Assemble</p>
-        </a>
-      </div>
-      <div class="col-4 text-center">
-        <p><a href="register.html"> Registreer</a> | <button data-toggle="modal" data-target="#loginModal" class="btn btn-link"> Inloggen</button> | <a href="about.html">Over Ons</a></p>
-      </div>
-      <div class="col-4 text-right">
-        <p class="contact">Contact:020-1234567 / 06-12345678</p>
-      </div>
-    </div>
-  </div>
-</footer>
+    <!-- FOOTER -->
+    <div include="assets/includes/_footer.html"></div>
 </body>
+
 </html>
