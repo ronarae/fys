@@ -2,137 +2,100 @@
 <html lang="nl" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>REGISTREER | Assemble</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
-  <link rel="stylesheet" href="css/main.css">
-  <link rel="stylesheet" href="css/register.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>REGISTREER | Assemble</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/pages/register.css">
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="js/register.js" charset="utf-8"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/pages/register.js" charset="utf-8"></script>
+    <script src="assets/js/pages/validation.js"></script>
 </head>
 
 <body id="subMain">
-  <div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Login</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <form action="profielpagina.html">
-            <div class="form-group">
-              <input type="text" class="form-control" name="uname" placeholder="Gebruikersnaam">
-            </div>
-            <div class="form-group">
-              <input type="text" class="form-control" name="pass" placeholder="Wachtwoord">
-            </div>
-            <div class="form-group">
-              <input type="submit" class="form-control btn btn-primary" name="submit" value="Inloggen">
-            </div>
-          </form>
-          <div class="d-flex justify-content-center links">
-            Nog geen account?&nbsp;<a href="register.html"> Registreer</a>
-          </div>
-          <div class="d-flex justify-content-center">
-            <a href="resetpass.html">Wachtwoord vergeten?</a>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Sluiten</button>
-        </div>
-      </div>
-    </div>
-  </div>
-  <nav class="navbar navbar-expand-sm fixed-top">
-    <a class="navbar-brand assembleBrand" href="index.html">Assemble</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav mr-auto">
-      </ul>
-        <button data-toggle="modal" data-target="#loginModal" class="nav-link text-white btn btn-link">
-          <i class="fas fa-sign-in-alt"></i> Login
-        </button>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-sm-10">
-        <h1 class="text-center">Registreer hier</h1>
-        <form class="justify-content-center needs-validation register" action="profielpagina.html" novalidate>
-          <!-- progressbar -->
-          <div class="progress">
-            <div id="registerProgress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">20%</div>
-          </div>
-          <div class="tab active">
-            <div class="form-group">
-              <label class="text-input">
-                <p class="label-txt animated">VOORNAAM</p>
-                <input type="text" class="input" required>
-                <div class="line-box">
-                  <div class="line"></div>
-                </div>
-              </label>
-            </div>
-            <div class="form-group">
-              <label class="text-input">
-                <p class="label-txt animated">TUSSENVOEGSEL</p>
-                <input type="text" class="input" required>
-                <div class="line-box">
-                  <div class="line"></div>
-                </div>
-              </label>
-            </div>
-            <div class="form-group">
-              <label class="text-input">
+    <!--    LOGIN POP UP       -->
+    <div include="assets/includes/_login.html"></div>
+    <!-- NAVBAR-->
+    <div include="assets/includes/_header.html"></div>
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-sm-10">
+                <h1 class="text-center">Registreer hier</h1>
+                <form class="justify-content-center needs-validation register" action="profielpagina.html" novalidate>
+                    <!-- progressbar -->
+                    <div class="progress">
+                        <div id="registerProgress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%">10%</div>
+                    </div>
+                    <div class="tab active">
+                        <div class="form-group">
+                            <label class="text-input">
+                                <p class="label-txt animated">VOORNAAM</p>
+                                    <input type="text" class="input validate" minlength="5" maxlength="8" required>
+                                    <div class="line-box">
+                                      <div class="line"></div>
+                                    </div>
+                              </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-input">
+                            <p class="label-txt animated">TUSSENVOEGSEL</p>
+                            <input type="text" class="input validate" required>
+                            <div class="line-box">
+                              <div class="line"></div>
+                            </div>
+                          </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="text-input">
                 <p class="label-txt animated">ACHTERNAAM</p>
-                <input type="text" class="input" required>
+                <input type="text" class="input validate" required>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
               </label>
-            </div>
-            <div class="form-group">
-              <label class="text-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-input">
                 <p class="label-txt animated">EMAIL</p>
-                <input type="email" class="input" required>
+                <input type="email" class="input validate" required>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
               </label>
-            </div>
-          </div>
-          <div class="tab">
-            <div class="form-group">
-              <label class="text-input">
-                <p class="label-txt animated">WACHTWOORD</p>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="form-group">
+                            <label class="text-input">
+                <p class="label-txt animated" id="must-match">WACHTWOORD</p>
                 <input type="password" class="input" required>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
               </label>
-            </div>
-            <div class="form-group"><label class="text-input">
+                        </div>
+                        <div class="form-group"><label class="text-input">
                 <p class="label-txt animated">HERHAAL WACHTWOORD</p>
-                <input type="password" class="input" required>
+                <input type="password" matches="must-match" class="input" required>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
               </label>
-            </div>
-          </div>
-          <div class="tab">
-            <div class="form-group">
-              <label class="text-input">
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="form-group">
+                            <label class="text-input">
                 <p class="label-txt">GESLACHT</p>
                 <select name="geslacht" id="geslacht" class="input single" required>
                   <option value="man">Man</option>
@@ -143,84 +106,78 @@
                   <div class="line"></div>
                 </div>
               </label>
-            </div>
-            <div class="form-group">
-              <label class="text-input">
+                        </div>
+                        <div class="form-group">
+                            <label class="text-input">
                 <p class="label-txt">GEBOORTEDATUM</p>
                 <input type="date" name="datum" class="input" required>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
               </label>
-            </div>
-            <div class="form-group">
-              <label>
+                        </div>
+                        <div class="form-group">
+                            <label>
                 <p class="label">KIES EEN PROFIELAFBEELDING</p>
-                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg" class="input btn btn-primary btn-block">
+                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"
+                  class="input btn btn-primary btn-block">
               </label>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="form-group">
+                            <div class="form-group badge-checkboxes">
+                                <p class="label">INTERESSES</p>
+                                <div id="interessesDiv">
+                                    <!-- script genereert alle tags vanuit een array, deze tags worden hier geplaatst -->
+                                </div>
+                                <!-- script voor het genereren van alle tags -->
+                                <script>
+                                    var interessesArray = ["Voetbal", "Basketbal", "Dansen", "Musea", "Gallerij", "Standbeelden",
+                                        "Walibi", "Horrorhouse", "Canalcruise", "Club", "Bar", "Bos", "Bergen", "Strand"
+                                    ];
+                                    var div = $("#interessesDiv");
+                                    for (var i = 0; i < interessesArray.length; i++) {
+                                        div.html(div.html() + '<label class="checkbox-inline"><input type="checkbox" value="' +
+                                            interessesArray[i] + '" /><span class="badge">' + interessesArray[i] + '</span></label>');
+                                    }
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="form-group">
+                            <label>BESTEMMING</label>
+                            <p>hier komt de bestemming</p>
+                        </div>
+                    </div>
+                    <div class="tab">
+                        <div class="form-group">
+                            <label>
+                                <textarea name="bio" rows="8" cols="80" class="input" placeholder="Schrijf een stukje over jezelf"></textarea>
+                        <div class="line-box">
+                          <div class="line"></div>
+                        </div>
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Registreer" class="btn btn-primary btn-block">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-2 float-left">
+                            <button onclick="previousPage()" id="prevBtn" class="btn btn-secondary" type="button" disabled="">Vorige</button>
+                        </div>
+                        <div class="col-2 ml-auto">
+                            <button onclick="nextPage()" id="nextBtn" class="btn btn-primary" type="button">Volgende</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-          </div>
-          <div class="tab">
-            <div class="form-group">
-              <div class="form-group badge-checkboxes">
-                <p class="label">INTERESSES</p>
-                <div id="interessesDiv">
-                  <!-- script genereert alle tags vanuit een array, deze tags worden hier geplaatst -->
-                </div>
-                <!-- script voor het genereren van alle tags -->
-                <script>
-                  var interessesArray = ["Voetbal", "Basketbal", "Dansen", "Musea", "Gallerij", "Standbeelden", "Walibi", "Horrorhouse", "Canalcruise", "Club", "Bar", "Bos", "Bergen", "Strand"];
-                  var div = $("#interessesDiv");
-                  for (var i = 0; i < interessesArray.length; i++) {
-                    div.html(div.html() + '<label class="checkbox-inline"><input type="checkbox" value="' + interessesArray[i] + '" /><span class="badge">' + interessesArray[i] + '</span></label>');
-                  }
-                </script>
-              </div>
-            </div>
-          </div>
-          <div class="tab">
-            <div class="form-group">
-              <label>
-                <textarea name="bio" rows="8" cols="80" class="input" placeholder="Schrijf een stukje over jezelf"></textarea>
-                <div class="line-box">
-                  <div class="line"></div>
-                </div>
-              </label>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Registreer" class="btn btn-primary btn-block">
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-2 float-left">
-              <button onclick="previousPage()" id="prevBtn" class="btn btn-secondary" type="button" disabled="">Vorige</button>
-            </div>
-            <div class="col-2 ml-auto">
-              <button onclick="nextPage()" id="nextBtn" class="btn btn-primary" type="button">Volgende</button>
-            </div>
-          </div>
-        </form>
-      </div>
+        </div>
     </div>
-  </div>
-  <!-- FOOTER -->
-  <footer class="footer text-center" id="mainFooter">
-      <div class="container">
-          <div class="row">
-              <div class="col-4 text-left">
-                  <a href="index.html">
-                      <p class="brand">Assemble</p>
-                  </a>
-              </div>
-              <div class="col-4 text-center">
-                  <p><a href="profielpagina.html">MIJN PROFIEL</a> | <a href="index.html"> UITLOGGEN</a> | <a href="about.html">OVER ONS</a></p>
-              </div>
-              <div class="col-4 text-right">
-                  <p class="contact">Contact:020-1234567 / 06-12345678</p>
-              </div>
-          </div>
-      </div>
-  </footer>
+    <!-- FOOTER -->
+    <div include="assets/includes/_footer.html"></div>
 </body>
 
 </html>
