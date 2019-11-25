@@ -1,3 +1,15 @@
+//Run als het document geladen is.
+$(document).ready(function() {
+    //run als er een element met de class validate gefocused wordt
+    $(".validate").focus(function() {
+        //run als er een toets losgelaten wordt.
+        $(this).keyup(function() {
+            //run de functie check over het element die gefocused is als er een toets losgelaten wordt.
+            check(this);
+        });
+    });
+});
+
 // check of een element een bepaald attribute heeft
 function hasAttr(el, attr) {
     return el.hasAttribute(attr);
@@ -20,8 +32,10 @@ function maxLength(text, max) {
 }
 
 //check of 2 strings hetzelfde zijn
-function matchInput(input1, input2) {
-    return input1 == input2;
+function matchInput(el, id) {
+    value1 = el.value;
+    value2 = $("#" + id).value;
+    return value1 == value2;
 }
 
 //check of een string aan bepaalde regex regels voldoet
@@ -34,7 +48,7 @@ function contains(text, regex) {
 
 //check een bepaald element of het aan de regels die in het element staan voldoet
 function check(el) {
-    //zet de variablee
+    //zet de variabele
     let passed = true;
     //get array van alle siblings
     let container = getSiblings(el, '.line-box');
@@ -76,7 +90,7 @@ function getChildren(el, type = null) {
     el = el.children;
     //check of het niet null is
     if (type != null) {
-        el = searchElements(type);
+        el = searchElements(el, type);
     }
     return el;
 }
@@ -87,15 +101,13 @@ function getSiblings(el, type = null) {
     el = el.parentNode.children;
     //check of het niet null is
     if (type != null) {
-        el = searchElements(type);
+        el = searchElements(el, type);
     }
     return el;
 }
 
 //kijk of een een array van elementen een bepaald element bevat.
-function searchElements(search) {
-    let el;
-
+function searchElements(el, type) {
     //check of de variabele niet begint met een . of een #
     if (type.charAt(0) != '.' && type.charAt(0) != '#') {
         //loop door alle elementen heen en check of het een de type van het element overeenkomt met de zoekopdracht
