@@ -29,7 +29,7 @@ function nextPage() {
         active.removeClass("active");
         active = active.next();
         active.addClass("active");
-        progressBar(20);
+        progressBar(18);
     }
     //als er niet nog een pagina na komt, disable de knop om naar de volgende pagina te gaan.
     if (!active.next().hasClass("tab")) {
@@ -50,7 +50,7 @@ function previousPage() {
         active.removeClass("active");
         active = active.prev();
         active.addClass("active");
-        progressBar(-20);
+        progressBar(-18);
     }
     //als er niet een tab voor komt disable de button om naar de vorige pagina te gaan
     if (!active.prev().hasClass("tab")) {
