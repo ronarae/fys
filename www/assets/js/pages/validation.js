@@ -33,9 +33,9 @@ function maxLength(text, max) {
 
 //check of 2 strings hetzelfde zijn
 function matchInput(el, id) {
-    value1 = el.value;
+    console.log($("#" + id));
     value2 = $("#" + id).value;
-    return value1 == value2;
+    return el == value2;
 }
 
 //check of een string aan bepaalde regex regels voldoet
@@ -71,7 +71,7 @@ function check(el) {
         }
     }
     if (hasAttr(el, 'contains')) {
-        if (!contains(el.value, getAttr(el, contains))) {
+        if (!contains(el.value, getAttr(el, 'contains'))) {
             passed = false;
         }
     }
