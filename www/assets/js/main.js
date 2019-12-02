@@ -28,7 +28,7 @@ function scroll() {
                     targetEl = 0;
                     isTop = true;
                 }
-                //anders zet de target gelijk aan de y coordinate van het target element 
+                //anders zet de target gelijk aan de y coordinate van het target element
                 else {
                     target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
                     targetEl = target.offset().top;
@@ -73,7 +73,7 @@ function includeHTML() {
                     // kijk of er een foutmelding is bij de xmlhttprequest
                     if (this.readyState == 4) {
                         if (this.status == 200) {
-                            element.innerHTML = this.responseText;
+                            element.appendChild(document.createRange().createContextualFragment(this.responseText));
                         }
                         if (this.status == 404) {
                             element.innerHTML = "Page not Found";
