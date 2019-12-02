@@ -1,3 +1,5 @@
+
+
 // run als het document geladen is
 $(document).ready(function() {
     //check voor input focus
@@ -69,4 +71,25 @@ function progressBar(add) {
     bar.attr("aria-valuenow", newVal);
     bar.css("width", newVal + "%");
     bar.text(newVal + "%");
+}
+
+function register() {
+    let voornaam = $("#voornaam").val();
+    let tussenvoegsel = $("#tussenvoegsel").val();
+    let achternaam = $("#achternaam").val();
+    let geslacht = $("#geslacht").val();
+    let geboorte_datum = $("#geboorte_datum").val();
+    let avatar = $("#avatar").val();
+    let bio = $("#bio").val();
+
+//de ingevoerde waardes worden in de database gezet
+    FYSCloud.API.queryDatabase(
+        "INSERT INTO gebruiker(voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum, profiel_foto, bio) VALUES(?,?,?,?,?,?,?)",
+        [voornaam, tussenvoegsel, achternaam, geslacht, geboorte_datum, avatar, bio]
+    ).done(function (data) {
+        console.log(data);
+    }).fail(function (reason) {
+        console.log(reason);
+    });
+
 }
