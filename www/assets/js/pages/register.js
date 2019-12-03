@@ -1,5 +1,3 @@
-
-
 // run als het document geladen is
 $(document).ready(function() {
     //check voor input focus
@@ -16,7 +14,6 @@ $(document).ready(function() {
             $(this).parent().find(".animated").removeClass('label-active');
         };
     });
-
 });
 //functie volgende pagina
 function nextPage() {

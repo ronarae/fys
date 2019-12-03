@@ -2,6 +2,7 @@
 $(document).ready(function() {
     //run als er een element met de class validate gefocused wordt
     $(".validate").focus(function() {
+      console.log('validate');
         //run als er een toets losgelaten wordt.
         $(this).keyup(function() {
             //run de functie check over het element die gefocused is als er een toets losgelaten wordt.
@@ -9,6 +10,7 @@ $(document).ready(function() {
         });
     });
 });
+
 
 // check of een element een bepaald attribute heeft
 function hasAttr(element, attribute) {
@@ -47,7 +49,8 @@ function contains(text, regex) {
 }
 
 //check een bepaald element of het aan de regels die in het element staan voldoet
-function check(element) {
+function check(el) {
+  console.log('check');
     //zet de variabele
     let passed = true;
     //get array van alle siblings
@@ -144,7 +147,4 @@ function searchElements(element, type) {
         }
     }
     return el;
-
-
-
 }
