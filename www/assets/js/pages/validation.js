@@ -11,14 +11,14 @@ $(document).ready(function() {
 });
 
 // check of een element een bepaald attribute heeft
-function hasAttr(el, attr) {
-    return el.hasAttribute(attr);
+function hasAttr(element, attribute) {
+    return element.hasAttribute(attribute);
 }
 
 // geef de waarde van een attribute terug
-function getAttr(el, attr) {
-    var attr = el.getAttribute(attr);
-    return attr;
+function getAttr(element, attribute) {
+    var attribute = element.getAttribute(attribute);
+    return attribute;
 }
 
 //check of een string een bepaalde minimale lengte heeft
@@ -32,10 +32,10 @@ function maxLength(text, max) {
 }
 
 //check of 2 strings hetzelfde zijn
-function matchInput(el, id) {
+function matchInput(element, id) {
     console.log($("#" + id));
     value2 = $("#" + id).value;
-    return el == value2;
+    return element == value2;
 }
 
 //check of een string aan bepaalde regex regels voldoet
@@ -47,31 +47,31 @@ function contains(text, regex) {
 }
 
 //check een bepaald element of het aan de regels die in het element staan voldoet
-function check(el) {
+function check(element) {
     //zet de variabele
     let passed = true;
     //get array van alle siblings
-    let container = getSiblings(el, '.line-box');
+    let container = getSiblings(element, '.line-box');
     //get array van alle children
     let line = getChildren(container, '.line');
     //check of aan alle regels voldaan wordt.
-    if (hasAttr(el, 'minlength')) {
-        if (!minLength(el.value, getAttr(el, 'minlength'))) {
+    if (hasAttr(element, 'minlength')) {
+        if (!minLength(element.value, getAttr(element, 'minlength'))) {
             passed = false;
         }
     }
-    if (hasAttr(el, 'maxlength')) {
-        if (!maxLength(el.value, getAttr(el, 'maxlength'))) {
+    if (hasAttr(element, 'maxlength')) {
+        if (!maxLength(element.value, getAttr(element, 'maxlength'))) {
             passed = false;
         }
     }
-    if (hasAttr(el, 'match')) {
-        if (!matchInput(el.value, getAttr(el, 'match'))) {
+    if (hasAttr(element, 'match')) {
+        if (!matchInput(element.value, getAttr(element, 'match'))) {
             passed = false;
         }
     }
-    if (hasAttr(el, 'contains')) {
-        if (!contains(el.value, getAttr(el, 'contains'))) {
+    if (hasAttr(element, 'contains')) {
+        if (!contains(element.value, getAttr(element, 'contains'))) {
             passed = false;
         }
     }
@@ -85,36 +85,36 @@ function check(el) {
 }
 
 // get een array van alle children
-function getChildren(el, type = null) {
+function getChildren(element, type = null) {
     //element is gelijk aan element.children
-    el = el.children;
+    element = element.children;
     //check of het niet null is
     if (type != null) {
-        el = searchElements(el, type);
+        element = searchElements(element, type);
     }
-    return el;
+    return element;
 }
 
 //get een array van alle siblings
-function getSiblings(el, type = null) {
+function getSiblings(element, type = null) {
     //element is gelijk aan de alle children van het parent element
-    el = el.parentNode.children;
+    element = element.parentNode.children;
     //check of het niet null is
     if (type != null) {
-        el = searchElements(el, type);
+        element = searchElements(element, type);
     }
-    return el;
+    return element;
 }
 
 //kijk of een een array van elementen een bepaald element bevat.
-function searchElements(el, type) {
+function searchElements(element, type) {
     //check of de variabele niet begint met een . of een #
     if (type.charAt(0) != '.' && type.charAt(0) != '#') {
         //loop door alle elementen heen en check of het een de type van het element overeenkomt met de zoekopdracht
-        for (let i = 0; i < el.length; i++) {
+        for (let i = 0; i < element.length; i++) {
             //als de zoekopdracht overeenkomt stop de loop
-            if (el[i].nodeName.toLowerCase() == type) {
-                el = el[i];
+            if (element[i].nodeName.toLowerCase() == type) {
+                element = element[i];
                 break;
             }
         }
@@ -144,4 +144,7 @@ function searchElements(el, type) {
         }
     }
     return el;
+
+
+
 }
