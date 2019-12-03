@@ -1,14 +1,25 @@
-function login() {
-  console.log('login');
-  FYSCloud.API.queryDatabase(
-    "SELECT * FROM fys_is107_5_dev.login WHERE `email` = 'email' AND `password` = 'wachtwoord'"
-  ).done(function(data) {
-    FYSCloud.Session.set("loggedin", data.user_id);
-  }).fail(function(reason) {
-    console.log(reason);
-  });
-}
+function login(){
+  var email = $("input[name='uname']").val();
+  var wachtwoord = $("input[name='pass']").val();
+  if(!email || !wachtwoord){
+    console.log("geen waardes");
+  }
+  else{
+    FYSCloud.API.queryDatabase(
+        "SELECT salt FROM login Where email = ?",
+        [email]
+    ).done(function (data) {
+      //todo
+      FYSCloud.API.queryDatabase(
+          "SELECT* FROM login Where email = ? AND wachtwoord = ?",
+          [email,wachtwoord]
+      ).done(function (data) {
+        console.log(data);
+          }
 
-$('#login').submit(function(e) {
-  alert();
-});
+      ).fail(function (reason) {
+        console.log(reason);
+      })
+    })
+  }
+}
