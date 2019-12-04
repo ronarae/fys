@@ -35,8 +35,7 @@ function maxLength(text, max) {
 
 //check of 2 strings hetzelfde zijn
 function matchInput(element, id) {
-  console.log($("#" + id));
-  value2 = $("#" + id).value;
+  value2 = document.getElementById(id).value;
   return element == value2;
 }
 
@@ -80,8 +79,10 @@ function check(element, rules) {
   //als alle regels true groene achtergrond, anders rode achtergrond
   if (passed) {
     line.style.background = "green";
+    document.getElementById('nextBtn').removeAttribute('disabled');
   } else {
     line.style.background = "red";
+    document.getElementById('nextBtn').setAttribute('disabled', true);
   }
 }
 

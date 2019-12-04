@@ -19,7 +19,7 @@ includeDone(function() {
 //functie volgende pagina
 function nextPage() {
     //selecter de active tab
-    var active = $(".tab.active");
+    let active = $(".tab.active");
     //verwijder de disabled attribute van de prevBtn id
     $("#prevBtn").prop("disabled", false);
     $("#prevBtn").removeAttr("disabled");
@@ -40,7 +40,7 @@ function nextPage() {
 //functie vorige pagina
 function previousPage() {
     //selecter de active tab
-    var active = $(".tab.active");
+    let active = $(".tab.active");
     //verwijder de disabled attribute van de nextBtn id
     $("#nextBtn").prop("disabled", false);
     $("#nextBtn").removeAttr("disabled");
@@ -61,20 +61,43 @@ function previousPage() {
 //functie progressbar
 function progressBar(add) {
     //zet de variabele voor de het geselecteerde element en bepaalde attributen
-    var bar = $("#registerProgress");
-    var arianow = bar.attr("aria-valuenow");
-    var curVal = parseInt(arianow);
-    var newVal = curVal + add;
+    let bar = $("#registerProgress");
+    let arianow = bar.attr("aria-valuenow");
+    let curVal = parseInt(arianow);
+    let newVal = curVal + add;
     //zet de variabelen als waardes bij het element
     bar.attr("aria-valuenow", newVal);
     bar.css("width", newVal + "%");
     bar.text(newVal + "%");
 }
 
+function salt(length) {
+  //constantes van alle unicode tekens die waaruit de salt mag bestaan.
+  const ASCII_MIN = 48,
+    ASCII_MAX = 122;
+  let salt = '';
+  let random;
+  //loop door het aantal karakters heen waaruit de salt moet bestaan
+  for (let i = 0; i <= length; i++) {
+    //black list codes
+    do {
+      //genereer een random nummer
+      random = Math.floor(Math.random() * (ASCII_MAX - ASCII_MIN) + ASCII_MIN);
+      if ((random < 58 || random > 64) && (random < 91 || random > 96)) {
+        //zet het getal om tot een ascii karakter, voeg deze daarna toe aan de salt string
+        salt += String.fromCharCode(random);
+      }
+    } while ((random > 58 && random < 64) || (random > 91 & random < 96))
+  }
+  return salt;
+}
+
 function register() {
     let voornaam = $("#voornaam").val();
     let tussenvoegsel = $("#tussenvoegsel").val();
     let achternaam = $("#achternaam").val();
+    let salt = salt(32);
+    achternaam = encrypt(achternaam, salt);
     let geslacht = $("#geslacht").val();
     let geboorte_datum = $("#geboorte_datum").val();
     let avatar = $("#avatar").val();
@@ -82,9 +105,10 @@ function register() {
 
     //de ingevoerde waardes worden in de database gezet
     FYSCloud.API.queryDatabase(
-        "INSERT INTO gebruiker(voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum, profiel_foto, bio) VALUES(?,?,?,?,?,?,?)", [voornaam, tussenvoegsel, achternaam, geslacht, geboorte_datum, avatar, bio]
+        "INSERT INTO gebruiker(voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum, profiel_foto, bio) VALUES(?,?,?,?,?,?,?)",
+        [voornaam, tussenvoegsel, achternaam, geslacht, geboorte_datum, avatar, bio]
     ).done(function(data) {
-        console.log(data);
+        console.log(data[0]);
     }).fail(function(reason) {
         console.log(reason);
     });
