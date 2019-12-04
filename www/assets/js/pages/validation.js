@@ -1,16 +1,11 @@
-//Run als het document geladen is.
-$(document).ready(function() {
-    //run als er een element met de class validate gefocused wordt
-    $(".validate").focus(function() {
-      console.log('validate');
-        //run als er een toets losgelaten wordt.
-        $(this).keyup(function() {
-            //run de functie check over het element die gefocused is als er een toets losgelaten wordt.
-            check(this);
-        });
+//Run als het document geladen is en de ajax request klaar zijn.
+includeDone(function() {
+  $('.validate').focus(function() {
+    $(this).keyup(function() {
+      check(this);
     });
-});
-
+  });
+})
 
 // check of een element een bepaald attribute heeft
 function hasAttr(element, attribute) {
@@ -49,7 +44,7 @@ function contains(text, regex) {
 }
 
 //check een bepaald element of het aan de regels die in het element staan voldoet
-function check(el) {
+function check(element) {
   console.log('check');
     //zet de variabele
     let passed = true;
@@ -126,10 +121,10 @@ function searchElements(element, type) {
     if (type.charAt(0) == '.') {
         //loop door alle elementen
         type = type.substr(1);
-        for (let i = 0; i < el.length; i++) {
+        for (let i = 0; i < element.length; i++) {
             //zoek het eerste element met die bepaalde klas als er een overeenkomst is, stop de loop
-            if (el[i].className == type) {
-                el = el[i];
+            if (element[i].className == type) {
+                element = element[i];
                 break;
             }
         }
@@ -138,13 +133,13 @@ function searchElements(element, type) {
     if (type.charAt(0) == '#') {
         //loop door alle elementen
         type = type.substr(1);
-        for (let i = 0; i < el.length; i++) {
+        for (let i = 0; i < element.length; i++) {
             //zoek het eerste element die aan de zoekopdracht voldoet, als er een overeenkomst is, stop de loop.
-            if (el[i].id == type) {
-                el = el[i];
+            if (element[i].id == type) {
+                element = element[i];
                 break;
             }
         }
     }
-    return el;
+    return element;
 }

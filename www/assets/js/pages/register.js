@@ -1,6 +1,7 @@
 // run als het document geladen is
-$(document).ready(function() {
+includeDone(function() {
     //check voor input focus
+
     $('.input').focus(function() {
         //voeg de class label-active toe om het element te animeren
         $(this).parent().find(".animated").addClass('label-active');
@@ -79,14 +80,12 @@ function register() {
     let avatar = $("#avatar").val();
     let bio = $("#bio").val();
 
-//de ingevoerde waardes worden in de database gezet
+    //de ingevoerde waardes worden in de database gezet
     FYSCloud.API.queryDatabase(
-        "INSERT INTO gebruiker(voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum, profiel_foto, bio) VALUES(?,?,?,?,?,?,?)",
-        [voornaam, tussenvoegsel, achternaam, geslacht, geboorte_datum, avatar, bio]
-    ).done(function (data) {
+        "INSERT INTO gebruiker(voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum, profiel_foto, bio) VALUES(?,?,?,?,?,?,?)", [voornaam, tussenvoegsel, achternaam, geslacht, geboorte_datum, avatar, bio]
+    ).done(function(data) {
         console.log(data);
-    }).fail(function (reason) {
+    }).fail(function(reason) {
         console.log(reason);
     });
-
 }
