@@ -4,10 +4,11 @@ window.location="index.html";
 }
 
 function accGegevensUpdate() {
+console.log("mn method werkt");
     let voornaam = $("#voornaam").val();
 //    let tussenvoegsel = $("#tussenvoegsel").val();
     let achternaam = $("#achternaam").val();
-    achternaam = encrypt(achternaam, salt);
+//    achternaam = encrypt(achternaam, salt);
     let geslacht = $("#geslacht").val();
     let geboorte_datum = $("#geboorte_datum").val();
     let gebruiker_id = $("#gebruiker_id").val();
