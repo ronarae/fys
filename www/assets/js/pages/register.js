@@ -91,10 +91,12 @@ function Register() {
         "INSERT INTO gebruiker(voornaam, tussenvoegsel, achternaam, email, wachtwoord, geslacht, geboortedatum, profiel_foto, bio) VALUES(?,?,?,?,?,?,?,?,?)",
         [voornaam, tussenvoegsel, achternaam, email, wachtwoord,  geslacht, geboorte_datum, avatar, bio]
     ).done(function(data) {
+            FYSCloud.URL.redirect("index.html"); //redirecten naar de home profiel
         console.log(data);
     }).fail(function(reason) {
         console.log(reason);
     });
+
 }
 
 
