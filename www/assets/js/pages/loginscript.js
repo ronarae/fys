@@ -1,16 +1,20 @@
 function login(){
-  var email = $("input[name='uname']").val();
-  var wachtwoord = $("input[name='pass']").val();
+  console.log('login');
+  const email = $("input[name='uname']").val();
+  const wachtwoord = $("input[name='pass']").val();
   if(!email || !wachtwoord){
     console.log("geen waardes");
   }
-  else{
+  else {
+    console.log('login');
     FYSCloud.API.queryDatabase(
-        "SELECT * FROM login Where email = ? AND wachtwoord =?",
+        "SELECT * FROM login Where email = ? AND password =?",
         [email,wachtwoord]
     ).done(function (data) {
-      //todo
+      console.log(data);
 
-    })
+    }).fail(reason => {
+      console.log(reason);
+    });
   }
 }
