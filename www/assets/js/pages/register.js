@@ -82,17 +82,22 @@ function Register() {
     let geboorte_datum = $("#geboorte_datum").val();
     let avatar = $("#avatar").val();
     let bio = $("#bio").val();
+    let wachtwoord = $("#wachtwoord").val();
+    console.log(wachtwoord);
+    let email = $("#email").val();
 
     //de ingevoerde waardes worden in de database gezet
     FYSCloud.API.queryDatabase(
-        "INSERT INTO gebruiker(voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum, profiel_foto, bio) VALUES(?,?,?,?,?,?,?)",
-        [voornaam, tussenvoegsel, achternaam, geslacht, geboorte_datum, avatar, bio]
+        "INSERT INTO gebruiker(voornaam, tussenvoegsel, achternaam, email, wachtwoord, geslacht, geboortedatum, profiel_foto, bio) VALUES(?,?,?,?,?,?,?,?,?)",
+        [voornaam, tussenvoegsel, achternaam, email, wachtwoord,  geslacht, geboorte_datum, avatar, bio]
     ).done(function(data) {
-        console.log(data[0]);
+        console.log(data);
     }).fail(function(reason) {
         console.log(reason);
     });
 }
+
+
 
 // function salt(length) {
 //   //constantes van alle unicode tekens die waaruit de salt mag bestaan.

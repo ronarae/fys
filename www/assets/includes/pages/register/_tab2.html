@@ -1,7 +1,7 @@
 <div class="form-group">
   <label class="text-input">
     <p class="label-txt animated">WACHTWOORD</p>
-    <input type="password" id="must-match" name="wachtwoord" class="input validate" minLength="8" maxLength="32" contains="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,32}$" required>
+    <input type="password" id="wachtwoord" name="wachtwoord" class="input validate" minLength="1" maxLength="32" required>
     <div class="line-box">
       <div class="line"></div>
     </div>
@@ -9,7 +9,7 @@
 </div>
 <div class="form-group"><label class="text-input">
     <p class="label-txt animated">HERHAAL WACHTWOORD</p>
-    <input type="password" match="must-match" name="wachtwoord_herhaal" class="input validate" required>
+    <input type="password" match="wachtwoord" name="wachtwoord_herhaal" class="input validate" required>
     <div class="line-box">
       <div class="line"></div>
     </div>
