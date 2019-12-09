@@ -11,8 +11,13 @@ function login(){
         "SELECT * FROM gebruiker Where email = ? AND wachtwoord =?",
         [email,wachtwoord]
     ).done(function (data) {
-      console.log(data);
-
+      if(data[0]){
+        FYSCloud.Session.set("userId", data[0].gebruiker_id);
+        FYSCloud.URL.redirect("index.html");
+      }
+     else{
+       alert("wachtwoord email is niet correct");
+      }
     }).fail(reason => {
       console.log(reason);
     });
