@@ -7,15 +7,25 @@
         <div class="form-group">
           <label class="text-input">
             <p class="label-txt animated">Voornaam:</p>
-            <input type="text" class="input" value="Lorem" required>
+            <input type="text" class="input" id="voornaam" value="Lorem" required>
             <div class="line-box">
               <div class="line"></div>
             </div>
           </label>
+        </div>
+        <div class="form-group">
+          <label class="text-input">
+            <p class="label-txt animated">Tussenvoegsel</p>
+            <input type="text" class="input" id="tussenvoegsel" value="em">
+            <div class="line-box">
+              <div class="line"></div>
+            </div>
+          </label>
+        </div>
           <div class="form-group">
             <label class="text-input">
               <p class="label-txt animated">Achternaam:</p>
-              <input type="text" class="input" value="Ipsum" required>
+              <input type="text" class="input" id="achternaam" value="Ipsum" required>
               <div class="line-box">
                 <div class="line"></div>
               </div>
@@ -23,7 +33,7 @@
           </div>
           <div class="form-group">
             <label class="text-input">
-              <p class="label-txt">GESLACHT</p>
+              <p class="label-txt">Geslacht</p>
               <select name="geslacht" id="geslacht" class="input single" required>
                 <option value="">Kies een optie:</option>
                 <option value="man">Man</option>
@@ -37,8 +47,8 @@
           </div>
           <div class="form-group">
             <label class="text-input">
-              <p class="label-txt">GEBOORTEDATUM</p>
-              <input type="date" name="datum" class="input" value="2000-01-01" required>
+              <p class="label-txt">Geboortedatum</p>
+              <input type="date" name="datum" class="input" id="geboortedatum" value="2000-01-01" required>
               <div class="line-box">
                 <div class="line"></div>
               </div>
@@ -48,8 +58,6 @@
           <div class="form-group">
             <button type="button" class="btn btn-primary btn-block" onclick="accGegevensUpdate()">Opslaan</button>
           </div>
-
-        </div>
       </form>
     </div>
   </div>
