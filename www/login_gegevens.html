@@ -65,7 +65,7 @@
                     <div class="form-group">
                         <label class="text-input">
                         <p class="label-txt animated">Email:</p>
-                        <input type="text" class="input" value="test@persoon.nl" required>
+                        <input type="text" class="input" id="email" value="test@persoon.nl" required>
                         <div class="line-box">
                             <div class="line"></div>
                         </div>
@@ -73,7 +73,7 @@
                         <div class="form-group">
                             <label class="text-input">
                             <p class="label-txt animated">Wachtwoord:</p>
-                            <input type="password" class="input" value="wachtwoord" required>
+                            <input type="password" class="input" id="wachtwoord" value="wachtwoord" required>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
@@ -82,7 +82,7 @@
                         <div class="form-group">
                             <label class="text-input">
                             <p class="label-txt animated">Herhaal wachtwoord:</p>
-                            <input type="password" class="input" value="wachtwoord" required>
+                            <input type="password" class="input" id="herhaal_wachtwoord" value="wachtwoord" required>
                             <div class="line-box">
                                 <div class="line"></div>
                             </div>
@@ -90,7 +90,7 @@
                         </div>
 
                         <div class="form-group">
-                            <input type="submit" value="Opslaan" class="btn btn-primary btn-block">
+                            <input type="submit" value="Opslaan" class="btn btn-primary btn-block" onclick="loginUpdate()">
                         </div>
 
                     </div>
