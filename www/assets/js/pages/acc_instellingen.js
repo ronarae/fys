@@ -6,7 +6,7 @@ window.location="index.html";
 function accGegevensUpdate() {
 console.log("mn method werkt");
     let voornaam = $("#voornaam").val();
-//    let tussenvoegsel = $("#tussenvoegsel").val();
+    let tussenvoegsel = $("#tussenvoegsel").val();
     let achternaam = $("#achternaam").val();
 //    achternaam = encrypt(achternaam, salt);
     let geslacht = $("#geslacht").val();
