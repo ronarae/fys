@@ -8,7 +8,7 @@ function login(){
   else {
     console.log('login');
     FYSCloud.API.queryDatabase(
-        "SELECT * FROM login Where email = ? AND password =?",
+        "SELECT * FROM gebruiker Where email = ? AND wachtwoord =?",
         [email,wachtwoord]
     ).done(function (data) {
       console.log(data);
