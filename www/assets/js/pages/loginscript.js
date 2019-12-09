@@ -16,7 +16,7 @@ function login(){
         FYSCloud.URL.redirect("index.html");
       }
      else{
-       alert("wachtwoord email is niet correct");
+       alert("wachtwoord en/of email is niet correct");
       }
     }).fail(reason => {
       console.log(reason);
