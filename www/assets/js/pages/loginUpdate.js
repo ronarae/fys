@@ -4,14 +4,13 @@ function loginUpdate () {
     let wachtwoord = $("#wachtwoord").val();
 
 
-
     //de ingevoerde waardes worden in de database gezet
     FYSCloud.API.queryDatabase(
         "UPDATE login SET email = ?, wachtwoord = ? WHERE gebruiker_id = ?",
         [email, wachtwoord, gebruiker_id]
-    ).done(function(data) {
+    ).done(function (data) {
         console.log(data[0]);
-    }).fail(function(reason) {
+    }).fail(function (reason) {
         console.log(reason);
     });
 }
