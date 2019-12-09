@@ -6,20 +6,11 @@ function login(){
   }
   else{
     FYSCloud.API.queryDatabase(
-        "SELECT salt FROM login Where email = ?",
-        [email]
+        "SELECT * FROM login Where email = ? AND wachtwoord =?",
+        [email,wachtwoord]
     ).done(function (data) {
       //todo
-      FYSCloud.API.queryDatabase(
-          "SELECT* FROM login Where email = ? AND wachtwoord = ?",
-          [email,wachtwoord]
-      ).done(function (data) {
-        console.log(data);
-          }
 
-      ).fail(function (reason) {
-        console.log(reason);
-      })
     })
   }
 }

@@ -2,7 +2,7 @@ function verwijderAcc() {
 alert("Weet je zeker dat je het account wil verwijderen? Dit kan niet ongedaan worden!");
 window.location="index.html";
 }
-
+//functie accGegevensUpdate
 function accGegevensUpdate() {
 console.log("mn method werkt");
     let voornaam = $("#voornaam").val();
