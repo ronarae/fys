@@ -4,9 +4,7 @@ function editProfile() {
     let tussenvoegsel = $("#tussenvoegsel").val();
     let achternaam = $("#achternaam").val();
     let geslacht = $("#geslacht").val();
-    let geboortedatum = $("#geboortedatum").val();
-
-
+    let geboorte_datum = $("#geboorte_datum").val();
 
 
     //de ingevoerde waardes worden in de database gezet
