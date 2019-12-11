@@ -110,7 +110,8 @@ function Register() {
         FYSCloud.API.queryDatabase(query, interesses).done(function(data) {
           FYSCloud.URL.redirect('profielpagina.html');
         }).fail(function(reason) {
-          console.log(reason)
+          console.log(reason);
+          FYSCloud.API.deleteFile(url);
         });
       }).fail(function(reason) {
         console.log(reason);
