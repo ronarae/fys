@@ -1,4 +1,4 @@
-$(function() {
-    FYSCloud.Session.remove("userId");
-        FYSCloud.URL.redirect("index.html");
-});
+function logout() {
+  FYSCloud.Session.remove("userId");
+  FYSCloud.URL.redirect("index.html");
+}

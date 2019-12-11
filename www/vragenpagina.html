@@ -1,79 +1,82 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <title>FAQ/HELP</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awes   ome/5.11.2/css/all.css">
-    <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/pages/vragenpagina.css">
+  <meta charset="UTF-8">
+  <title>FAQ/HELP</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awes   ome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/pages/vragenpagina.css">
 
-    <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
-    <script src="assets/js/config.js"></script>
+  <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
+  <script src="assets/js/config.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="assets/js/main.js" charset="utf-8"></script>
-    <script src="assets/js/pages/vragenpagina.js" charset="utf-8"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <script src="assets/js/main.js" charset="utf-8"></script>
+  <script src="assets/js/pages/vragenpagina.js" charset="utf-8"></script>
+  <script src="assets/js/pages/logoutscript.js" charset="utf-8"></script>
 </head>
+
 <body id="subMain">
-    <!-- NAVBAR -->
-    <div include="assets/includes/_header.html"></div>
+  <!-- NAVBAR -->
+  <div include="assets/includes/_header.html"></div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h2>Vragenpagina</h2>
-                <p>Op deze pagina staan de FAQ.</p>
-                <button class="accordion" onclick="slide();">Wat heb je nodig om te registreren?</button>
-                <div class="panel">
-                    <p>Je hebt nodig. je naam, email adres, wachtwoord, geslacht, geboortedatum, interesse, bio over jezelf</p>
-                </div>
-
-                <button class="accordion" onclick="slide();">Hoe kan ik de logingegevens veranderen?</button>
-                <div class="panel">
-                    <p>op de profielpagina klikt op de 'potlood icon' bij naam,geboortedatum,geslacht,email.
-                        klik daarna op logingegevens. verander je email en wachtwoord. en dan klik op opslaan.</p>
-                </div>
-
-                <button class="accordion" onclick="slide();">Hoe kan ik de privacy veranderen?</button>
-                <div class="panel">
-                    <p>op de profielpagina klikt op de 'potlood icon' bij naam,geboortedatum,geslacht,email.
-                        klik daarna op instellingen. verander 'Wie kan mijn e-mail zien?.','Wie kan mij berichten sturen?',
-                        'Wie kan mijn matches zien?'en dan klik op opslaan. </p>
-                </div>
-
-                <button class="accordion" onclick="slide();">Section 4</button>
-                <div class="panel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion" onclick="slide();">Section 5</button>
-                <div class="panel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion" onclick="slide();">Section 6</button>
-                <div class="panel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion" onclick="slide();">Section 7</button>
-                <div class="panel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-
-                <button class="accordion" onclick="slide();">Section 8</button>
-                <div class="panel">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-            </div>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Vragenpagina</h2>
+        <p>Op deze pagina staan de FAQ.</p>
+        <button class="accordion" onclick="slide();">Wat heb je nodig om te registreren?</button>
+        <div class="panel">
+          <p>Je hebt nodig. je naam, email adres, wachtwoord, geslacht, geboortedatum, interesse, bio over jezelf</p>
         </div>
+
+        <button class="accordion" onclick="slide();">Hoe kan ik de logingegevens veranderen?</button>
+        <div class="panel">
+          <p>op de profielpagina klikt op de 'potlood icon' bij naam,geboortedatum,geslacht,email.
+            klik daarna op logingegevens. verander je email en wachtwoord. en dan klik op opslaan.</p>
+        </div>
+
+        <button class="accordion" onclick="slide();">Hoe kan ik de privacy veranderen?</button>
+        <div class="panel">
+          <p>op de profielpagina klikt op de 'potlood icon' bij naam,geboortedatum,geslacht,email.
+            klik daarna op instellingen. verander 'Wie kan mijn e-mail zien?.','Wie kan mij berichten sturen?',
+            'Wie kan mijn matches zien?'en dan klik op opslaan. </p>
+        </div>
+
+        <button class="accordion" onclick="slide();">Section 4</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion" onclick="slide();">Section 5</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion" onclick="slide();">Section 6</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion" onclick="slide();">Section 7</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion" onclick="slide();">Section 8</button>
+        <div class="panel">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
     </div>
+  </div>
 
 
-    <!-- FOOTER -->
-    <div include="assets/includes/_footer.html"></div>
+  <!-- FOOTER -->
+  <div include="assets/includes/_footer.html"></div>
 </body>
+
 </html>

@@ -5,6 +5,26 @@ $(document).ready(function() {
   includeHTML();
 });
 
+
+//wordt geladen als alle includes ingeladen zijn.
+includeDone(function() {
+  loginLogout();
+});
+
+function loginLogout() {
+  if (FYSCloud.Session.get('userId')) {
+    $('#navbarCollapse').append(
+      `<button class='btn btn-link text-white nav-link' onclick='logout()'>Log Uit</button`
+    );
+  } else {
+    $('#navbarCollapse').append(
+      `<button data-toggle='modal' data-target='#loginModal' class='nav-link text-white btn btn-link'>
+      <i class='fas fa-sign-in-alt'></i> Login
+      </button>`
+    );
+  }
+}
+
 //smooth scroll
 function scroll() {
   //selecteer alle a element met een href tag wat een # bevat
