@@ -17,6 +17,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/pages/logoutscript.js" charset="utf-8"></script>
+    <script src="assets/js/pages/profielpagina.js" charset="utf-8"></script>
 </head>
 
 <body id="subMain">
@@ -41,10 +42,10 @@
                 <div class="info">
                     <div class="row">
                         <div class="col-10">
-                            Naam: Lorem Ipsum
-                            <br><br> Geboortedatum: 01-01-2000
-                            <br><br> Geslacht: Ander
-                            <br><br> Email: test@persoon.nl
+                            Naam: <span id='naam'>.........</span>
+                            <br><br> Geboortedatum: <span id='geboortedatum'>.......</span>
+                            <br><br> Geslacht: <span id='geslacht'>.......</span>
+                            <br><br> Email: <span id='email'>.......</span>
                         </div>
                         <div class="col-2">
                             <a href="acc_gegevens.html"> <i class="far fa-edit editIcons    "></i></a>
@@ -58,7 +59,7 @@
             <div class="col-5">
                 <div class="info2">
                     <p class="text-uppercase">links: <a href="https://google.nl">google.nl</a></p>
-                    <p class="text-uppercase">over mij: <i>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, vitae.</i></p>
+                    <p class="text-uppercase">over mij: <i><span id='bio'></span></i></p>
                     <p class="text-uppercase">interesse:</p>
                     <br>
                     <div class="row">

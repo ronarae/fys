@@ -14,11 +14,15 @@ includeDone(function() {
 function loginLogout() {
   if (FYSCloud.Session.get('userId')) {
     $('#navbarCollapse').append(
-      `<button class='btn btn-link text-white nav-link' onclick='logout()'>Log Uit</button`
+      `<a href='profielpagina.html' class='text-white'>Over Mij</a>
+      <button class='btn btn-link text-white nav-link' onclick='logout()'>Log Uit</button`
     );
   } else {
     $('#navbarCollapse').append(
-      `<button data-toggle='modal' data-target='#loginModal' class='nav-link text-white btn btn-link'>
+      `<a href="register.html" class="nav-link text-white">
+      <i class="fas fa-user"></i> Registreren
+      </a>
+      <button data-toggle='modal' data-target='#loginModal' class='nav-link text-white btn btn-link'>
       <i class='fas fa-sign-in-alt'></i> Login
       </button>`
     );
