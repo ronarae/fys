@@ -80,54 +80,66 @@ function Register() {
   // achternaam = encrypt(achternaam);
   let geslacht = $("#geslacht").val();
   let geboorte_datum = $("#geboorte_datum").val();
-  let avatar = $("#avatar").val();
+  let avatar = $("#avatar");
   let bio = $("#bio").val();
   let wachtwoord = $("#wachtwoord").val();
   let email = $("#email").val();
   let interesses = getCheckedCheckboxes($('input.interesses_checkbox:checkbox:checked'));
   //de ingevoerde waardes worden in de database gezet
-  FYSCloud.API.queryDatabase(
-    "INSERT INTO gebruiker(voornaam, tussenvoegsel, achternaam, email, wachtwoord, geslacht, geboortedatum, profiel_foto, bio) VALUES(?,?,?,?,?,?,?,?,?)",
-    [voornaam, tussenvoegsel, achternaam, email, wachtwoord, geslacht, geboorte_datum, avatar, bio]
-  ).done(function(data) {
-    console.log(data);
-    FYSCloud.Session.set('userId', data.insertId);
-    let query = "INSERT INTO gebruiker_has_interesses (Gebruiker_gebruiker_id, Interesses_interesses_id) VALUES ";
-    for (let i = 0; i < interesses.length; i++) {
-      if ((i + 1) >= interesses.length) {
-        query += "('" + FYSCloud.Session.get('userId') + "' , ?)";
-      } else {
-        query += "(" + FYSCloud.Session.get('userId') + ", ?), ";
-      }
-    }
-    console.log(query);
-    FYSCloud.API.queryDatabase(query, interesses).done(function(data) {
-      FYSCloud.URL.redirect('profielpagina.html');
+  FYSCloud.Utils.getDataUrl(avatar).done(function(data) {
+    FYSCloud.API.uploadFile(
+      salt(10) + "." + data.extension,
+      data.url
+    ).done(function(url) {
+      let picture_url = url;
+      FYSCloud.API.queryDatabase(
+        "INSERT INTO gebruiker(voornaam, tussenvoegsel, achternaam, email, wachtwoord, geslacht, geboortedatum, profiel_foto, bio) VALUES(?,?,?,?,?,?,?,?,?)",
+        [voornaam, tussenvoegsel, achternaam, email, wachtwoord, geslacht, geboorte_datum, url, bio]
+      ).done(function(data) {
+        console.log(data);
+        FYSCloud.Session.set('userId', data.insertId);
+        let query = "INSERT INTO gebruiker_has_interesses (Gebruiker_gebruiker_id, Interesses_interesses_id) VALUES ";
+        for (let i = 0; i < interesses.length; i++) {
+          if ((i + 1) >= interesses.length) {
+            query += "('" + FYSCloud.Session.get('userId') + "' , ?)";
+          } else {
+            query += "(" + FYSCloud.Session.get('userId') + ", ?), ";
+          }
+        }
+        console.log(query);
+        FYSCloud.API.queryDatabase(query, interesses).done(function(data) {
+          FYSCloud.URL.redirect('profielpagina.html');
+        }).fail(function(reason) {
+          console.log(reason)
+        });
+      }).fail(function(reason) {
+        console.log(reason);
+      });
     }).fail(function(reason) {
-      console.log(reason)
-    });
+      console.log(reason);
+    })
   }).fail(function(reason) {
     console.log(reason);
   });
 }
 
-// function salt(length) {
-//   //constantes van alle unicode tekens die waaruit de salt mag bestaan.
-//   const ASCII_MIN = 48,
-//     ASCII_MAX = 122;
-//   let salt = '';
-//   let random;
-//   //loop door het aantal karakters heen waaruit de salt moet bestaan
-//   for (let i = 0; i <= length; i++) {
-//     //black list codes
-//     do {
-//       //genereer een random nummer
-//       random = Math.floor(Math.random() * (ASCII_MAX - ASCII_MIN) + ASCII_MIN);
-//       if ((random < 58 || random > 64) && (random < 91 || random > 96)) {
-//         //zet het getal om tot een ascii karakter, voeg deze daarna toe aan de salt string
-//         salt += String.fromCharCode(random);
-//       }
-//     } while ((random > 58 && random < 64) || (random > 91 & random < 96))
-//   }
-//   return salt;
-// }
+function salt(length) {
+  //constantes van alle unicode tekens die waaruit de salt mag bestaan.
+  const ASCII_MIN = 48,
+    ASCII_MAX = 122;
+  let salt = '';
+  let random;
+  //loop door het aantal karakters heen waaruit de salt moet bestaan
+  for (let i = 0; i <= length; i++) {
+    //black list codes
+    do {
+      //genereer een random nummer
+      random = Math.floor(Math.random() * (ASCII_MAX - ASCII_MIN) + ASCII_MIN);
+      if ((random < 58 || random > 64) && (random < 91 || random > 96)) {
+        //zet het getal om tot een ascii karakter, voeg deze daarna toe aan de salt string
+        salt += String.fromCharCode(random);
+      }
+    } while ((random > 58 && random < 64) || (random > 91 & random < 96))
+  }
+  return salt;
+}
