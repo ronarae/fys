@@ -85,6 +85,7 @@ function Register() {
   let wachtwoord = $("#wachtwoord").val();
   let email = $("#email").val();
   let interesses = getCheckedCheckboxes($('input.interesses_checkbox:checkbox:checked'));
+  let bestemmingen = getCheckedCheckboxes($('input.bestemming_checkbox:checkbox:checked'));
   //de ingevoerde waardes worden in de database gezet
   FYSCloud.Utils.getDataUrl(avatar).done(function(data) {
     FYSCloud.API.uploadFile(
@@ -106,9 +107,20 @@ function Register() {
             query += "(" + FYSCloud.Session.get('userId') + ", ?), ";
           }
         }
-        console.log(query);
         FYSCloud.API.queryDatabase(query, interesses).done(function(data) {
-          FYSCloud.URL.redirect('profielpagina.html');
+          let query = "INSERT INTO gebruiker_has_bestemming (Gebruiker_gebruiker_id, Bestemming_bestemming_id) VALUES ";
+          for (let i = 0; i < bestemmingen.length; i++) {
+            if ((i + 1) >= bestemmingen.length) {
+              query += "('" + FYSCloud.Session.get('userId') + "' , ?)";
+            } else {
+              query += "(" + FYSCloud.Session.get('userId') + ", ?), ";
+            }
+          }
+          FYSCloud.API.queryDatabase(query, bestemmingen).done(function(data) {
+            FYSCloud.URL.redirect('profielpagina.html');
+          }).fail(function(reason) {
+            console.log(reason);
+          });
         }).fail(function(reason) {
           console.log(reason);
           FYSCloud.API.deleteFile(url);
