@@ -14,6 +14,7 @@ function overmijUpdate () {
     });
 }
 
+
 function accountgegevensUpdate() {
     console.log("working");
     let voornaam = $("#voornaam").val();
