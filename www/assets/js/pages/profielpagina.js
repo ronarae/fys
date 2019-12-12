@@ -7,7 +7,8 @@ function profielData() {
   let geboortedatum = $('#geboortedatum');
   let geslacht = $('#geslacht');
   let email = $('#email');
-  let bio = $('#bio')
+  let bio = $('#bio');
+  let avatar = $('#avatar');
   FYSCloud.API.queryDatabase(
     "SELECT * FROM gebruiker WHERE gebruiker_id = ?",
     [FYSCloud.Session.get('userId')]
@@ -18,6 +19,7 @@ function profielData() {
     geslacht.html(d.geslacht);
     email.html(d.email);
     bio.html(d.bio);
+    avatar.attr('src', d.profiel_foto);
   }).fail(function(reason) {
     console.log(reason);
   });
