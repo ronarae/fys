@@ -1,5 +1,5 @@
 function verwijderAcc() {
-// alert("Weet je zeker dat je het account wil verwijderen? Dit kan niet ongedaan worden!");
+alert("Weet je zeker dat je het account wil verwijderen? Dit kan niet ongedaan worden!");
 
     let gebruiker_id = FYSCloud.Session.get("userId");
 
@@ -10,11 +10,9 @@ function verwijderAcc() {
         [gebruiker_id, FYSCloud.Session.get("userId")]
     ).done(function(data) {
         console.log(data[0]);
+        FYSCloud.URL.redirect("index.html");
     }).fail(function(reason) {
         console.log(reason);
     });
-
     // FYSCloud.Session.remove("userId");
-    // FYSCloud.URL.redirect("index.html");
-
 }
