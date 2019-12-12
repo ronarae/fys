@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Edit</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/template.css">
@@ -12,9 +13,13 @@
 
     <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
     <script src="assets/js/config.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="assets/js/pages/checkboxes.js" charset="utf-8"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+            crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+            crossorigin="anonymous"></script>
     <script src="assets/js/main.js"></script>
     <script src="assets/js/pages/logoutscript.js" charset="utf-8"></script>
     <script src="assets/js/require_login.js" charset="utf-8"></script>
@@ -24,96 +29,83 @@
 
 <body id="subMain">
 
-    <!-- NAVBAR-->
-    <div include="assets/includes/_header.html"></div>
+<!-- NAVBAR-->
+<div include="assets/includes/_header.html"></div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-4"></div>
-            <div class="col-4">
-                <div class="title">
-                    <p class="text-uppercase text-center">bewerk profiel</p>
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="title">
+                <p class="text-uppercase text-center">bewerk profiel</p>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <div class="navTabs">
-                    <ul class="nav nav-tabs center d-flex justify-content-between">
-                        <li class="nav-item">
-                            <a class="nav-link active text-uppercase" href="over_mij.html">over mij</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="profielFoto_veranderen.html">profiel foto</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="acc_gegevens.html">account gegevens</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="login_gegevens.html">login gegevens</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="acc_instellingen.html">Instellingen</a>
-                        </li>
-                    </ul>
-                </div>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <div class="navTabs">
+                <ul class="nav nav-tabs center d-flex justify-content-between">
+                    <li class="nav-item">
+                        <a class="nav-link active text-uppercase" href="over_mij.html">over mij</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="profielFoto_veranderen.html">profiel foto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="acc_gegevens.html">account gegevens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="login_gegevens.html">login gegevens</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="acc_instellingen.html">Instellingen</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="mainContainer">
-        <div class="row justify-content-center">
-            <div class="col-sm-10">
-                <form class="justify-content-center needs-validation" novalidate>
+<div class="mainContainer">
+    <div class="row justify-content-center">
+        <div class="col-sm-10">
+            <form class="justify-content-center needs-validation" novalidate>
+                <div class="form-group">
+                    <label class="text-input">
+                        <p class="label-txt animated">Links:</p>
+                        <input type="text" class="input" value="google.nl" placeholder="Voeg links toe" required>
+                        <div class="line-box">
+                            <div class="line"></div>
+                        </div>
+                    </label>
                     <div class="form-group">
-                        <label class="text-input">
-              <p class="label-txt animated">Links:</p>
-              <input type="text" class="input" value="google.nl" placeholder="Voeg links toe" required>
-              <div class="line-box">
-                <div class="line"></div>
-              </div>
-            </label>
-                        <div class="form-group">
-                            <label>
-                <p class="label-txt animated">Over jezelf:</p>
-                <textarea name="bio" rows="8" cols="80" class="input" id="bio" placeholder="Schrijf een stukje over jezelf"></textarea>
-                <div class="line-box">
-                  <div class="line"></div>
-                </div>
-              </label>
-                        </div>
-                        <div class="tab">
-                            <div class="form-group">
-                                <div class="form-group badge-checkboxes">
-                                    <p class="label-txt why">Interesses:</p>
-                                    <div id="interessesDiv">
-                                        <!-- script genereert alle tags vanuit een array, deze tags worden hier geplaatst -->
-                                    </div>
-                                    <script>
-                                        var interessesArray = ["Voetbal", "Basketbal", "Dansen", "Musea", "Gallerij", "Standbeelden", "Walibi", "Horrorhouse", "Canalcruise", "Club", "Bar", "Bos", "Bergen", "Strand"];
-                                        var div = $("#interessesDiv");
-                                        for (var i = 0; i < interessesArray.length; i++) {
-                                            div.html(div.html() + '<label class="checkbox-inline"><input type="checkbox" value="' + interessesArray[i] + '" /><span class="badge">' + interessesArray[i] + '</span></label>');
-                                        }
-                                    </script>
-                                </div>
+                        <label>
+                            <p class="label-txt animated">Over jezelf:</p>
+                            <textarea name="bio" rows="8" cols="80" class="input" id="bio"
+                                      placeholder="Schrijf een stukje over jezelf">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi sit ipsam natus ad assumenda numquam iusto quia repudiandae earum quaerat architecto, ullam ipsa consequatur tempora quod doloribus quidem sapiente molestiae consequuntur. Aliquam fuga quaerat corporis ea sapiente nobis id eligendi nihil accusamus dolorum, natus, ullam sequi sit fugit laboriosam adipisci!
+                </textarea>
+                            <div class="line-box">
+                                <div class="line"></div>
                             </div>
-                        </div>
+                        </label>
+
+
 
                         <div class="form-group">
-                            <input type="button" value="Opslaan" class="btn btn-primary btn-block" onclick="overmijUpdate()">
+                            <input type="button" value="Opslaan" class="btn btn-primary btn-block"
+                                   onclick="overmijUpdate()">
                         </div>
 
                     </div>
-                </form>
-            </div>
+            </form>
         </div>
     </div>
-    <!-- FOOTER -->
-    <div include="assets/includes/_footer.html"></div>
+</div>
+<!-- FOOTER -->
+<div include="assets/includes/_footer.html"></div>
 </body>
 
 </html>
