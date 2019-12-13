@@ -9,6 +9,7 @@ function profielData() {
   let email = $('#email');
   let bio = $('#bio');
   let avatar = $('#avatar');
+  let interesses = $('#interesses')
   FYSCloud.API.queryDatabase(
     "SELECT * FROM gebruiker WHERE gebruiker_id = ?",
     [FYSCloud.Session.get('userId')]
@@ -20,7 +21,23 @@ function profielData() {
     email.html(d.email);
     bio.html(d.bio);
     avatar.attr('src', d.profiel_foto);
+
+      FYSCloud.API.queryDatabase(
+          "SELECT i.interesse_naam FROM gebruiker_has_interesses INNER JOIN Interesses i ON Interesses_interesses_id = i.interesses_id WHERE Gebruiker_gebruiker_id = ?",
+          [FYSCloud.Session.get('userId')]
+      ).done(function(data){
+          console.log(data);
+          for (let i = 0; i < data.length; i++) {
+              interesses.append(`
+                <p>${data[i].interesse_naam}</p>
+              `);
+          }
+
+      }).fail(function(reason) {
+          console.log(reason)
+      });
   }).fail(function(reason) {
     console.log(reason);
   });
+
 }
