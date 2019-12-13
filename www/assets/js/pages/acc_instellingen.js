@@ -11,8 +11,9 @@ alert("Weet je zeker dat je het account wil verwijderen? Dit kan niet ongedaan w
     ).done(function(data) {
         console.log(data[0]);
         FYSCloud.URL.redirect("index.html");
+        FYSCloud.Session.remove("userId");
     }).fail(function(reason) {
         console.log(reason);
     });
-    // FYSCloud.Session.remove("userId");
+    //
 }
