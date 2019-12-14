@@ -16,7 +16,7 @@ function profielData() {
   ).done(function(data) {
     d = data[0];
     naam.html(d.voornaam + " " + d.achternaam);
-    geboortedatum.html(d.geboortedatum);
+    geboortedatum.html(d.geboortedatum.replace("T00:00:00.000Z",""));
     geslacht.html(d.geslacht);
     email.html(d.email);
     bio.html(d.bio);

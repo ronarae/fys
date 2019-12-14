@@ -1,5 +1,5 @@
 //functie accGegevensUpdate
-document.getElementById("opslaan").addEventListener("click", accGegevensUpdate);
+/*document.getElementById("opslaan").addEventListener("click", accGegevensUpdate);
 function accGegevensUpdate() {
     console.log('update');
     let voornaam = $("#voornaam").val();
@@ -25,4 +25,6 @@ function accGegevensUpdate() {
        });
 
 }
+*/
+
 
