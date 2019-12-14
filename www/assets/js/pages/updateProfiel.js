@@ -18,15 +18,15 @@ function overmijUpdate () {
 function accountgegevensUpdate() {
     console.log("working");
     let voornaam = $("#voornaam").val();
-    //  let tussenvoegsel = $("#tussenvoegsel").val();
+      let tussenvoegsel = $("#tussenvoegsel").val();
     let achternaam = $("#achternaam").val();
     let geslacht = $("#geslacht").val();
-    //let geboorte_datum = $("#geboortedatum").val();
+    let geboorte_datum = $("#geboortedatum").val();
 
     //de ingevoerde waardes worden in de database gezet
     FYSCloud.API.queryDatabase(
-        "UPDATE gebruiker SET voornaam = ?, achternaam = ?, geslacht = ? WHERE gebruiker_id = ?",
-        [voornaam, achternaam, geslacht, FYSCloud.Session.get('userId')]
+        "UPDATE gebruiker SET voornaam = ?, tussenvoegsel = ?, achternaam = ?, geslacht = ?, geboortedatum = ? WHERE gebruiker_id = ?",
+        [voornaam,tussenvoegsel, achternaam, geslacht, geboorte_datum, FYSCloud.Session.get('userId')]
     ).done(function(data) {
         console.log(data[0]);
     }).fail(function(reason) {
