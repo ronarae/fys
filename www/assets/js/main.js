@@ -14,7 +14,7 @@ includeDone(function() {
 function loginLogout() {
   if (FYSCloud.Session.get('userId')) {
     $('#navbarCollapse').append(
-      `<a href='profielpagina.html' class='text-white'>Over Mij</a>
+      `<a href='profielpagina.html' class='text-white'>Profiel</a>
       <button class='btn btn-link text-white nav-link' onclick='logout()'>Log Uit</button`
     );
   } else {

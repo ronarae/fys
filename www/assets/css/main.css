@@ -227,7 +227,7 @@ footer#mainFooter {
 
 footer#mainFooter p.brand, footer#subFooter p.brand {
   font-family: "French Script MT";
-  color: floralwhite;
+  color: black;
   font-size: 36px;
   margin: 6px 0 0;
 }
@@ -242,7 +242,7 @@ footer#subFooter p.brand {
 footer#mainFooter p, footer#mainFooter a,
 footer#subFooter p, footer#subFooter a {
   margin-top: 10px;
-  color: white;
+  color: black;
   font-family: Consolas;
   font-size: 15px;
   font-weight: lighter;
@@ -271,5 +271,5 @@ footer#subFooter p.contact, footer#mainFooter p.contact {
 }
 
 footer#mainFooter .btn-link {
-  color: white !important;
+  color: rgba(0, 0, 0, 0.9) !important;
 }
