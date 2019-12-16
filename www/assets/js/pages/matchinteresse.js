@@ -79,7 +79,7 @@ function showData() {
   let d;
   for (let i = 0; i < gebruikerData.length; i++) {
     if (isNaN(gebruikerData[i].matches)) {
-      gebruikerData[i].matches = 0;
+      gebruikerData.splice(i);
     }
   }
   gebruikerData.sort(sortByMatches);
