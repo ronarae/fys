@@ -16,7 +16,7 @@ function match() {
     ).done(function(data) {
       for (let i = 0; i < data.length; i++) {
         gebruikerData.push(data[i]);
-        gebruikerData[i].geboortedatum = gebruikerData[i].geboortedatum.split('T')[0];
+        gebruikerData[i].leeftijd = calculate_age(new Date(gebruikerData[i].geboortedatum));
         FYSCloud.API.queryDatabase(
           "SELECT * FROM gebruiker_has_interesses WHERE Gebruiker_gebruiker_id = ?",
           [data[i].gebruiker_id]
@@ -26,8 +26,8 @@ function match() {
             gebruikerData[i].interesses.push(data[j].Interesses_interesses_id);
           }
           gebruikerData[i].matches = compareArray(gebruikerInteresses, gebruikerData[i].interesses);
-          gebruikerData.sort(sortByMatches);
           calculated = true;
+          console.log()
         }).fail(function(reason) {
           console.log(reason);
         });
@@ -69,8 +69,20 @@ includeLoaded(function() {
   showData();
 });
 
+function calculate_age(dob) {
+    var diff_ms = Date.now() - dob.getTime();
+    var age_dt = new Date(diff_ms);
+    return Math.abs(age_dt.getUTCFullYear() - 1970);
+}
+
 function showData() {
   let d;
+  for (let i = 0; i < gebruikerData.length; i++) {
+    if (isNaN(gebruikerData[i].matches)) {
+      gebruikerData[i].matches = 0;
+    }
+  }
+  gebruikerData.sort(sortByMatches);
   for (let i = 0; i < gebruikerData.length; i++) {
     d = gebruikerData[i];
     $('#match-list').append(`
@@ -82,11 +94,11 @@ function showData() {
             </div>
             <div class="col-9">
               <li class="text-uppercase">${d.voornaam} ${d.achternaam}</li>
-              <li class="text-uppercase">${d.geboortedatum}</li>
+              <li class="text-uppercase">${d.leeftijd} Jaar</li>
               <li class="text-uppercase">${d.matches}% match</li>
               <li class="text-uppercase">
                 <a href="profile-match.html">
-                <button class="btn btn-outline-secondary text-uppercase">match</button>
+                <button class="btn btn-outline-secondary text-uppercase">Show Gebruiker</button>
               </a>
               </li>
             </div>
