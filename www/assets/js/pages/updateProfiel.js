@@ -30,10 +30,8 @@ function overmijUpdate() {
     console.log(reason);
   });
 
-
 }
-
-
+//Update de accountgegevens van de gebruiker
 function accountgegevensUpdate() {
   console.log("working");
   let voornaam = $("#voornaam").val();

@@ -42,9 +42,23 @@ function laadAlleVelden(id, tabel) {
     console.log(reason);
   });
 }
+//Laad bio van gebruiker
+function laadBio() {
+    let bio = $('#bio');
+    FYSCloud.API.queryDatabase(
+        "SELECT bio FROM gebruiker WHERE gebruiker_id = ?",
+        [FYSCloud.Session.get('userId')]
+    ).done(function(data) {
+        bio.html(data[0].bio);
+    }).fail(function(reason) {
+        console.log(reason);
+    });
+}
+
 
 includeDone(function() {
   laadAlleVelden('#interessesUpdate', 'interesses');
+  laadBio();
 });
 
 // checkbox selector
