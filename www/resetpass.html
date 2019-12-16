@@ -17,6 +17,7 @@
   <script src="assets/js/main.js" charset="utf-8"></script>
   <script src="assets/js/pages/register.js" charset="utf-8"></script>
   <script src="assets/js/pages/logoutscript.js" charset="utf-8"></script>
+  <script src="assets/js/pages/verandergegevenslogin.js" charset="utf-8"></script>
 </head>
 
 <body id="main">
@@ -36,7 +37,7 @@
             <div class="form-group">
               <label class="text-input">
                 <p class="label-txt animated">VOER HIER JE EMAIL IN</p>
-                <input type="email" class="input">
+                <input type="email" class="input" id="jouwemail" required>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
@@ -45,7 +46,7 @@
             <div class="form-group">
               <label class="text-input">
                 <p class="label-txt animated">NIEUW WACHTWOORD</p>
-                <input type="password" class="input" required>
+                <input type="password" class="input" id="wachtwoord" required>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
@@ -54,14 +55,14 @@
             <div class="form-group">
               <label class="text-input">
                 <p class="label-txt animated">HERHAAL WACHTWOORd</p>
-                <input type="password" class="input" required>
+                <input type="password" class="input" id="herhaalwachtwoord" required>
                 <div class="line-box">
                   <div class="line"></div>
                 </div>
               </label>
             </div>
             <div class="form-group">
-              <button type="submit" class="btn btn-primary btn-block">RESET WACHTWOORD</button>
+              <button type="submit" class="btn btn-primary btn-block" onclick="verandergegevenslogin()">RESET WACHTWOORD</button>
             </div>
           </form>
         </div>

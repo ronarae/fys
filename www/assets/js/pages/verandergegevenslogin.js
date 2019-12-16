@@ -1,9 +1,7 @@
-function loginUpdate () {
-    console.log("mn method werkt");
-    let email = $("#email").val();
+function verandergegevenslogin(){
+    let email = $("#jouwemail").val();
     let wachtwoord = $("#wachtwoord").val();
-    let herhaalwachtwoord = $("#herhaal_wachtwoord").val();
-
+    let herhaalwachtwoord = $("#herhaalwachtwoord").val();
 
     //de ingevoerde waardes worden in de database gezet
     if(wachtwoord !==herhaalwachtwoord){
@@ -11,10 +9,10 @@ function loginUpdate () {
     }
     else {
         FYSCloud.API.queryDatabase(
-            "UPDATE gebruiker SET email = ?, wachtwoord = ? WHERE gebruiker_id = ?",
-            [email, wachtwoord, FYSCloud.Session.get('userId')]
+            "UPDATE gebruiker SET  wachtwoord = ? WHERE email = ?",
+            [wachtwoord, email]
         ).done(function (data) {
-            console.log(data[0]);
+            console.log(data);
         }).fail(function (reason) {
             console.log(reason);
         });
