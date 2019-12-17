@@ -15,7 +15,7 @@ function profielData() {
     [FYSCloud.Session.get('userId')]
   ).done(function(data) {
     d = data[0];
-    naam.html(d.voornaam + " " + d.achternaam);
+    naam.html(d.voornaam + " "+d.tussenvoegsel +" " + d.achternaam);
     geboortedatum.html(d.geboortedatum.replace("T00:00:00.000Z",""));
     geslacht.html(d.geslacht);
     email.html(d.email);
