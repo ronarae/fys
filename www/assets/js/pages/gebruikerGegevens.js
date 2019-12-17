@@ -55,10 +55,30 @@ function laadBio() {
     });
 }
 
+function laadGebruikerGegevens() {
+     let voornaam = $("#voornaam");
+     let tussenvoegsel = $("#tussenvoegsel");
+     let achternaam = $("#achternaam");
+     let geslacht = $("#geslacht");
+     let geboortedatum = $("#geboortedatum");
+    FYSCloud.API.queryDatabase(
+        "SELECT voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum FROM gebruiker WHERE gebruiker_id = ?",
+        [FYSCloud.Session.get('userId')]
+    ).done(function(data) {
+        voornaam.html(data[0].voornaam);
+        tussenvoegsel.html(data[0].tussenvoegsel);
+        achternaam.html(data[0].achternaam);
+        geslacht.html(data[0].achternaam);
+        geboortedatum.html(data[0].geboortedatum);
+    }).fail(function(reason) {
+        console.log(reason);
+    });
+}
 
 includeDone(function() {
   laadAlleVelden('#interessesUpdate', 'interesses');
   laadBio();
+  laadGebruikerGegevens();
 });
 
 // checkbox selector
