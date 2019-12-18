@@ -55,21 +55,25 @@ function laadBio() {
     });
 }
 
+;
+
 function laadGebruikerGegevens() {
-     let voornaam = $("#voornaam");
-     let tussenvoegsel = $("#tussenvoegsel");
-     let achternaam = $("#achternaam");
-     let geslacht = $("#geslacht");
-     let geboortedatum = $("#geboortedatum");
+    let voornaam = $('#voornaam');
+    let tussenvoegsel = $('#tussenvoegsel');
+    let achternaam = $('#achternaam');
+    let geslacht = $('#geslacht');
+    let geboortedatum = $('#geboortedatum');
     FYSCloud.API.queryDatabase(
-        "SELECT voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum FROM gebruiker WHERE gebruiker_id = ?",
+        "SELECT * FROM gebruiker WHERE gebruiker_id = ?",
         [FYSCloud.Session.get('userId')]
     ).done(function(data) {
-        voornaam.html(data[0].voornaam);
-        tussenvoegsel.html(data[0].tussenvoegsel);
-        achternaam.html(data[0].achternaam);
-        geslacht.html(data[0].achternaam);
-        geboortedatum.html(data[0].geboortedatum);
+        console.log(data);
+        d = data[0];
+        voornaam.html(d.voornaam);
+        tussenvoegsel.html(d.tussenvoegsel);
+        achternaam.html(d.achternaam);
+        geslacht.html(d.geslacht);
+        geboortedatum.html(d.geboortedatum.replace("T00:00:00.000Z",""));
     }).fail(function(reason) {
         console.log(reason);
     });
