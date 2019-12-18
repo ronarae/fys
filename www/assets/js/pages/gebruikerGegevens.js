@@ -45,8 +45,13 @@ function laadAlleVelden(id, tabel) {
 //Laad bio van gebruiker
 function laadBio() {
     let bio = $('#bio');
+    let voornaam = $('#voornaam').val();
+    let tussenvoegsel = $('#tussenvoegsel');
+    let achternaam = $('#achternaam');
+    let geslacht = $('#geslacht');
+    let geboortedatum = $('#geboortedatum');
     FYSCloud.API.queryDatabase(
-        "SELECT bio FROM gebruiker WHERE gebruiker_id = ?",
+        "SELECT bio  FROM gebruiker WHERE gebruiker_id = ?",
         [FYSCloud.Session.get('userId')]
     ).done(function(data) {
         bio.html(data[0].bio);
@@ -61,10 +66,10 @@ function laadGebruikerGegevens() {
     let voornaam = $('#voornaam');
     let tussenvoegsel = $('#tussenvoegsel');
     let achternaam = $('#achternaam');
-    let geslacht = $('#geslacht');
+    let geslacht = $('#geslacht').selected;
     let geboortedatum = $('#geboortedatum');
     FYSCloud.API.queryDatabase(
-        "SELECT * FROM gebruiker WHERE gebruiker_id = ?",
+        "SELECT voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum FROM gebruiker WHERE gebruiker_id = ?",
         [FYSCloud.Session.get('userId')]
     ).done(function(data) {
         console.log(data);
