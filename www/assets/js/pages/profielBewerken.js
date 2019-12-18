@@ -38,12 +38,12 @@ function accountgegevensUpdate() {
   let tussenvoegsel = $("#tussenvoegsel").val();
   let achternaam = $("#achternaam").val();
   let geslacht = $("#geslacht").val();
-  let geboorte_datum = $("#geboortedatum").val();
+  let geboortedatum = $("#geboortedatum").val();
 
   //de ingevoerde waardes worden in de database gezet
   FYSCloud.API.queryDatabase(
     "UPDATE gebruiker SET voornaam = ?, tussenvoegsel = ?, achternaam = ?, geslacht = ?, geboortedatum = ? WHERE gebruiker_id = ?",
-    [voornaam, tussenvoegsel, achternaam, geslacht, geboorte_datum, FYSCloud.Session.get('userId')]
+    [voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum, FYSCloud.Session.get('userId')]
   ).done(function(data) {
     console.log(data[0]);
   }).fail(function(reason) {
