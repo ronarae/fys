@@ -11,7 +11,7 @@ function login(){
         "SELECT * FROM gebruiker Where email = ? AND wachtwoord =?",
         [email,wachtwoord]
     ).done(function (data) {
-      if(data[0]){
+       if(data[0]){
         FYSCloud.Session.set("userId", data[0].gebruiker_id);
         FYSCloud.URL.redirect("index.html");
       }
