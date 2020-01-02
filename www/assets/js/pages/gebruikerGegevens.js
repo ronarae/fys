@@ -45,11 +45,6 @@ function laadAlleVelden(id, tabel) {
 //Laad bio van gebruiker
 function laadBio() {
     let bio = $('#bio');
-    let voornaam = $('#voornaam').val();
-    let tussenvoegsel = $('#tussenvoegsel');
-    let achternaam = $('#achternaam');
-    let geslacht = $('#geslacht');
-    let geboortedatum = $('#geboortedatum');
     FYSCloud.API.queryDatabase(
         "SELECT bio  FROM gebruiker WHERE gebruiker_id = ?",
         [FYSCloud.Session.get('userId')]
