@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>adminpagina | Assemble</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link rel="stylesheet" href="assets/css/pages/adminpagina.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+
+    <script src="https://cdn.fys.cloud/fyscloud/0.0.3/fyscloud.bundle.min.js"></script>
+    <script src="assets/js/config.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="assets/js/pages/profielpagina.js" charset="utf-8"></script>
+    <script src="assets/js/pages/logoutscript.js" charset="utf-8"></script>
+    <script src="assets/js/pages/loginscript.js" charset="utf-8"></script>
+    <script src="assets/js/require_login.js" charset="utf-8"></script>
+    <script src="assets/js/pages/logoutscript.js" charset="utf-8"></script>
+    <script src="assets/js/pages/adminloginlogout.js" charset="utf-8"></script>
+    <script src="assets/js/pages/loginscriptadmin.js" charset="utf-8"></script>
+</head>
+
+<body id="subMain" onload="dataladen()">
+        <!-- Navbar -->
+        <div include="assets/includes/_header.html"></div>
+<!-- gegevens laden gebruiker -->
+        <div class = "text-center">
+            <h1>welkom <span id='naam'>.........</span></h1>
+            <h1>hieronder zie je de namen die geregistreerd</h1>
+        </div>
+        <div class="row justify-content-center">
+<div id ="gebruikertabel"></div>
+        </div>
+</body>
+</html>
