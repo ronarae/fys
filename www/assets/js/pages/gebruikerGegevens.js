@@ -45,11 +45,6 @@ function laadAlleVelden(id, tabel) {
 //Laad bio van gebruiker
 function laadBio() {
     let bio = $('#bio');
-    let voornaam = $('#voornaam').val();
-    let tussenvoegsel = $('#tussenvoegsel');
-    let achternaam = $('#achternaam');
-    let geslacht = $('#geslacht');
-    let geboortedatum = $('#geboortedatum');
     FYSCloud.API.queryDatabase(
         "SELECT bio  FROM gebruiker WHERE gebruiker_id = ?",
         [FYSCloud.Session.get('userId')]
@@ -60,13 +55,13 @@ function laadBio() {
     });
 }
 
-;
+
 
 function laadGebruikerGegevens() {
     let voornaam = $('#voornaam');
     let tussenvoegsel = $('#tussenvoegsel');
     let achternaam = $('#achternaam');
-    let geslacht = $('#geslacht').selected;
+    let geslacht = $('#geslacht').filter(":selected");
     let geboortedatum = $('#geboortedatum');
     FYSCloud.API.queryDatabase(
         "SELECT voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum FROM gebruiker WHERE gebruiker_id = ?",
@@ -77,17 +72,32 @@ function laadGebruikerGegevens() {
         voornaam.html(d.voornaam);
         tussenvoegsel.html(d.tussenvoegsel);
         achternaam.html(d.achternaam);
-        geslacht.html(d.geslacht);
+        geslacht.html(d.geslacht).filter(":selected").val();
         geboortedatum.html(d.geboortedatum.replace("T00:00:00.000Z",""));
     }).fail(function(reason) {
         console.log(reason);
     });
 }
 
+function laadLoginGegevens() {
+    let email = $('#email');
+    FYSCloud.API.queryDatabase(
+        "SELECT email  FROM gebruiker WHERE gebruiker_id = ?",
+        [FYSCloud.Session.get('userId')]
+    ).done(function(data) {
+        console.log(data);
+        email.html('test');
+    }).fail(function(reason) {
+        console.log(reason);
+    });
+}
+
+
 includeDone(function() {
   laadAlleVelden('#interessesUpdate', 'interesses');
   laadBio();
   laadGebruikerGegevens();
+  laadLoginGegevens();
 });
 
 // checkbox selector
