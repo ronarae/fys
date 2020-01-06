@@ -125,12 +125,15 @@ function Register() {
         }).fail(function(reason) {
           console.log(reason);
           FYSCloud.API.deleteFile(url);
+          alert("Register niet gelukt");
         });
       }).fail(function(reason) {
         console.log(reason);
+        alert("Register niet gelukt");
       });
     }).fail(function(reason) {
       console.log(reason);
+      alert("Register niet gelukt");
     })
   }).fail(function(reason) {
     console.log(reason);
