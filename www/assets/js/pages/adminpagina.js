@@ -6,7 +6,7 @@ $(document).ready(() => {
 function main() {
     let table = $('#gebruikertabel');
     FYSCloud.API.queryDatabase(
-        "SELECT * FROM gebruiker"
+        "SELECT * FROM gebruiker WHERE gebruiker_id <> ?", [FYSCloud.Session.get('userId')]
     ).done(data => {
         table.append(`
             <table style='font-family: arial, sans-serif;border-collapse: collapse;width: 100%;'>
@@ -22,7 +22,8 @@ function main() {
                     <td style='border: 1px solid #dddddd;text-align: left;padding: 8px;'>${data[i].geboortedatum.split('T')[0]}</td>
                     <td style='border: 1px solid #dddddd;text-align: left;padding: 8px;'>${data[i].geslacht}</td>
                     <td style='border: 1px solid #dddddd;text-align: left;padding: 8px;'>${data[i].rechten_id}</td>
-                    <td style='border: 1px solid #dddddd; text-align: left; padding: 8px;'><button onclick='remove(${data[i].gebruiker_id})'>X</button></td>
+                    <td style='border: 1px solid #dddddd; text-align: left; padding: 8px;'><button class='btn btn-link text-danger' onclick='remove(${data[i].gebruiker_id})'>X</button></td>
+                    <td style='border: 1px solid #dddddd; text-align: left; padding: 8px;'><button class='btn btn-link' onclick='makeAdmin(${data[i].gebruiker_id})'>Maak Admin</button></td>
                 </tr>
             `);
         }
@@ -41,4 +42,15 @@ function remove(userId) {
     }).fail(reason => {
         console.error(reason);
     })
+}
+
+function makeAdmin(userId) {
+    FYSCloud.API.queryDatabase(
+        "UPDATE gebruiker SET rechten_id = ? WHERE gebruiker_id = ?", [2, userId]
+    ).done(data => {
+        $('#gebruikertabel').html('');
+        main();
+    }).fail(reason => {
+        console.error(reason);
+    });
 }
