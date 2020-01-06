@@ -46,8 +46,10 @@ function accountgegevensUpdate() {
     [voornaam, tussenvoegsel, achternaam, geslacht, geboortedatum, FYSCloud.Session.get('userId')]
   ).done(function(data) {
     console.log(data[0]);
+      alert("Gelukt!!");
   }).fail(function(reason) {
     console.log(reason);
+      alert("Try again, niet alles ingevuld");
   });
 }
 // Verwijdert account
