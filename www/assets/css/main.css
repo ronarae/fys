@@ -220,8 +220,10 @@ button.btn.btn-outline-secondary.btn-lg:hover {
 }
 /*bestemming*/
 .bestemming {
+  margin-left: 25%;
+  margin-top: 10px;
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 20px;
+  padding: 50px;
   border: 1px solid #4CAF50;
 }
 /*FOOTER*/
