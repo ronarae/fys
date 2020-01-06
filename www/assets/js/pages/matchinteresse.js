@@ -9,9 +9,11 @@ function match() {
         for (let i = 0; i < data.length; i++) {
             gebruikerInteresses.push(data[i].Interesses_interesses_id);
         }
+        userId = FYSCloud.Session.get('userId');
         FYSCloud.API.queryDatabase(
-            "SELECT * FROM Gebruiker WHERE gebruiker_id <> ?", [FYSCloud.Session.get('userId')]
+            "SELECT * FROM Gebruiker WHERE gebruiker_id <> ?; SELECT * FROM Vrienden WHERE Gebruiker_gebruiker_id = ?; SELECT * FROM Vrienden WHERE Vriend_user_id = ?", [userId, userId, userId]
         ).done(function(data) {
+            data = removeDoubles(data);
             for (let i = 0; i < data.length; i++) {
                 gebruikerData.push(data[i]);
                 gebruikerData[i].leeftijd = calculate_age(new Date(gebruikerData[i].geboortedatum));
@@ -35,6 +37,22 @@ function match() {
     }).fail(function(reason) {
         console.log(reason);
     });
+}
+
+function removeDoubles(array) {
+    for (let i = 0; i < array[0].length; i++) {
+        for (let j = 0; j < array[1].length; j++) {
+            if (array[0][i].gebruiker_id === array[1][j].vriend_user_id) {
+                array[0].splice(i, 1);
+            }
+        }
+        for (let j = 0; j < array[2].length; j++) {
+            if (array[0][i].gebruiker_id === array[2][j].Gebruiker_gebruiker_id) {
+                array[0].splice(i, 1);
+            }
+        }
+    }
+    return array[0];
 }
 
 function compareArray(array1, array2) {
