@@ -21,13 +21,16 @@ function overmijUpdate() {
         interesses
       ).done(function(data) {
         console.log(data);
+          alert("Gelukt!!");
       }).fail(function(reason) {
         console.log(reason);
+          alert("Probeer het nog één keer, niet alles ingevuld");
       });
     })
 
   }).fail(function(reason) {
     console.log(reason);
+      alert("Probeer het nog één keer, niet alles ingevuld");
   });
 
 }
@@ -49,9 +52,10 @@ function accountgegevensUpdate() {
       alert("Gelukt!!");
   }).fail(function(reason) {
     console.log(reason);
-      alert("Try again, niet alles ingevuld");
+      alert("Probeer het nog één keer, niet alles is ingevuld");
   });
 }
+
 // Verwijdert account
 function verwijderAcc() {
 alert("Weet je zeker dat je het account wil verwijderen? Dit kan niet ongedaan worden!");
@@ -67,8 +71,10 @@ alert("Weet je zeker dat je het account wil verwijderen? Dit kan niet ongedaan w
         console.log(data[0]);
         FYSCloud.URL.redirect("index.html");
         FYSCloud.Session.remove("userId");
+        alert('Jouw account is verwijderd');
     }).fail(function(reason) {
         console.log(reason);
+        alert('Jouw account is nog NIET vewijderd');
     });
     //
 }
