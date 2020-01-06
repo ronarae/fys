@@ -233,8 +233,8 @@ color: white;
 }
 /*bestemming*/
 .bestemming {
-  margin-left: 25%;
-  margin-top: 10px;
+  margin-left: 10px;
+  margin-top: 20px;
   background-color: rgba(255, 255, 255, 0.5);
   padding: 50px;
   border: 1px solid #4CAF50;

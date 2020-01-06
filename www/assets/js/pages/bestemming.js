@@ -9,15 +9,15 @@ function bestemming() {
         for (let i = 0; i < data.length; i++) {
             d = data[i];
             $('#bestemming-lijst').append(`
+      
       <div class="col-4">
         <div class="bestemming">
           <div class="row">
             <div class="col-3">
             </div>
             <div class="col-9">
-              <h3 class="text-uppercase">${d.bestemming_naam}</h3>
-                <a href="#">
-                <button class="btn btn-outline-secondary text-uppercase">meer informatie</button>
+                <a href="https://www.corendon.nl">
+                 <h1>${d.bestemming_naam}</h1>
               </a>
             </div>
           </div>
