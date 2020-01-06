@@ -36,10 +36,7 @@ function loginLogout() {
       </a>
       <button data-toggle='modal' data-target='#loginModal' class='nav-link text-white btn btn-link'>
       <i class='fas fa-sign-in-alt'></i> Login
-      </button>
-        <button data-toggle='modal' data-target='#loginModaladmin' class='nav-link text-white btn btn-link'>
-        <i class='fas fa-sign-in-alt'></i> Admin
-        </button>`
+      </button>`
 
         );
     }
