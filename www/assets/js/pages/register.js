@@ -118,21 +118,26 @@ function Register() {
           }
           FYSCloud.API.queryDatabase(query, bestemmingen).done(function(data) {
             FYSCloud.URL.redirect('profielpagina.html');
+            alert("Profiel gemaakt");
           }).fail(function(reason) {
             console.log(reason);
           });
         }).fail(function(reason) {
           console.log(reason);
           FYSCloud.API.deleteFile(url);
+          alert("Register niet gelukt");
         });
       }).fail(function(reason) {
         console.log(reason);
+        alert("Register niet gelukt");
       });
     }).fail(function(reason) {
       console.log(reason);
+      alert("Register niet gelukt");
     })
   }).fail(function(reason) {
     console.log(reason);
+    alert("Register niet gelukt");
   });
 }
 

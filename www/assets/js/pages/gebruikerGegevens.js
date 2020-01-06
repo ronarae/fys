@@ -69,11 +69,11 @@ function laadGebruikerGegevens() {
     ).done(function(data) {
         console.log(data);
         d = data[0];
-        voornaam.html(d.voornaam);
-        tussenvoegsel.html(d.tussenvoegsel);
-        achternaam.html(d.achternaam);
-        geslacht.html(d.geslacht).filter(":selected").val();
-        geboortedatum.html(d.geboortedatum.replace("T00:00:00.000Z",""));
+        voornaam.val(d.voornaam);
+        tussenvoegsel.val(d.tussenvoegsel);
+        achternaam.val(d.achternaam);
+        geslacht.val(d.geslacht).filter(":selected");
+        geboortedatum.val(d.geboortedatum.replace("T00:00:00.000Z",""));
     }).fail(function(reason) {
         console.log(reason);
     });
@@ -81,16 +81,24 @@ function laadGebruikerGegevens() {
 
 function laadLoginGegevens() {
     let email = $('#email');
+    let wachtwoord = $('#wachtwoord');
+    let herhaalwachtwoord = $('#herhaal_wachtwoord');
     FYSCloud.API.queryDatabase(
-        "SELECT email  FROM gebruiker WHERE gebruiker_id = ?",
+        "SELECT email, wachtwoord  FROM gebruiker WHERE gebruiker_id = ?",
         [FYSCloud.Session.get('userId')]
     ).done(function(data) {
         console.log(data);
-        email.html('test');
+        email.val(data[0].email);
+        wachtwoord.val(data[0].wachtwoord);
+        herhaalwachtwoord.val(data[0].wachtwoord);
     }).fail(function(reason) {
         console.log(reason);
     });
 }
+//TO DO RONA
+// function laadInstellingen() {
+//
+// }
 
 
 includeDone(function() {
@@ -98,6 +106,7 @@ includeDone(function() {
   laadBio();
   laadGebruikerGegevens();
   laadLoginGegevens();
+  laadInstellingen();
 });
 
 // checkbox selector
