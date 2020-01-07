@@ -15,6 +15,7 @@ function loginUpdate () {
             [email, wachtwoord, FYSCloud.Session.get('userId')]
         ).done(function (data) {
             console.log(data[0]);
+            FYSCloud.URL.redirect("profielpagina.html");
         }).fail(function (reason) {
             console.log(reason);
         });

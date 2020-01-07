@@ -22,6 +22,7 @@ function overmijUpdate() {
       ).done(function(data) {
         console.log(data);
           alert("Gelukt!!");
+          FYSCloud.URL.redirect("profielpagina.html");
       }).fail(function(reason) {
         console.log(reason);
           alert("Probeer het nog één keer, niet alles ingevuld");
@@ -50,6 +51,7 @@ function accountgegevensUpdate() {
   ).done(function(data) {
     console.log(data[0]);
       alert("Gelukt!!");
+      FYSCloud.URL.redirect("profielpagina.html");
   }).fail(function(reason) {
     console.log(reason);
       alert("Probeer het nog één keer, niet alles is ingevuld");

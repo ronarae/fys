@@ -95,18 +95,12 @@ function laadLoginGegevens() {
         console.log(reason);
     });
 }
-//TO DO RONA
-// function laadInstellingen() {
-//
-// }
-
 
 includeDone(function() {
   laadAlleVelden('#interessesUpdate', 'interesses');
   laadBio();
   laadGebruikerGegevens();
   laadLoginGegevens();
-  laadInstellingen();
 });
 
 // checkbox selector

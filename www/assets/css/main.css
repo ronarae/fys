@@ -169,23 +169,19 @@ button.btn.btn-outline-secondary.btn-lg:hover {
 }
 /*profiel bewerken icon*/
 .editIcons {
-  font-size: 35px;
-  margin-top: 11px;
+  font-size: 20px;
+  /*margin-top: 11px;*/
   color: black;
 }
-.editIcons:hover{
-font-size: 35px;
+
+.editIconsfoto:hover {
 color: white;
 }
 .editIconsfoto {
-  font-size: 35px;
+  font-size: 25px;
   color: black;
 }
-.editIconsfoto:hover {
-  font-size: 35px;
-  color: white;
 
-}
 
 .editIconFoto {
   text-align: right;
@@ -193,6 +189,14 @@ color: white;
   margin-top: 25px;
 }
 
+a.btn.btn-outline-secondary.bewerkButton {
+  border: cornflowerblue solid 3px;
+  margin-top: 125px;
+}
+a.btn.btn-outline-secondary.bewerkButton:hover {
+  color:black;
+  background-color: navajowhite;
+}
 .info {
   background-color: rgba(255, 255, 255, 0.5);
   margin-bottom: 20px;
