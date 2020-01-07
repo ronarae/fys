@@ -21,44 +21,63 @@ includeDone(function() {
 });
 //functie volgende pagina
 function nextPage() {
-  //selecter de active tab
-  let active = $(".tab.active");
-  //verwijder de disabled attribute van de prevBtn id
-  $("#prevBtn").prop("disabled", false);
-  $("#prevBtn").removeAttr("disabled");
-  //check of het volgende element de class tab heeft
-  if (active.next().hasClass("tab")) {
-    // verplaats de class naar de volgende tab en verhoog de progressbar
-    active.removeClass("active");
-    active = active.next();
-    active.addClass("active");
-    progressBar(18);
-  }
-  //als er niet nog een pagina na komt, disable de knop om naar de volgende pagina te gaan.
-  if (!active.next().hasClass("tab")) {
-    $("#nextBtn").attr("disabled", "");
-  }
+    //selecter de active tab
+    let active = $(".tab.active");
+    let voornaam = $("#voornaam").val();
+    let tussenvoegsel = $("#tussenvoegsel").val();
+    let achternaam = $("#achternaam").val();
+    let geslacht = $("#geslacht").val();
+    let geboorte_datum = $("#geboorte_datum").val();
+    let avatar = $("#avatar");
+    let bio = $("#bio").val();
+    let wachtwoord = $("#wachtwoord").val();
+    let email = $("#email").val();
+
+    //verwijder de disabled attribute van de prevBtn id
+    $("#prevBtn").prop("disabled", false);
+    $("#prevBtn").removeAttr("disabled");
+    //check of het volgende element de class tab heeft
+    if (active.next().hasClass("tab")) {
+        // verplaats de class naar de volgende tab en verhoog de progressbar
+        active.removeClass("active");
+        active = active.next();
+        active.addClass("active");
+        progressBar(18);
+    }
+
+    //als de inputvelden leeg zijn krijg je alert dat je het moet invullen en je kan niet op volgende knop klikken -- WIP
+    if ((voornaam, tussenvoegsel, achternaam, geslacht, geboorte_datum, avatar, bio, wachtwoord, email) == ''){
+        $("#nextBtn").attr("disabled", true);
+        alert('U heeft niet alles ingevuld. Vul alsjeblieft alles in');
+    }
+
+    //als er niet nog een pagina na komt, disable de knop om naar de volgende pagina te gaan.
+    if (!active.next().hasClass("tab")) {
+        $("#nextBtn").attr("disabled", "");
+    }
+
 }
 
 //functie vorige pagina
 function previousPage() {
-  //selecter de active tab
-  let active = $(".tab.active");
-  //verwijder de disabled attribute van de nextBtn id
-  $("#nextBtn").prop("disabled", false);
-  $("#nextBtn").removeAttr("disabled");
-  //kijk of de vorige element de class tab heeft
-  if (active.prev().hasClass("tab")) {
-    //verplaats de active class naar het vorige element en verlaag de progressbar
-    active.removeClass("active");
-    active = active.prev();
-    active.addClass("active");
-    progressBar(-18);
-  }
-  //als er niet een tab voor komt disable de button om naar de vorige pagina te gaan
-  if (!active.prev().hasClass("tab")) {
-    $("#prevBtn").attr("disabled", "");
-  }
+    //selecter de active tab
+    let active = $(".tab.active");
+    //verwijder de disabled attribute van de nextBtn id
+    $("#nextBtn").prop("disabled", false);
+    $("#nextBtn").removeAttr("disabled");
+    //kijk of de vorige element de class tab heeft
+    if (active.prev().hasClass("tab")) {
+        //verplaats de active class naar het vorige element en verlaag de progressbar
+        active.removeClass("active");
+        active = active.prev();
+        active.addClass("active");
+        progressBar(-18);
+    }
+    //als er niet een tab voor komt disable de button om naar de vorige pagina te gaan
+    if (!active.prev().hasClass("tab")) {
+        $("#prevBtn").attr("disabled", "");
+    }
+
 }
 
 //functie progressbar

@@ -29,7 +29,7 @@ function getCheckBoxesFromTable(id, userId, tabel) {
         for (let i = 0; i < data.length; i++) {
             $(id).append(`
             <label class="checkbox-inline">
-              <input type="checkbox" class="${tabel}_checkbox" value="${data[i].interesses_id}" checked/>
+              <input type="checkbox" class="${tabel}_checkbox" value="${data[i].interesses_id}" checked disabled/>
               <span class="badge">${data[i].interesse_naam}</span>
             </label>
         `);

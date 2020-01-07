@@ -17,25 +17,27 @@
     <script src="assets/js/pages/loginscript.js" charset="utf-8"></script>
     <script src="assets/js/pages/logoutscript.js" charset="utf-8"></script>
     <script src="assets/js/require_login.js" charset="utf-8"></script>
+    <script src="assets/js/pages/bestemming.js" charset="utf-8"></script>
 </head>
-<body id="subMain">
+<body id="subMain" onload="bestemming()">
 <!--navbar-->
 <div include="assets/includes/_header.html"></div>
 
 <!--bestemming-->
 <div class="container">
     <div class="row">
-        <div class="col">
-        </div>
-        <div class="bestemming">
-            <div class="col">
-                <h1>bestemming1</h1>
-                dit is een suggestie van de bestemming op basis van interesse
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="page-title">
+                <p class="text-uppercase text-center">Bestemmingen</p>
             </div>
-        </div>
-        <div class="col">
         </div>
     </div>
 </div>
+<div class="container">
+    <div class="row" id="bestemming-lijst">
+    </div>
+</div>
+
 </body>
 </html>
