@@ -23,6 +23,16 @@ includeDone(function() {
 function nextPage() {
     //selecter de active tab
     let active = $(".tab.active");
+    let voornaam = $("#voornaam").val();
+    let tussenvoegsel = $("#tussenvoegsel").val();
+    let achternaam = $("#achternaam").val();
+    let geslacht = $("#geslacht").val();
+    let geboorte_datum = $("#geboorte_datum").val();
+    let avatar = $("#avatar");
+    let bio = $("#bio").val();
+    let wachtwoord = $("#wachtwoord").val();
+    let email = $("#email").val();
+
     //verwijder de disabled attribute van de prevBtn id
     $("#prevBtn").prop("disabled", false);
     $("#prevBtn").removeAttr("disabled");
@@ -34,10 +44,18 @@ function nextPage() {
         active.addClass("active");
         progressBar(18);
     }
+
+    //als de inputvelden leeg zijn krijg je alert dat je het moet invullen en je kan niet op volgende knop klikken -- WIP
+    if ((voornaam, tussenvoegsel, achternaam, geslacht, geboorte_datum, avatar, bio, wachtwoord, email) == ''){
+        $("#nextBtn").attr("disabled", true);
+        alert('U heeft niet alles ingevuld. Vul alsjeblieft alles in');
+    }
+
     //als er niet nog een pagina na komt, disable de knop om naar de volgende pagina te gaan.
     if (!active.next().hasClass("tab")) {
         $("#nextBtn").attr("disabled", "");
     }
+
 }
 
 //functie vorige pagina
@@ -59,6 +77,7 @@ function previousPage() {
     if (!active.prev().hasClass("tab")) {
         $("#prevBtn").attr("disabled", "");
     }
+
 }
 
 //functie progressbar
