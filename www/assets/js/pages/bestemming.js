@@ -13,9 +13,9 @@ function bestemming() {
       <div class="col-4">
         <div class="bestemming">
           <div class="row">
-            <div class="col-3">
+            <div class="col-1">
             </div>
-            <div class="col-9">
+            <div class="col-3">
                 <a href="https://www.corendon.nl">
                  <h1>${d.bestemming_naam}</h1>
               </a>
