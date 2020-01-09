@@ -1,31 +1,20 @@
-
 function bestemming() {
-    FYSCloud.API.queryDatabase(
-        "SELECT * FROM gebruiker_has_bestemming INNER JOIN bestemming ON bestemming.bestemming_id = gebruiker_has_bestemming.Bestemming_bestemming_id WHERE Gebruiker_gebruiker_id=? ",
-        [FYSCloud.Session.get("userId")]
-    ).done(function(data) {
-        console.log(data);
-        let d;
-        for (let i = 0; i < data.length; i++) {
-            d = data[i];
-            $('#bestemming-lijst').append(`
-      
-      <div class="col-4">
-        <div class="bestemming">
-          <div class="row">
-            <div class="col-1">
-            </div>
-            <div class="col-3">
-                <a href="https://www.corendon.nl">
-                 <h1>${d.bestemming_naam}</h1>
-              </a>
-            </div>
-          </div>
+  FYSCloud.API.queryDatabase(
+    "SELECT * FROM Gebruiker_has_bestemming gb INNER JOIN Bestemming b ON gb.Bestemming_bestemming_id = b.bestemming_id WHERE Gebruiker_gebruiker_id = ?",
+    [FYSCloud.Session.get("userId")]
+  ).done(function (data) {
+    let lijst = $('#bestemming-lijst');
+    for (let i = 0; i < data.length; i++) {
+      lijst.append(`
+        <div class="card m-2" style="width: 18rem;">
+          <img class="card-img-top" src="${data[i].bestemming_afbeelding}" alt="${data[i].bestemming_naam}">
+          <div class="card-body">
+          <h5 class="card-title">${data[i].bestemming_naam}</h5>
         </div>
       </div>
-    `);
-        }
-    }).fail(function(reason) {
-        console.log(reason);
-    });
+      `);
+    }
+  }).fail(function (reason) {
+    console.log(reason);
+  });
 }
