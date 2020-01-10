@@ -7,7 +7,7 @@ function bestemming() {
     lijst.html('');
     for (let i = 0; i < data.length; i++) {
       lijst.append(`
-        <div class="card m-2" style="width: 18rem;">
+        <div class="card m-3" style="width: 250px;">
           <img class="card-img-top" src="${data[i].bestemming_afbeelding}" alt="${data[i].bestemming_naam}">
           <div class="card-body">
           <a href="${data[i].bestemming_link}" target="_blank">
@@ -30,7 +30,7 @@ function bestemming() {
     lijst.html('');
     for (let i = 0; i < data.length; i++) {
       lijst.append(`
-        <div class="card m-2" style="width: 18rem;">
+        <div class="card m-3" style="width: 250px;">
           <img class="card-img-top" src="${data[i].bestemming_afbeelding}" alt="${data[i].bestemming_naam}">
           <div class="card-body">
             <a href="${data[i].bestemming_link}" target="_blank">
