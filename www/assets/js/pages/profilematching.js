@@ -60,7 +60,7 @@ function match() {
                 }
             ],
             subject: "Je hebt een Match",
-            html: "<h1>Je hebt een nieuwe match</h1><p>Controleer uw profiel om de nieuwe match te bekijken.</p>"
+            html: "<h1>Je hebt een nieuwe match</h1><p>De gebruiker " + sender.voornaam + " heeft met u gematched.</p><p>Controleer uw profiel om de nieuwe match te bekijken.</p>"
           }).done(data => {
             console.info(data);
             FYSCloud.URL.redirect('profielpagina.html');
