@@ -16,6 +16,10 @@ function loginLogout() {
         FYSCloud.API.queryDatabase(
             "SELECT rechten_id FROM gebruiker WHERE gebruiker_id = ?", [FYSCloud.Session.get('userId')]
         ).done(data => {
+          console.log(data);
+          if (data.length <= 0) {
+            FYSCloud.Session.remove('userId');
+          } else {
             if (data[0].rechten_id !== 2) {
                 $('#navbarCollapse').append(
                     `<a href='profielpagina.html' class='text-white text-uppercase mr-3'><b>Mijn Profiel</b></a>
@@ -30,6 +34,7 @@ function loginLogout() {
                     <button class='btn btn-link text-white nav-link text-uppercase' onclick='logout()'><b>Log Uit</b></button>`
                 );
             }
+          }
         }).fail(reason => console.error(reason))
     } else {
         $('#navbarCollapse').append(
