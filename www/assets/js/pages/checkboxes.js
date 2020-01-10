@@ -1,3 +1,4 @@
+//interesses en bestemmingen checkboxes van de register
 function laadAlleVelden(id, tabel) {
     let data_naam;
     let data_id;
@@ -21,7 +22,7 @@ function laadAlleVelden(id, tabel) {
         console.log(reason);
     });
 }
-
+//same as above alleen geeft alleen de gegevens die is gecheckt
 function getCheckBoxesFromTable(id, userId, tabel) {
     FYSCloud.API.queryDatabase(
         "SELECT i.interesses_id, i.interesse_naam FROM " + tabel + " i INNER JOIN Gebruiker_has_" + tabel + " g ON i." + tabel + "_id = g." + tabel + "_" + tabel + "_id WHERE Gebruiker_gebruiker_id = ?", [userId]
@@ -38,7 +39,7 @@ function getCheckBoxesFromTable(id, userId, tabel) {
         console.error(reason);
     });
 }
-
+//check welke checkboxes is gechecked
 function getCheckedCheckboxes(selector) {
     let elements = $(selector);
     let array = [];
