@@ -26,7 +26,7 @@ function profielData() {
         ).done(function(data) {
             for (let i = 0; i < data.length; i++) {
                 interesses.append(`
-                <p>${data[i].interesse_naam}</p>
+                <p class="space">${data[i].interesse_naam}</p> 
               `);
             }
 
