@@ -146,7 +146,7 @@ function Register() {
     });
   }
 }
-
+//gebruike bij de profielfoto zodat het random blijft
 function salt(length) {
   //constantes van alle unicode tekens die waaruit de salt mag bestaan.
   const ASCII_MIN = 48,

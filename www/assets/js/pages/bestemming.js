@@ -13,7 +13,7 @@ function bestemming() {
           <a href="${data[i].bestemming_link}" target="_blank">
           <h5 class="card-title">${data[i].bestemming_naam}</h5>
           </a>
-          <button type='button' class="btn btn-danger mr-right"onclick='removeBestemming(${data[i].bestemming_id})'>-</button>
+          <button type='button' class="btn btn-danger"onclick='removeBestemming(${data[i].bestemming_id})'>-</button>
         </div>
       </div>
       `);
@@ -36,7 +36,7 @@ function bestemming() {
             <a href="${data[i].bestemming_link}" target="_blank">
             <h5 class="card-title">${data[i].bestemming_naam}</h5>
             </a>
-            <button type='button' class="btn btn-primary mr-right"onclick='addBestemming(${data[i].bestemming_id})'>+</button>
+            <button type='button' class="btn btn-success"onclick='addBestemming(${data[i].bestemming_id})'>+</button>
           </div>
       </div>
       `);

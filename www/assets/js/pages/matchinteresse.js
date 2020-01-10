@@ -104,10 +104,7 @@ function showData() {
       <div class="col-4">
         <div class="match">
           <div class="row">
-            <div class="col-3">
-              <i class="fas fa-user-circle matchPic"></i>
-            </div>
-            <div class="col-9">
+            <div class="col-12 text-center">
               <li class="text-uppercase">${d.voornaam} ${d.achternaam}</li>
               <li class="text-uppercase">${d.leeftijd} Jaar</li>
               <li class="text-uppercase">${d.matches}% match</li>

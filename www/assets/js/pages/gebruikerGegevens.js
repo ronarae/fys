@@ -1,4 +1,4 @@
-//laad alle interesses en toont geselecteerde interesses van gebruiker
+//laad alle interesses en toont geselecteerde interesses van gebruiker -- bewerkprofiel
 function laadAlleVelden(id, tabel) {
   let data_naam;
   let data_id;
