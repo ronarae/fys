@@ -9,7 +9,9 @@ function bestemming() {
         <div class="card m-2" style="width: 18rem;">
           <img class="card-img-top" src="${data[i].bestemming_afbeelding}" alt="${data[i].bestemming_naam}">
           <div class="card-body">
+          <a href="${data[i].bestemming_link}" target="_blank">
           <h5 class="card-title">${data[i].bestemming_naam}</h5>
+          </a>
         </div>
       </div>
       `);
