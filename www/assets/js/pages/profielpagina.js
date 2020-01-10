@@ -56,6 +56,7 @@ function loadVrienden() {
                         <td style='border: 1px solid #dddddd;text-align: left;padding: 8px;'>${d[i].voornaam}</td>
                         <td style='border: 1px solid #dddddd;text-align: left;padding: 8px;'>${d[i].tussenvoegsel}</td>
                         <td style='border: 1px solid #dddddd;text-align: left;padding: 8px;'>${d[i].achternaam}</td>
+                        <td style='border: 1px solid #dddddd; text-align: left; padding: 8px;'><button class='btn btn-link text-info' onclick="openEmailModal(${d[i].vriend_id})">Verstuur Bericht</button></td>
                         <td style='border: 1px solid #dddddd; text-align: left; padding: 8px;'><button class='btn btn-link text-danger' onclick='remove(${d[i].vriend_id})'>Verwijder Match</button></td>
                     </tr>
                 `);
@@ -65,6 +66,7 @@ function loadVrienden() {
                         <td style='border: 1px solid #FFFFFF;text-align: left;padding: 8px;'>${d[i].voornaam}</td>
                         <td style='border: 1px solid #FFFFFF;text-align: left;padding: 8px;'>${d[i].tussenvoegsel}</td>
                         <td style='border: 1px solid #FFFFFF;text-align: left;padding: 8px;'>${d[i].achternaam}</td>
+                        <td style='border: 1px solid #FFFFFF; text-align: left; padding: 8px;'><button class='btn btn-link text-info' data-toggle='modal' data-target='#emailModal'>Verstuur Bericht</button></td>
                         <td style='border: 1px solid #FFFFFF; text-align: left; padding: 8px;'><button class='btn btn-link text-danger' onclick='remove(${d[i].vriend_id})'>Verwijder Match</button></td>
                     </tr>
                 `);
@@ -100,4 +102,9 @@ function Leeftijd() {
         console.log(reason);
     });
 
+}
+
+function openEmailModal(vriendId) {
+  $('#sendEmailId').attr('onclick', `sendEmail(${vriendId})`);
+  $("#emailModal").modal('show');
 }
