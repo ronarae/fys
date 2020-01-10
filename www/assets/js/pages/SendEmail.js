@@ -2,17 +2,18 @@ $(document).ready(function() {
  sendEmail();
 });
 
-function sendEmail() {
-    //
+function sendEmail(userId) {
+
     // let email = $('#email');
-    let naam = $('#naam');
+
     // let interesses = $('#interesses')
-    let email_veld = $('#email-veld');
-    let subjectveld = $('#subjectveld');
+    let email_veld = $('#email-veld').html();
+    let subjectveld = $('#subjectveld').val();
 
     FYSCloud.API.queryDatabase(
-        "SELECT * FROM gebruiker gebruiker_id = ?", [userId]
+        "SELECT * FROM gebruiker WHERE gebruiker_id = ?", [userId]
     ).done(function(data) {
+        let naam = data[0].voornaam;
         console.log(data);
         FYSCloud.API.sendEmail({
             from: {
@@ -22,12 +23,11 @@ function sendEmail() {
             to: [
                 {
                     name: naam,
-                    address: email
+                    address: data[0].email
                 }
             ],
             subject: subjectveld,
-            text: email_veld,
-            html: "<h1>Je bent gematched!!!</h1><p>Je bent gematched met iemand :)</p>"
+            html: email_veld
         }).done(function(data) {
             console.log(data);
         }).fail(function(reason) {
