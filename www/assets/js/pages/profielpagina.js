@@ -90,12 +90,11 @@ function Leeftijd() {
     let geboortedatum = $('#geboortedatum');
 
     FYSCloud.API.queryDatabase(
-        "SELECT *, YEAR(CURDATE()) - YEAR(geboortedatum) AS leeftijd FROM gebruiker where gebruiker_id = ?;",
+        "SELECT *, YEAR(CURDATE()) - YEAR(geboortedatum) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '-', MONTH(geboortedatum), '-', DAY(geboortedatum)) ,'%Y-%c-%e') > CURDATE(), 1, 0) AS leeftijd FROM gebruiker where gebruiker_id = ?;",
         [FYSCloud.Session.get('userId')]
     ).done(function(data) {
         d = data[0];
         geboortedatum.html(d.leeftijd);
-        console.log(d);
     }).fail(function(reason) {
         console.log(reason);
     });
