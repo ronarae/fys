@@ -1,6 +1,6 @@
 $(document).ready(() => {
-    main();
-})
+  whenIsAdmin(() => main());
+});
 
 
 function main() {

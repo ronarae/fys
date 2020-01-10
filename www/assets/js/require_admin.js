@@ -1,3 +1,5 @@
+isAdmin = false;
+
 FYSCloud.API.queryDatabase(
     "SELECT rechten_id FROM gebruiker WHERE gebruiker_id = ?", [FYSCloud.Session.get('userId')]
 ).done(data => {
@@ -6,7 +8,18 @@ FYSCloud.API.queryDatabase(
             "SELECT r.rechten_naam FROM rechten r INNER JOIN gebruiker g ON r.rechten_id = g.rechten_id WHERE g.gebruiker_id = ?", [FYSCloud.Session.get('userId')]
         ).done(data => {
             alert(`Je moet ${data.rechten_naam} om deze pagina te kunnen bekijken.`)
-            FYSCloud.URL.Redirect('index.html')
+            FYSCloud.URL.redirect('index.html')
         })
+    } else {
+      isAdmin = true;
     }
-})
+});
+
+function whenIsAdmin(callback) {
+  let interval = setInterval(() => {
+    if (isAdmin) {
+      clearInterval(interval);
+      callback();
+    }
+  }, 100);
+}
