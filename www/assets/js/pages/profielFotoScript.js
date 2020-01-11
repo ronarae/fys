@@ -1,31 +1,52 @@
+$(document).ready(() => {
+  FYSCloud.API.queryDatabase(
+    "SELECT profiel_foto FROM gebruiker WHERE gebruiker_id = ?",
+    [FYSCloud.Session.get('userId')]
+  ).done(data => {
+    console.info(data);
+    $('#avatar').attr('src', data[0].profiel_foto);
+  }).fail(reason => console.error(reason));
+});
+
 function profielFotoUpdate() {
 
     let avatar = $("#profiel_foto");
-    //de ingevoerde waardes worden in de database gezet
-    FYSCloud.Utils
-        .getDataUrl(avatar)
-        .done(function (data) {
-            console.log(data);
-            FYSCloud.API.uploadFile(
-                salt(10) + "." + data.extension,
-                data.url
-            ).done(function (url) {
-                FYSCloud.API.queryDatabase(
-                    "UPDATE gebruiker SET profiel_foto = ? WHERE gebruiker_id = ?",
-                    [url]
-                ).done(function (data) {
-                    console.log(data);
-                });
+    FYSCloud.API.queryDatabase(
+      "SELECT profiel_foto FROM gebruiker WHERE gebruiker_id = ?",
+      [FYSCloud.Session.get('userId')]
+    ).done(data => {
+      console.log(data);
+      let file_name = data[0].profiel_foto.split('/');
+      file_name = file_name[file_name.length - 1];
+      FYSCloud.API.deleteFile(file_name).done(data => {
+        console.info(data);
+        FYSCloud.Utils
+            .getDataUrl(avatar)
+            .done(function (data) {
                 console.log(data);
-            }).fail(function (reason) {
-                console.log(reason);
-            });
-            console.log(data);
-            // alert("geluk 1");
-            // FYSCloud.URL.redirect("profielpagina.html");
+                if (data.isImage) {
+                  $('#avatar').attr('src', data.url);
+                }
+                FYSCloud.API.uploadFile(
+                    salt(10) + "." + data.extension,
+                    data.url
+                ).done(function (url) {
+                    FYSCloud.API.queryDatabase(
+                        "UPDATE gebruiker SET profiel_foto = ? WHERE gebruiker_id = ?",
+                        [url, FYSCloud.Session.get('userId')]
+                    ).done(function (data) {
+                        console.log(data);
+                    });
+                    console.log(url);
+                }).fail(function (reason) {
+                    console.log(reason);
+                });
         }).fail(function (reason) {
         console.log(reason);
-    });
+      });
+    }).fail(reason => console.error(reason));
+    //de ingevoerde waardes worden in de database gezet
+  }).fail(reason => console.error(reason));
 }
 //gebruike bij de profielfoto zodat het random blijft
 function salt(length) {
