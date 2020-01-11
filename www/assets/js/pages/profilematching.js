@@ -37,6 +37,36 @@ function match() {
         "INSERT INTO Vrienden (Gebruiker_gebruiker_id, Vriend_user_id) VALUES (?, ?)", [FYSCloud.Session.get('userId'), FYSCloud.URL.queryString('userId')]
     ).done(data => {
         console.info(data);
-        FYSCloud.URL.redirect('profielpagina.html');
+        FYSCloud.API.queryDatabase(
+          "SELECT * FROM gebruiker WHERE gebruiker_id = ?",
+          [FYSCloud.Session.get('userId')]
+        ).done(data => {
+          console.log(data);
+          sender = data[0];
+          FYSCloud.API.queryDatabase(
+            "SELECT * FROM gebruiker WHERE gebruiker_id = ?",
+            [FYSCloud.URL.queryString('userId')]
+          ).done(data => {
+            receiver = data[0];
+            console.log(receiver);
+          FYSCloud.API.sendEmail({
+            from: {
+                name: "ASSEMBLE",
+                address: "group@fys.cloud"
+            },
+            to: [
+                {
+                    name: receiver.voornaam + ' ' + receiver.tussenvoegsel + ' ' + receiver.achternaam,
+                    address: receiver.email.toLowerCase()
+                }
+            ],
+            subject: "Je hebt een Match",
+            html: "<h1>Je hebt een nieuwe match</h1><p>De gebruiker " + sender.voornaam + " heeft met u gematched.</p><p>Controleer uw profiel om de nieuwe match te bekijken.</p>"
+          }).done(data => {
+            console.info(data);
+            FYSCloud.URL.redirect('profielpagina.html');
+          }).fail(reason => console.error(reason));
+        });
+        });
     }).fail(reason => console.error(reason));
 }

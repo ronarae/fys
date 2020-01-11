@@ -1,29 +1,29 @@
-$(document).ready(function() {
- SendEmail();
-});
-
-function SendEmail() {
-
-    let email = $('#email');
-    let naam = $('#naam');
-
+function sendEmail(vriendId) {
+  let subject = $('#subject-field').val();
+  let content = $.trim($('#email-field').val());
+  FYSCloud.API.queryDatabase(
+    "SELECT voornaam, tussenvoegsel, achternaam, email FROM gebruiker WHERE gebruiker_id = ?",
+    [vriendId]
+  ).done(data => {
+    console.info(data);
+    receiver = data[0];
     FYSCloud.API.sendEmail({
-        from: {
-            name: "Group 5 Assemble",
-            address: "group@fys.cloud"
-        },
-        to: [
-            {
-                name: naam,
-                address: email
-            }
-        ],
-        subject: "Je bent aangemeld voor Assemble!!!",
-        html: "<h1>Hello Team 5</h1><p>This is an email :)</p>"
-    }).done(function(data) {
-        console.log(data);
-    }).fail(function(reason) {
-        console.log(reason);
-    });
-
+      from: {
+          name: "ASSEMBLE",
+          address: "group@fys.cloud"
+      },
+      to: [
+          {
+              name: receiver.voornaam + ' ' + receiver.tussenvoegsel + ' ' + receiver.achternaam,
+              address: receiver.email
+          }
+      ],
+      subject: subject,
+      html: content
+    }).done(data => {
+      console.info(data);
+      alert('Bericht verzonden');
+      $('#emailModal').modal('hide');
+    }).fail(reason => console.error(reason));
+  }).fail(reason => console.error(reason));
 }
