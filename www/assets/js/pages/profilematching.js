@@ -48,6 +48,7 @@ function match() {
             [FYSCloud.URL.queryString('userId')]
           ).done(data => {
             receiver = data[0];
+            console.log(receiver);
           FYSCloud.API.sendEmail({
             from: {
                 name: "ASSEMBLE",
@@ -56,7 +57,7 @@ function match() {
             to: [
                 {
                     name: receiver.voornaam + ' ' + receiver.tussenvoegsel + ' ' + receiver.achternaam,
-                    address: receiver.email
+                    address: receiver.email.toLowerCase()
                 }
             ],
             subject: "Je hebt een Match",
