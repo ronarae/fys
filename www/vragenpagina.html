@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <title>FAQ/HELP</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awes   ome/5.11.2/css/all.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <link rel="stylesheet" href="assets/css/pages/vragenpagina.css">
 
@@ -16,10 +16,15 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   <script src="assets/js/main.js" charset="utf-8"></script>
   <script src="assets/js/pages/vragenpagina.js" charset="utf-8"></script>
+  <script src="assets/js/pages/loginscript.js" charset="utf-8"></script>
   <script src="assets/js/pages/logoutscript.js" charset="utf-8"></script>
 </head>
 
 <body id="subMain">
+
+<!--    LOGIN POP UP       -->
+<div include='assets/includes/_login.html'></div>
+
   <!-- NAVBAR -->
   <div include="assets/includes/_header.html"></div>
 
@@ -30,7 +35,8 @@
         <p>Op deze pagina staan de FAQ.</p>
         <button class="accordion" onclick="slide();">Wat heb je nodig om te registreren?</button>
         <div class="panel">
-          <p>Je hebt nodig. je naam, email adres, wachtwoord, geslacht, geboortedatum, interesse, bio over jezelf</p>
+          <p>Je hebt nodig. je naam, email adres, wachtwoord, geslacht, geboortedatum,foto van jezelf,
+            interesse, bio over jezelf,bestemmingen</p>
         </div>
 
         <button class="accordion" onclick="slide();">Hoe kan ik de logingegevens veranderen?</button>
@@ -39,37 +45,27 @@
             klik daarna op logingegevens. verander je email en wachtwoord. en dan klik op opslaan.</p>
         </div>
 
-        <button class="accordion" onclick="slide();">Hoe kan ik de privacy veranderen?</button>
-        <div class="panel">
-          <p>op de profielpagina klikt op de 'potlood icon' bij naam,geboortedatum,geslacht,email.
-            klik daarna op instellingen. verander 'Wie kan mijn e-mail zien?.','Wie kan mij berichten sturen?',
-            'Wie kan mijn matches zien?'en dan klik op opslaan. </p>
-        </div>
-
         <button class="accordion" onclick="slide();">waar kan ik mijn account verwijderen?</button>
         <div class="panel">
-          <p>klik op mijn profiel. daarna klik op bewerk. klik op instellingen. daarna klik op verwijder account.</p>
+          <p>klik op mijn profiel. daarna klik op bewerk. klik op instellingen. daarna klik op verwijder account.
+          Waarschuwing!!! je kan de account verwijderen bij het klikken niet ongedaan maken!!!!!</p>
         </div>
 
-        <button class="accordion" onclick="slide();">Section 5</button>
+        <button class="accordion" onclick="slide();">Wat moet ik doen als ik het de gebruikersnaam of wachtwoord vergeet/account gestolen</button>
         <div class="panel">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>maak contact met ons of Corendon en we verwijder je account. dan maak een nieuw account bij de registreren.</p>
         </div>
 
-        <button class="accordion" onclick="slide();">Section 6</button>
+        <button class="accordion" onclick="slide();">Hoe kan je iemand matchen?</button>
         <div class="panel">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>Ga naar je profiel. klik op "zoek een match". klik op "show gebruiker" die je ervan houdt. klik dan op "match".</p>
         </div>
 
-        <button class="accordion" onclick="slide();">Section 7</button>
+        <button class="accordion" onclick="slide();">Waar kan ik de bestemmingen veranderen?</button>
         <div class="panel">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>ga naar "mijn bestemmingen". op de lijst kan je bestemmingen toevoegen met een '+' en bestemmingen verwijderen met een '-'. </p>
         </div>
 
-        <button class="accordion" onclick="slide();">Section 8</button>
-        <div class="panel">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
       </div>
     </div>
   </div>

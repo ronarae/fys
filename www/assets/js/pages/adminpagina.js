@@ -104,7 +104,7 @@ function updateUser() {
     let voornaam = $('#voornaam').val();
     let tussenvoegsel = $('#tussenvoegsel').val();
     let achternaam = $('#achternaam').val();
-    let email = $('#achternaam').val();
+    let email = $('#email').val();
     let wachtwoord = $('#wachtwoord').val();
     let geslacht = $('#geslacht').val();
     let geboortedatum = $('#geboortedatum').val().split('T')[0];
