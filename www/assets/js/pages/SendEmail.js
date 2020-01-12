@@ -4,11 +4,11 @@ $(document).ready(function() {
 
 function sendEmail(userId) {
 
-    // let email = $('#email');
-
+     let email = $('#email');
     // let interesses = $('#interesses')
     let email_veld = $('#email-veld').html();
     let subjectveld = $('#subjectveld').val();
+    let naam = $('#voornaam').val();
 
     FYSCloud.API.queryDatabase(
         "SELECT * FROM gebruiker WHERE gebruiker_id = ?", [userId]
