@@ -16,7 +16,6 @@ function loginLogout() {
         FYSCloud.API.queryDatabase(
             "SELECT rechten_id FROM gebruiker WHERE gebruiker_id = ?", [FYSCloud.Session.get('userId')]
         ).done(data => {
-          console.log(data);
           if (data.length <= 0) {
             FYSCloud.Session.remove('userId');
           } else {

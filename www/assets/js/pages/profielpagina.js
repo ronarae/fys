@@ -4,41 +4,51 @@ $(document).ready(function() {
 });
 
 function profielData() {
-    let naam = $('#naam');
-    let geslacht = $('#geslacht');
-    let email = $('#email');
-    let bio = $('#bio');
-    let avatar = $('#avatar');
-    let interesses = $('#interesses')
-    FYSCloud.API.queryDatabase(
-        "SELECT * FROM gebruiker WHERE gebruiker_id = ?", [FYSCloud.Session.get('userId')]
-    ).done(function(data) {
-        d = data[0];
-        naam.html(d.voornaam + " " + d.tussenvoegsel + " " + d.achternaam);
-        geslacht.html(d.geslacht);
-        email.html(d.email);
-        bio.html(d.bio);
-        avatar.attr('src', d.profiel_foto);
-
-
-        FYSCloud.API.queryDatabase(
-            "SELECT i.interesse_naam FROM gebruiker_has_interesses INNER JOIN Interesses i ON Interesses_interesses_id = i.interesses_id WHERE Gebruiker_gebruiker_id = ?", [FYSCloud.Session.get('userId')]
-        ).done(function(data) {
-            for (let i = 0; i < data.length; i++) {
-                interesses.append(`
-                <p class="space">${data[i].interesse_naam}</p>
-              `);
-            }
-
-        }).fail(function(reason) {
-            console.log(reason)
-        });
-    }).fail(function(reason) {
-        console.log(reason);
-    });
-
+    if (!FYSCloud.URL.queryString('userId', false)) {
+      laadProfiel(FYSCloud.Session.get('userId'));
+    } else {
+      laadProfiel(FYSCloud.URL.queryString('userId'));
+      $('#editFotoIcon').html('');
+      $('#editAccGegevens').html('');
+      $('#editOverMij').html('');
+    }
     loadVrienden();
+}
 
+function laadProfiel(userId) {
+  let naam = $('#naam');
+  let geslacht = $('#geslacht');
+  let email = $('#email');
+  let bio = $('#bio');
+  let avatar = $('#avatar');
+  let interesses = $('#interesses');
+  FYSCloud.API.queryDatabase(
+      "SELECT * FROM gebruiker WHERE gebruiker_id = ?",
+      [userId]
+  ).done(function(data) {
+      d = data[0];
+      naam.html(d.voornaam + " " + d.tussenvoegsel + " " + d.achternaam);
+      geslacht.html(d.geslacht);
+      email.html(d.email);
+      bio.html(d.bio);
+      avatar.attr('src', d.profiel_foto);
+
+
+      FYSCloud.API.queryDatabase(
+          "SELECT i.interesse_naam FROM gebruiker_has_interesses INNER JOIN Interesses i ON Interesses_interesses_id = i.interesses_id WHERE Gebruiker_gebruiker_id = ?", [FYSCloud.Session.get('userId')]
+      ).done(function(data) {
+          for (let i = 0; i < data.length; i++) {
+              interesses.append(`
+              <p class="space">${data[i].interesse_naam}</p>
+            `);
+          }
+
+      }).fail(function(reason) {
+          console.log(reason)
+      });
+  }).fail(function(reason) {
+      console.log(reason);
+  });
 }
 
 function loadVrienden() {
@@ -51,16 +61,22 @@ function loadVrienden() {
           matches.html(`<table class='table table-striped'><thead></thead><tbody id='vriendTableBody'></tbody></table>`);
             for (user of data) {
               $('#vriendTableBody').append(`
-                <tr>
-                  <td>${user.voornaam}</td>
-                  <td>${user.tussenvoegsel}</td>
-                  <td>${user.achternaam}</td>
+                <tr title='Bekijk het profiel van ${user.voornaam} ${user.tussenvoegsel} ${user.achternaam}'>
+                  <td onclick='openMatch(${user.gebruiker_id})'>${user.voornaam}</td>
+                  <td onclick='openMatch(${user.gebruiker_id})'>${user.tussenvoegsel}</td>
+                  <td onclick='openMatch(${user.gebruiker_id})'>${user.achternaam}</td>
                   <td><button class='btn btn-primary' onclick='openEmailModal(${user.gebruiker_id})'>Stuur Bericht</button></td>
                   <td><button class='btn btn-link text-danger' onclick='remove(${user.gebruiker_id})'>Verwijder Match</button></td>
                 </tr>`);
             }
         }
     }).fail(reason => console.error(reason));
+}
+
+function openMatch(userId) {
+  FYSCloud.URL.redirect('profielpagina.html', {
+    userId: userId
+  });
 }
 
 function remove(vriendId) {
@@ -93,5 +109,11 @@ function Leeftijd() {
 
 function openEmailModal(vriendId) {
   $('#sendEmailId').attr('onclick', `sendEmail(${vriendId})`);
-  $("#emailModal").modal('show');
+  FYSCloud.API.queryDatabase(
+    "SELECT voornaam, tussenvoegsel, achternaam FROM gebruiker WHERE gebruiker_id = ?",
+    [vriendId]
+  ).done(data => {
+    $('#vriend_naam').html(data[0].voornaam + ' ' + data[0].tussenvoegsel + ' ' + data[0].achternaam);
+    $("#emailModal").modal('show');
+  }).fail(reason => console.error(reason));
 }
