@@ -10,12 +10,12 @@ function match() {
     gebruikerInteresses = [...data.map(obj => obj.Interesses_interesses_id)];
     let userId = FYSCloud.Session.get('userId');
     FYSCloud.API.queryDatabase(
-      "SELECT * FROM gebruiker WHERE gebruiker_id <> ? AND (gebruiker_id NOT IN (SELECT Vriend_user_id FROM Vrienden WHERE Gebruiker_gebruiker_id = ?) OR gebruiker_id NOT IN (SELECT Gebruiker_gebruiker_id FROM Vrienden WHERE Vriend_user_id = ?))",
+      "SELECT * FROM gebruiker WHERE gebruiker_id <> ? AND  (NOT gebruiker_id IN (SELECT Vriend_user_id FROM Vrienden WHERE Gebruiker_gebruiker_id = ?) OR gebruiker_id IN (SELECT Gebruiker_gebruiker_id FROM Vrienden WHERE Vriend_user_id = ?))",
       [userId, userId, userId]
     ).done(data => {
       userData = [...data];
       FYSCloud.API.queryDatabase(
-        "SELECT * FROM gebruiker_has_interesses WHERE gebruiker_gebruiker_id <> ? AND (gebruiker_gebruiker_id NOT IN (SELECT Vriend_user_id FROM Vrienden WHERE Gebruiker_gebruiker_id = ?) OR gebruiker_gebruiker_id NOT IN (SELECT Gebruiker_gebruiker_id FROM Vrienden WHERE Vriend_user_id = ?))",
+        "SELECT * FROM gebruiker_has_interesses WHERE gebruiker_gebruiker_id <> ? AND (NOT gebruiker_gebruiker_id IN (SELECT Vriend_user_id FROM Vrienden WHERE Gebruiker_gebruiker_id = ?) OR gebruiker_gebruiker_id IN (SELECT Gebruiker_gebruiker_id FROM Vrienden WHERE Vriend_user_id = ?))",
         [userId, userId, userId]
       ).done(data => {
         let ud;
@@ -27,7 +27,7 @@ function match() {
           ud.leeftijd = calculate_age(new Date(ud.geboortedatum));
         }
         FYSCloud.API.queryDatabase(
-          "SELECT * FROM gebruiker_has_bestemming WHERE gebruiker_gebruiker_id <> ? AND (gebruiker_gebruiker_id NOT IN (SELECT Vriend_user_id FROM Vrienden WHERE Gebruiker_gebruiker_id = ?) OR gebruiker_gebruiker_id NOT IN (SELECT Gebruiker_gebruiker_id FROM Vrienden WHERE Vriend_user_id = ?))",
+          "SELECT * FROM gebruiker_has_bestemming WHERE gebruiker_gebruiker_id <> ? AND (NOT gebruiker_gebruiker_id IN (SELECT Vriend_user_id FROM Vrienden WHERE Gebruiker_gebruiker_id = ?) OR gebruiker_gebruiker_id IN (SELECT Gebruiker_gebruiker_id FROM Vrienden WHERE Vriend_user_id = ?))",
           [userId, userId, userId]
         ).done(data => {
           let ud;
